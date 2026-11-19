@@ -224,7 +224,7 @@ Claude Codeがコードを生成・編集する際は、以下5原則を必ず�
 | 22 | **画面（View）層解析機能実装**（新設・FR-17） | 完了 |
 | 23 | **簡易版Call Graph機能実装**（新設・FR-18） | 完了 |
 
-**現在のタスク：No.18 GitHubに公開する（作業中：README・LICENSE作成済み、push待ち）**
+**現在のタスク：No.18 GitHubに公開する（作業中：Privateリポジトリへpush済み。Public化はユーザーの指示があるまで行わない）**
 - 完了：No.5〜No.17、No.20〜No.23
 - 今後の順序：No.18→No.19（No.18のpushは必ずユーザーの明確な指示を受けてから行う）
 （作業開始時にここを手動更新すること）
@@ -460,6 +460,8 @@ Claude Codeがコードを生成・編集する際は、以下5原則を必ず�
   ライセンスはMIT（`LICENSE`、`pom.xml`）。コミット履歴の作成者メールアドレスは書き換えない
 - **公開前の確認**：追跡対象ファイルに秘密情報・ローカルの絶対パスが無いこと、`workspace/`・`target/`が
   Git管理外であることを確認した
+- **進捗（2026/11/19）**：`https://github.com/qimeimeiqi-hash/java-system-analyzer`（Private）へ`publish/main`をpush済み。
+  Public化（`gh repo edit --visibility public`）はユーザーの指示があるまで行わない（ユーザー確認済み）。Public化した時点でNo.18完了とする
 
 ## No.19 Claude Code活用結果整理
 - **完了条件**：MCP/Sub Agent/Skill/Hooks/Prompt Engineeringの活用内容と効果をまとめた報告資料が完成していること
