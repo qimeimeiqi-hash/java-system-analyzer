@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>クラス一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e">解析総覧</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/apis">API一覧 (5)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/er">ER図 (0)</a></li>
+        <li class="active"><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/classes">クラス一覧 (2)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/views">画面一覧 (4)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>クラス一覧</h1>
+  <form method="get" action="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/classes" class="filters">
+    <label>パッケージ：
+      <select name="package" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="com.example.shop">com.example.shop</option>
+        <option value="com.example.shop.web">com.example.shop.web</option>
+      </select>
+    </label>
+    <label>役割：
+      <select name="role" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="Controller">Controller</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>クラス名</th><th>種類</th><th>役割</th><th>パッケージ</th><th>概要</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/classes/com.example.shop.ShopApplication"
+     title="com.example.shop.ShopApplication">ShopApplication</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>com.example.shop</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/classes/com.example.shop.web.ItemController"
+     title="com.example.shop.web.ItemController">ItemController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>com.example.shop.web</td>
+          <td>Screens of items.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

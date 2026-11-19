@@ -1,0 +1,2971 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyBatis - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964">解析総覧</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/apis">API一覧 (73)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/er">ER図 (0)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes">クラス一覧 (89)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/issues">解析エラー (0)</a></li>
+        <li class="active"><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/mybatis">MyBatis (9)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/views">画面一覧 (33)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>MyBatis</h1>
+  <form method="get" action="/projects/08ce5846-9749-42f7-af60-00b4f1324964/mybatis" class="filters">
+    <label>Mapper：
+      <select name="mapper" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="ltd.newbee.mall.dao.AdminUserMapper" title="ltd.newbee.mall.dao.AdminUserMapper">AdminUserMapper</option>
+        <option value="ltd.newbee.mall.dao.CarouselMapper" title="ltd.newbee.mall.dao.CarouselMapper">CarouselMapper</option>
+        <option value="ltd.newbee.mall.dao.GoodsCategoryMapper" title="ltd.newbee.mall.dao.GoodsCategoryMapper">GoodsCategoryMapper</option>
+        <option value="ltd.newbee.mall.dao.IndexConfigMapper" title="ltd.newbee.mall.dao.IndexConfigMapper">IndexConfigMapper</option>
+        <option value="ltd.newbee.mall.dao.MallUserMapper" title="ltd.newbee.mall.dao.MallUserMapper">MallUserMapper</option>
+        <option value="ltd.newbee.mall.dao.NewBeeMallGoodsMapper" title="ltd.newbee.mall.dao.NewBeeMallGoodsMapper">NewBeeMallGoodsMapper</option>
+        <option value="ltd.newbee.mall.dao.NewBeeMallOrderItemMapper" title="ltd.newbee.mall.dao.NewBeeMallOrderItemMapper">NewBeeMallOrderItemMapper</option>
+        <option value="ltd.newbee.mall.dao.NewBeeMallOrderMapper" title="ltd.newbee.mall.dao.NewBeeMallOrderMapper">NewBeeMallOrderMapper</option>
+        <option value="ltd.newbee.mall.dao.NewBeeMallShoppingCartItemMapper" title="ltd.newbee.mall.dao.NewBeeMallShoppingCartItemMapper">NewBeeMallShoppingCartItemMapper</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  <p class="note">&lt;include&gt; は展開せず、記述どおりに表示する。SQL の意味解析はしない。</p>
+  
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.AdminUserMapper"
+           title="ltd.newbee.mall.dao.AdminUserMapper">AdminUserMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.AdminUserMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/AdminUserMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>insert</td>
+          <td>AdminUser record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>AdminUser record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>login</td>
+          <td>String userName, String password</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.AdminUser"
+     title="ltd.newbee.mall.entity.AdminUser">AdminUser</a></td>
+          <td>select login</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Integer adminUserId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.AdminUser"
+     title="ltd.newbee.mall.entity.AdminUser">AdminUser</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>AdminUser record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>AdminUser record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>admin_user_id, login_user_name, login_password, nick_name, locked</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select login（XML）</h4>
+    
+    <pre>select
+    &lt;include refid=&quot;Base_Column_List&quot; /&gt;
+    from tb_newbee_mall_admin_user
+    where login_user_name = #{userName,jdbcType=VARCHAR} AND login_password=#{password,jdbcType=VARCHAR} AND locked = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+    &lt;include refid=&quot;Base_Column_List&quot; /&gt;
+    from tb_newbee_mall_admin_user
+    where admin_user_id = #{adminUserId,jdbcType=INTEGER}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_admin_user (admin_user_id, login_user_name, login_password,
+      nick_name, locked)
+    values (#{adminUserId,jdbcType=INTEGER}, #{loginUserName,jdbcType=VARCHAR}, #{loginPassword,jdbcType=VARCHAR},
+      #{nickName,jdbcType=VARCHAR}, #{locked,jdbcType=TINYINT})</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_admin_user
+    &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+      &lt;if test=&quot;adminUserId != null&quot;&gt;
+        admin_user_id,
+      &lt;/if&gt;
+      &lt;if test=&quot;loginUserName != null&quot;&gt;
+        login_user_name,
+      &lt;/if&gt;
+      &lt;if test=&quot;loginPassword != null&quot;&gt;
+        login_password,
+      &lt;/if&gt;
+      &lt;if test=&quot;nickName != null&quot;&gt;
+        nick_name,
+      &lt;/if&gt;
+      &lt;if test=&quot;locked != null&quot;&gt;
+        locked,
+      &lt;/if&gt;
+    &lt;/trim&gt;
+    &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+      &lt;if test=&quot;adminUserId != null&quot;&gt;
+        #{adminUserId,jdbcType=INTEGER},
+      &lt;/if&gt;
+      &lt;if test=&quot;loginUserName != null&quot;&gt;
+        #{loginUserName,jdbcType=VARCHAR},
+      &lt;/if&gt;
+      &lt;if test=&quot;loginPassword != null&quot;&gt;
+        #{loginPassword,jdbcType=VARCHAR},
+      &lt;/if&gt;
+      &lt;if test=&quot;nickName != null&quot;&gt;
+        #{nickName,jdbcType=VARCHAR},
+      &lt;/if&gt;
+      &lt;if test=&quot;locked != null&quot;&gt;
+        #{locked,jdbcType=TINYINT},
+      &lt;/if&gt;
+    &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_admin_user
+    &lt;set&gt;
+      &lt;if test=&quot;loginUserName != null&quot;&gt;
+        login_user_name = #{loginUserName,jdbcType=VARCHAR},
+      &lt;/if&gt;
+      &lt;if test=&quot;loginPassword != null&quot;&gt;
+        login_password = #{loginPassword,jdbcType=VARCHAR},
+      &lt;/if&gt;
+      &lt;if test=&quot;nickName != null&quot;&gt;
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      &lt;/if&gt;
+      &lt;if test=&quot;locked != null&quot;&gt;
+        locked = #{locked,jdbcType=TINYINT},
+      &lt;/if&gt;
+    &lt;/set&gt;
+    where admin_user_id = #{adminUserId,jdbcType=INTEGER}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_admin_user
+    set login_user_name = #{loginUserName,jdbcType=VARCHAR},
+      login_password = #{loginPassword,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      locked = #{locked,jdbcType=TINYINT}
+    where admin_user_id = #{adminUserId,jdbcType=INTEGER}</pre>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.CarouselMapper"
+           title="ltd.newbee.mall.dao.CarouselMapper">CarouselMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.CarouselMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/CarouselMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>deleteByPrimaryKey</td>
+          <td>Integer carouselId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>delete deleteByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td>Carousel record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>Carousel record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Integer carouselId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.Carousel"
+     title="ltd.newbee.mall.entity.Carousel">Carousel</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>Carousel record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>Carousel record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>findCarouselList</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="java.util.List">List&lt;Carousel&gt;</span></td>
+          <td>select findCarouselList</td>
+        </tr>
+        <tr>
+          <td>getTotalCarousels</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="int">int</span></td>
+          <td>select getTotalCarousels</td>
+        </tr>
+        <tr>
+          <td>deleteBatch</td>
+          <td>Integer[] ids</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteBatch</td>
+        </tr>
+        <tr>
+          <td>findCarouselsByNum</td>
+          <td>int number</td>
+          <td><span
+     title="java.util.List">List&lt;Carousel&gt;</span></td>
+          <td>select findCarouselsByNum</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>carousel_id, carousel_url, redirect_url, carousel_rank, is_deleted, create_time, 
+    create_user, update_time, update_user</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findCarouselList（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_carousel
+        where is_deleted = 0
+        order by carousel_rank desc
+        &lt;if test=&quot;start!=null and limit!=null&quot;&gt;
+            limit #{start},#{limit}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select getTotalCarousels（XML）</h4>
+    
+    <pre>select count(*) from tb_newbee_mall_carousel
+        where is_deleted = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_carousel
+        where carousel_id = #{carouselId,jdbcType=INTEGER}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findCarouselsByNum（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_carousel
+        where is_deleted = 0
+        order by carousel_rank desc
+        limit #{number}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：delete deleteByPrimaryKey（XML）</h4>
+    
+    <pre>delete from tb_newbee_mall_carousel
+    where carousel_id = #{carouselId,jdbcType=INTEGER}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_carousel (carousel_id, carousel_url, redirect_url, 
+      carousel_rank, is_deleted, create_time, 
+      create_user, update_time, update_user
+      )
+    values (#{carouselId,jdbcType=INTEGER}, #{carouselUrl,jdbcType=VARCHAR}, #{redirectUrl,jdbcType=VARCHAR}, 
+      #{carouselRank,jdbcType=INTEGER}, #{isDeleted,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createUser,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=INTEGER}
+      )</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_carousel
+        &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;carouselId != null&quot;&gt;
+                carousel_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;carouselUrl != null&quot;&gt;
+                carousel_url,
+            &lt;/if&gt;
+            &lt;if test=&quot;redirectUrl != null&quot;&gt;
+                redirect_url,
+            &lt;/if&gt;
+            &lt;if test=&quot;carouselRank != null&quot;&gt;
+                carousel_rank,
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted,
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                create_user,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                update_user,
+            &lt;/if&gt;
+        &lt;/trim&gt;
+        &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;carouselId != null&quot;&gt;
+                #{carouselId,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;carouselUrl != null&quot;&gt;
+                #{carouselUrl,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;redirectUrl != null&quot;&gt;
+                #{redirectUrl,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;carouselRank != null&quot;&gt;
+                #{carouselRank,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                #{createUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                #{updateUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+        &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_carousel
+        &lt;set&gt;
+            &lt;if test=&quot;carouselUrl != null&quot;&gt;
+                carousel_url = #{carouselUrl,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;redirectUrl != null&quot;&gt;
+                redirect_url = #{redirectUrl,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;carouselRank != null&quot;&gt;
+                carousel_rank = #{carouselRank,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted = #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                create_user = #{createUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                update_user = #{updateUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+        &lt;/set&gt;
+        where carousel_id = #{carouselId,jdbcType=INTEGER}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_carousel
+    set carousel_url = #{carouselUrl,jdbcType=VARCHAR},
+      redirect_url = #{redirectUrl,jdbcType=VARCHAR},
+      carousel_rank = #{carouselRank,jdbcType=INTEGER},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=INTEGER}
+    where carousel_id = #{carouselId,jdbcType=INTEGER}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteBatch（XML）</h4>
+    
+    <pre>update tb_newbee_mall_carousel
+        set is_deleted=1,update_time=now() where carousel_id in
+        &lt;foreach item=&quot;id&quot; collection=&quot;array&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;</pre>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.GoodsCategoryMapper"
+           title="ltd.newbee.mall.dao.GoodsCategoryMapper">GoodsCategoryMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.GoodsCategoryMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/GoodsCategoryMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>deleteByPrimaryKey</td>
+          <td>Long categoryId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td>GoodsCategory record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>GoodsCategory record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Long categoryId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.GoodsCategory"
+     title="ltd.newbee.mall.entity.GoodsCategory">GoodsCategory</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>selectByLevelAndName</td>
+          <td>Byte categoryLevel, String categoryName</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.GoodsCategory"
+     title="ltd.newbee.mall.entity.GoodsCategory">GoodsCategory</a></td>
+          <td>select selectByLevelAndName</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>GoodsCategory record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>GoodsCategory record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>findGoodsCategoryList</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="java.util.List">List&lt;GoodsCategory&gt;</span></td>
+          <td>select findGoodsCategoryList</td>
+        </tr>
+        <tr>
+          <td>getTotalGoodsCategories</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="int">int</span></td>
+          <td>select getTotalGoodsCategories</td>
+        </tr>
+        <tr>
+          <td>deleteBatch</td>
+          <td>Integer[] ids</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteBatch</td>
+        </tr>
+        <tr>
+          <td>selectByLevelAndParentIdsAndNumber</td>
+          <td>List&lt;Long&gt; parentIds, int categoryLevel, int number</td>
+          <td><span
+     title="java.util.List">List&lt;GoodsCategory&gt;</span></td>
+          <td>select selectByLevelAndParentIdsAndNumber</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>category_id, category_level, parent_id, category_name, category_rank, is_deleted, 
+    create_time, create_user, update_time, update_user</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findGoodsCategoryList（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_category
+        &lt;where&gt;
+            &lt;if test=&quot;categoryLevel!=null and categoryLevel!=&#39;&#39;&quot;&gt;
+                and category_level = #{categoryLevel}
+            &lt;/if&gt;
+            &lt;if test=&quot;parentId!=null and parentId!=&#39;&#39;&quot;&gt;
+                and parent_id = #{parentId}
+            &lt;/if&gt;
+            and is_deleted = 0
+        &lt;/where&gt;
+        order by category_rank desc
+        &lt;if test=&quot;start!=null and limit!=null&quot;&gt;
+            limit #{start},#{limit}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select getTotalGoodsCategories（XML）</h4>
+    
+    <pre>select count(*) from tb_newbee_mall_goods_category
+        &lt;where&gt;
+            &lt;if test=&quot;categoryLevel!=null and categoryLevel!=&#39;&#39;&quot;&gt;
+                and category_level = #{categoryLevel}
+            &lt;/if&gt;
+            &lt;if test=&quot;parentId!=null and parentId!=&#39;&#39;&quot;&gt;
+                and parent_id = #{parentId}
+            &lt;/if&gt;
+            and is_deleted = 0
+        &lt;/where&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_category
+        where category_id = #{categoryId,jdbcType=BIGINT} and is_deleted=0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByLevelAndName（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_category
+        where category_name = #{categoryName,jdbcType=VARCHAR} and category_level = #{categoryLevel,jdbcType=TINYINT}
+        and is_deleted = 0 limit 1</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByLevelAndParentIdsAndNumber（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_category
+        where parent_id in
+        &lt;foreach item=&quot;parentId&quot; collection=&quot;parentIds&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{parentId,jdbcType=BIGINT}
+        &lt;/foreach&gt;
+        and category_level = #{categoryLevel,jdbcType=TINYINT}
+        and is_deleted = 0
+        order by category_rank desc
+        &lt;if test=&quot;number&gt;0&quot;&gt;
+            limit #{number}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_goods_category set is_deleted=1
+    where category_id = #{categoryId,jdbcType=BIGINT} and is_deleted=0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteBatch（XML）</h4>
+    
+    <pre>update tb_newbee_mall_goods_category
+        set is_deleted=1 where category_id in
+        &lt;foreach item=&quot;id&quot; collection=&quot;array&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_goods_category (category_id, category_level, parent_id, 
+      category_name, category_rank, is_deleted, 
+      create_time, create_user, update_time, 
+      update_user)
+    values (#{categoryId,jdbcType=BIGINT}, #{categoryLevel,jdbcType=TINYINT}, #{parentId,jdbcType=BIGINT}, 
+      #{categoryName,jdbcType=VARCHAR}, #{categoryRank,jdbcType=INTEGER}, #{isDeleted,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=INTEGER})</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_goods_category
+        &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;categoryId != null&quot;&gt;
+                category_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;categoryLevel != null&quot;&gt;
+                category_level,
+            &lt;/if&gt;
+            &lt;if test=&quot;parentId != null&quot;&gt;
+                parent_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;categoryName != null&quot;&gt;
+                category_name,
+            &lt;/if&gt;
+            &lt;if test=&quot;categoryRank != null&quot;&gt;
+                category_rank,
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted,
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                create_user,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                update_user,
+            &lt;/if&gt;
+        &lt;/trim&gt;
+        &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;categoryId != null&quot;&gt;
+                #{categoryId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;categoryLevel != null&quot;&gt;
+                #{categoryLevel,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;parentId != null&quot;&gt;
+                #{parentId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;categoryName != null&quot;&gt;
+                #{categoryName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;categoryRank != null&quot;&gt;
+                #{categoryRank,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                #{createUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                #{updateUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+        &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_goods_category
+        &lt;set&gt;
+            &lt;if test=&quot;categoryLevel != null&quot;&gt;
+                category_level = #{categoryLevel,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;parentId != null&quot;&gt;
+                parent_id = #{parentId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;categoryName != null&quot;&gt;
+                category_name = #{categoryName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;categoryRank != null&quot;&gt;
+                category_rank = #{categoryRank,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted = #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                create_user = #{createUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                update_user = #{updateUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+        &lt;/set&gt;
+        where category_id = #{categoryId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_goods_category
+    set category_level = #{categoryLevel,jdbcType=TINYINT},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      category_name = #{categoryName,jdbcType=VARCHAR},
+      category_rank = #{categoryRank,jdbcType=INTEGER},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=INTEGER}
+    where category_id = #{categoryId,jdbcType=BIGINT}</pre>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.IndexConfigMapper"
+           title="ltd.newbee.mall.dao.IndexConfigMapper">IndexConfigMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.IndexConfigMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/IndexConfigMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>deleteByPrimaryKey</td>
+          <td>Long configId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td>IndexConfig record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>IndexConfig record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Long configId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.IndexConfig"
+     title="ltd.newbee.mall.entity.IndexConfig">IndexConfig</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>selectByTypeAndGoodsId</td>
+          <td>int configType, Long goodsId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.IndexConfig"
+     title="ltd.newbee.mall.entity.IndexConfig">IndexConfig</a></td>
+          <td>select selectByTypeAndGoodsId</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>IndexConfig record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>IndexConfig record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>findIndexConfigList</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="java.util.List">List&lt;IndexConfig&gt;</span></td>
+          <td>select findIndexConfigList</td>
+        </tr>
+        <tr>
+          <td>getTotalIndexConfigs</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="int">int</span></td>
+          <td>select getTotalIndexConfigs</td>
+        </tr>
+        <tr>
+          <td>deleteBatch</td>
+          <td>Long[] ids</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteBatch</td>
+        </tr>
+        <tr>
+          <td>findIndexConfigsByTypeAndNum</td>
+          <td>int configType, int number</td>
+          <td><span
+     title="java.util.List">List&lt;IndexConfig&gt;</span></td>
+          <td>select findIndexConfigsByTypeAndNum</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>config_id, config_name, config_type, goods_id, redirect_url, config_rank, is_deleted, 
+    create_time, create_user, update_time, update_user</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findIndexConfigList（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_index_config
+        &lt;where&gt;
+            &lt;if test=&quot;configType!=null and configType!=&#39;&#39;&quot;&gt;
+                and config_type = #{configType}
+            &lt;/if&gt;
+            and is_deleted = 0
+        &lt;/where&gt;
+        order by config_rank desc
+        &lt;if test=&quot;start!=null and limit!=null&quot;&gt;
+            limit #{start},#{limit}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select getTotalIndexConfigs（XML）</h4>
+    
+    <pre>select count(*) from tb_newbee_mall_index_config
+        &lt;where&gt;
+            &lt;if test=&quot;configType!=null and configType!=&#39;&#39;&quot;&gt;
+                and config_type = #{configType}
+            &lt;/if&gt;
+            and is_deleted = 0
+        &lt;/where&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findIndexConfigsByTypeAndNum（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_index_config
+        where config_type = #{configType} and is_deleted = 0
+        order by config_rank desc
+        limit #{number}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_index_config
+        where config_id = #{configId,jdbcType=BIGINT} and is_deleted=0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByTypeAndGoodsId（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_index_config
+        where config_type = #{configType,jdbcType=BIGINT} and goods_id=#{goodsId,jdbcType=BIGINT} and is_deleted=0 limit 1</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_index_config set is_deleted=1
+    where config_id = #{configId,jdbcType=BIGINT} and is_deleted=0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteBatch（XML）</h4>
+    
+    <pre>update tb_newbee_mall_index_config
+        set is_deleted=1,update_time=now() where is_deleted=0 and config_id in
+        &lt;foreach item=&quot;id&quot; collection=&quot;array&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_index_config (config_id, config_name, config_type, 
+      goods_id, redirect_url, config_rank, 
+      is_deleted, create_time, create_user, 
+      update_time, update_user)
+    values (#{configId,jdbcType=BIGINT}, #{configName,jdbcType=VARCHAR}, #{configType,jdbcType=TINYINT}, 
+      #{goodsId,jdbcType=BIGINT}, #{redirectUrl,jdbcType=VARCHAR}, #{configRank,jdbcType=INTEGER}, 
+      #{isDeleted,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=INTEGER})</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_index_config
+        &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;configId != null&quot;&gt;
+                config_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;configName != null&quot;&gt;
+                config_name,
+            &lt;/if&gt;
+            &lt;if test=&quot;configType != null&quot;&gt;
+                config_type,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                goods_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;redirectUrl != null&quot;&gt;
+                redirect_url,
+            &lt;/if&gt;
+            &lt;if test=&quot;configRank != null&quot;&gt;
+                config_rank,
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted,
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                create_user,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                update_user,
+            &lt;/if&gt;
+        &lt;/trim&gt;
+        &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;configId != null&quot;&gt;
+                #{configId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;configName != null&quot;&gt;
+                #{configName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;configType != null&quot;&gt;
+                #{configType,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                #{goodsId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;redirectUrl != null&quot;&gt;
+                #{redirectUrl,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;configRank != null&quot;&gt;
+                #{configRank,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                #{createUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                #{updateUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+        &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_index_config
+        &lt;set&gt;
+            &lt;if test=&quot;configName != null&quot;&gt;
+                config_name = #{configName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;configType != null&quot;&gt;
+                config_type = #{configType,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                goods_id = #{goodsId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;redirectUrl != null&quot;&gt;
+                redirect_url = #{redirectUrl,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;configRank != null&quot;&gt;
+                config_rank = #{configRank,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted = #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                create_user = #{createUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                update_user = #{updateUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+        &lt;/set&gt;
+        where config_id = #{configId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_index_config
+    set config_name = #{configName,jdbcType=VARCHAR},
+      config_type = #{configType,jdbcType=TINYINT},
+      goods_id = #{goodsId,jdbcType=BIGINT},
+      redirect_url = #{redirectUrl,jdbcType=VARCHAR},
+      config_rank = #{configRank,jdbcType=INTEGER},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=INTEGER}
+    where config_id = #{configId,jdbcType=BIGINT}</pre>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.MallUserMapper"
+           title="ltd.newbee.mall.dao.MallUserMapper">MallUserMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.MallUserMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/MallUserMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>deleteByPrimaryKey</td>
+          <td>Long userId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td>MallUser record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>MallUser record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Long userId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.MallUser"
+     title="ltd.newbee.mall.entity.MallUser">MallUser</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>selectByLoginName</td>
+          <td>String loginName</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.MallUser"
+     title="ltd.newbee.mall.entity.MallUser">MallUser</a></td>
+          <td>select selectByLoginName</td>
+        </tr>
+        <tr>
+          <td>selectByLoginNameAndPasswd</td>
+          <td>String loginName, String password</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.MallUser"
+     title="ltd.newbee.mall.entity.MallUser">MallUser</a></td>
+          <td>select selectByLoginNameAndPasswd</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>MallUser record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>MallUser record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>findMallUserList</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="java.util.List">List&lt;MallUser&gt;</span></td>
+          <td>select findMallUserList</td>
+        </tr>
+        <tr>
+          <td>getTotalMallUsers</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="int">int</span></td>
+          <td>select getTotalMallUsers</td>
+        </tr>
+        <tr>
+          <td>lockUserBatch</td>
+          <td>Integer[] ids, int lockStatus</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update lockUserBatch</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>user_id, nick_name, login_name, password_md5, introduce_sign, address, is_deleted, 
+    locked_flag, create_time</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findMallUserList（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_user
+        where 1=1
+        &lt;if test=&quot;loginName!=null and loginName!=&#39;&#39;&quot;&gt;
+            and login_name = #{loginName}
+        &lt;/if&gt;
+        order by create_time desc
+        &lt;if test=&quot;start!=null and limit!=null&quot;&gt;
+            limit #{start},#{limit}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select getTotalMallUsers（XML）</h4>
+    
+    <pre>select count(*) from tb_newbee_mall_user
+        where 1=1
+        &lt;if test=&quot;loginName!=null and loginName!=&#39;&#39;&quot;&gt;
+            and login_name = #{loginName}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_user
+        where user_id = #{userId,jdbcType=BIGINT} and is_deleted = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByLoginName（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_user
+        where login_name = #{loginName} and is_deleted = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByLoginNameAndPasswd（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_user
+        where login_name = #{loginName} and password_md5 = #{password} and is_deleted = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_user set is_deleted = 1
+    where user_id = #{userId,jdbcType=BIGINT} and is_deleted = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_user (user_id, nick_name, login_name, 
+      password_md5, introduce_sign, address, 
+      is_deleted, locked_flag, create_time
+      )
+    values (#{userId,jdbcType=BIGINT}, #{nickName,jdbcType=VARCHAR}, #{loginName,jdbcType=VARCHAR}, 
+      #{passwordMd5,jdbcType=VARCHAR}, #{introduceSign,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{isDeleted,jdbcType=TINYINT}, #{lockedFlag,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}
+      )</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_user
+        &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;userId != null&quot;&gt;
+                user_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;nickName != null&quot;&gt;
+                nick_name,
+            &lt;/if&gt;
+            &lt;if test=&quot;loginName != null&quot;&gt;
+                login_name,
+            &lt;/if&gt;
+            &lt;if test=&quot;passwordMd5 != null&quot;&gt;
+                password_md5,
+            &lt;/if&gt;
+            &lt;if test=&quot;introduceSign != null&quot;&gt;
+                introduce_sign,
+            &lt;/if&gt;
+            &lt;if test=&quot;address != null&quot;&gt;
+                address,
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted,
+            &lt;/if&gt;
+            &lt;if test=&quot;lockedFlag != null&quot;&gt;
+                locked_flag,
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time,
+            &lt;/if&gt;
+        &lt;/trim&gt;
+        &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;userId != null&quot;&gt;
+                #{userId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;nickName != null&quot;&gt;
+                #{nickName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;loginName != null&quot;&gt;
+                #{loginName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;passwordMd5 != null&quot;&gt;
+                #{passwordMd5,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;introduceSign != null&quot;&gt;
+                #{introduceSign,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;address != null&quot;&gt;
+                #{address,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;lockedFlag != null&quot;&gt;
+                #{lockedFlag,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+        &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_user
+        &lt;set&gt;
+            &lt;if test=&quot;nickName != null&quot;&gt;
+                nick_name = #{nickName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;loginName != null&quot;&gt;
+                login_name = #{loginName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;passwordMd5 != null&quot;&gt;
+                password_md5 = #{passwordMd5,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;introduceSign != null&quot;&gt;
+                introduce_sign = #{introduceSign,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;address != null&quot;&gt;
+                address = #{address,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted = #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;lockedFlag != null&quot;&gt;
+                locked_flag = #{lockedFlag,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+        &lt;/set&gt;
+        where user_id = #{userId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_user
+    set nick_name = #{nickName,jdbcType=VARCHAR},
+      login_name = #{loginName,jdbcType=VARCHAR},
+      password_md5 = #{passwordMd5,jdbcType=VARCHAR},
+      introduce_sign = #{introduceSign,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      locked_flag = #{lockedFlag,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update lockUserBatch（XML）</h4>
+    
+    <pre>update tb_newbee_mall_user
+        set locked_flag=#{lockStatus} where user_id in
+        &lt;foreach item=&quot;id&quot; collection=&quot;ids&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;</pre>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.NewBeeMallGoodsMapper"
+           title="ltd.newbee.mall.dao.NewBeeMallGoodsMapper">NewBeeMallGoodsMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.NewBeeMallGoodsMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/NewBeeMallGoodsMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>deleteByPrimaryKey</td>
+          <td>Long goodsId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>delete deleteByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td>NewBeeMallGoods record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>NewBeeMallGoods record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Long goodsId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallGoods"
+     title="ltd.newbee.mall.entity.NewBeeMallGoods">NewBeeMallGoods</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>selectByCategoryIdAndName</td>
+          <td>String goodsName, Long goodsCategoryId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallGoods"
+     title="ltd.newbee.mall.entity.NewBeeMallGoods">NewBeeMallGoods</a></td>
+          <td>select selectByCategoryIdAndName</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>NewBeeMallGoods record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeyWithBLOBs</td>
+          <td>NewBeeMallGoods record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeyWithBLOBs</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>NewBeeMallGoods record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>findNewBeeMallGoodsList</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="java.util.List">List&lt;NewBeeMallGoods&gt;</span></td>
+          <td>select findNewBeeMallGoodsList</td>
+        </tr>
+        <tr>
+          <td>getTotalNewBeeMallGoods</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="int">int</span></td>
+          <td>select getTotalNewBeeMallGoods</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKeys</td>
+          <td>List&lt;Long&gt; goodsIds</td>
+          <td><span
+     title="java.util.List">List&lt;NewBeeMallGoods&gt;</span></td>
+          <td>select selectByPrimaryKeys</td>
+        </tr>
+        <tr>
+          <td>findNewBeeMallGoodsListBySearch</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="java.util.List">List&lt;NewBeeMallGoods&gt;</span></td>
+          <td>select findNewBeeMallGoodsListBySearch</td>
+        </tr>
+        <tr>
+          <td>getTotalNewBeeMallGoodsBySearch</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="int">int</span></td>
+          <td>select getTotalNewBeeMallGoodsBySearch</td>
+        </tr>
+        <tr>
+          <td>batchInsert</td>
+          <td>List&lt;NewBeeMallGoods&gt; newBeeMallGoodsList</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert batchInsert</td>
+        </tr>
+        <tr>
+          <td>updateStockNum</td>
+          <td>List&lt;StockNumDTO&gt; stockNumDTOS</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateStockNum</td>
+        </tr>
+        <tr>
+          <td>recoverStockNum</td>
+          <td>List&lt;StockNumDTO&gt; stockNumDTOS</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update recoverStockNum</td>
+        </tr>
+        <tr>
+          <td>batchUpdateSellStatus</td>
+          <td>Long[] orderIds, int sellStatus</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update batchUpdateSellStatus</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>goods_id, goods_name, goods_intro,goods_category_id, goods_cover_img, goods_carousel, original_price,
+    selling_price, stock_num, tag, goods_sell_status, create_user, create_time, update_user, 
+    update_time</pre>
+  </div>
+  <div class="statement">
+    <h4>文：sql Blob_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>goods_detail_content</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert batchInsert（XML）</h4>
+    
+    <pre>INSERT INTO tb_newbee_mall_goods_info(goods_name, goods_intro, goods_category_id,goods_cover_img,
+        goods_carousel,
+        goods_detail_content,original_price,
+        selling_price, stock_num)
+        VALUES
+        &lt;foreach collection=&quot;newBeeMallGoodsList&quot; item=&quot;goods&quot; separator=&quot;,&quot;&gt;
+            (#{goods.goodsName},#{goods.goodsIntro},#{goods.goodsCategoryId},#{goods.goodsCoverImg},#{goods.goodsCarousel},#{goods.goodsDetailContent},#{goods.originalPrice},#{goods.sellingPrice},#{goods.stockNum})
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        ,
+        &lt;include refid=&quot;Blob_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_info
+        where goods_id = #{goodsId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByCategoryIdAndName（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        ,
+        &lt;include refid=&quot;Blob_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_info
+        where goods_name = #{goodsName,jdbcType=VARCHAR} and goods_category_id = #{goodsCategoryId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateStockNum（XML）</h4>
+    
+    <pre>&lt;foreach collection=&quot;stockNumDTOS&quot; item=&quot;stockNumDTO&quot;&gt;
+            update tb_newbee_mall_goods_info set stock_num = stock_num-#{stockNumDTO.goodsCount}
+            where goods_id = #{stockNumDTO.goodsId} and stock_num&gt;=#{stockNumDTO.goodsCount} and goods_sell_status = 0;
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update recoverStockNum（XML）</h4>
+    
+    <pre>&lt;foreach collection=&quot;stockNumDTOS&quot; item=&quot;stockNumDTO&quot;&gt;
+            update tb_newbee_mall_goods_info set stock_num = stock_num+#{stockNumDTO.goodsCount}
+            where goods_id = #{stockNumDTO.goodsId} and stock_num&gt;=#{stockNumDTO.goodsCount} and goods_sell_status = 0;
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update batchUpdateSellStatus（XML）</h4>
+    
+    <pre>update tb_newbee_mall_goods_info
+        set goods_sell_status=#{sellStatus},update_time=now() where goods_id in
+        &lt;foreach item=&quot;id&quot; collection=&quot;orderIds&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findNewBeeMallGoodsList（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_info
+        &lt;where&gt;
+            &lt;if test=&quot;goodsName!=null and goodsName!=&#39;&#39;&quot;&gt;
+                and goods_name like CONCAT(&#39;%&#39;,&#39;#{goodsName}&#39;,&#39;%&#39;)
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsSellStatus!=null and goodsSellStatus!=&#39;&#39;&quot;&gt;
+                and goods_sell_status = #{goodsSellStatus}
+            &lt;/if&gt;
+            &lt;if test=&quot;startTime != null and startTime.trim() != &#39;&#39;&quot;&gt;
+                and create_time &amp;gt; #{startTime}
+            &lt;/if&gt;
+            &lt;if test=&quot;endTime != null and endTime.trim() != &#39;&#39;&quot;&gt;
+                and create_time &amp;lt; #{endTime}
+            &lt;/if&gt;
+        &lt;/where&gt;
+        order by goods_id desc
+        &lt;if test=&quot;start!=null and limit!=null&quot;&gt;
+            limit #{start},#{limit}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findNewBeeMallGoodsListBySearch（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_info
+        &lt;where&gt;
+            &lt;if test=&quot;keyword!=null and keyword!=&#39;&#39;&quot;&gt;
+                and (goods_name like CONCAT(&#39;%&#39;,#{keyword},&#39;%&#39;) or goods_intro like CONCAT(&#39;%&#39;,#{keyword},&#39;%&#39;))
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCategoryId!=null and goodsCategoryId!=&#39;&#39;&quot;&gt;
+                and goods_category_id = #{goodsCategoryId}
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsSellStatus!=null&quot;&gt;
+                and goods_sell_status = #{goodsSellStatus}
+            &lt;/if&gt;
+        &lt;/where&gt;
+        &lt;if test=&quot;orderBy!=null and orderBy!=&#39;&#39;&quot;&gt;
+            &lt;choose&gt;
+                &lt;when test=&quot;orderBy == &#39;new&#39;&quot;&gt;
+                    &lt;!-- 按照发布时间倒序排列 --&gt;
+                    order by goods_id desc
+                &lt;/when&gt;
+                &lt;when test=&quot;orderBy == &#39;price&#39;&quot;&gt;
+                    &lt;!-- 按照售价从小到大排列 --&gt;
+                    order by selling_price asc
+                &lt;/when&gt;
+                &lt;otherwise&gt;
+                    &lt;!-- 默认按照库存数量从大到小排列 --&gt;
+                    order by stock_num desc
+                &lt;/otherwise&gt;
+            &lt;/choose&gt;
+        &lt;/if&gt;
+        &lt;if test=&quot;start!=null and limit!=null&quot;&gt;
+            limit #{start},#{limit}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select getTotalNewBeeMallGoodsBySearch（XML）</h4>
+    
+    <pre>select count(*) from tb_newbee_mall_goods_info
+        &lt;where&gt;
+            &lt;if test=&quot;keyword!=null and keyword!=&#39;&#39;&quot;&gt;
+                and (goods_name like CONCAT(&#39;%&#39;,#{keyword},&#39;%&#39;) or goods_intro like CONCAT(&#39;%&#39;,#{keyword},&#39;%&#39;))
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCategoryId!=null and goodsCategoryId!=&#39;&#39;&quot;&gt;
+                and goods_category_id = #{goodsCategoryId}
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsSellStatus!=null&quot;&gt;
+                and goods_sell_status = #{goodsSellStatus}
+            &lt;/if&gt;
+        &lt;/where&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKeys（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_goods_info
+        where goods_id in
+        &lt;foreach item=&quot;id&quot; collection=&quot;list&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;
+        order by field(goods_id,
+        &lt;foreach item=&quot;id&quot; collection=&quot;list&quot; separator=&quot;,&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;
+        );</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select getTotalNewBeeMallGoods（XML）</h4>
+    
+    <pre>select count(*) from tb_newbee_mall_goods_info
+        &lt;where&gt;
+            &lt;if test=&quot;goodsName!=null and goodsName!=&#39;&#39;&quot;&gt;
+                and goods_name like CONCAT(&#39;%&#39;,&#39;#{goodsName}&#39;,&#39;%&#39;)
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsSellStatus!=null and goodsSellStatus!=&#39;&#39;&quot;&gt;
+                and goods_sell_status = #{goodsSellStatus}
+            &lt;/if&gt;
+            &lt;if test=&quot;startTime != null and startTime.trim() != &#39;&#39;&quot;&gt;
+                and create_time &amp;gt; #{startTime}
+            &lt;/if&gt;
+            &lt;if test=&quot;endTime != null and endTime.trim() != &#39;&#39;&quot;&gt;
+                and create_time &amp;lt; #{endTime}
+            &lt;/if&gt;
+        &lt;/where&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：delete deleteByPrimaryKey（XML）</h4>
+    
+    <pre>delete from tb_newbee_mall_goods_info
+    where goods_id = #{goodsId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_goods_info (goods_id, goods_name, goods_intro, 
+      goods_cover_img, goods_carousel, original_price, 
+      selling_price, stock_num, tag, 
+      goods_sell_status, create_user, create_time, 
+      update_user, update_time, goods_detail_content
+      )
+    values (#{goodsId,jdbcType=BIGINT}, #{goodsName,jdbcType=VARCHAR}, #{goodsIntro,jdbcType=VARCHAR}, 
+      #{goodsCoverImg,jdbcType=VARCHAR}, #{goodsCarousel,jdbcType=VARCHAR}, #{originalPrice,jdbcType=INTEGER}, 
+      #{sellingPrice,jdbcType=INTEGER}, #{stockNum,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR}, 
+      #{goodsSellStatus,jdbcType=TINYINT}, #{createUser,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{goodsDetailContent,jdbcType=LONGVARCHAR}
+      )</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_goods_info
+        &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                goods_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsName != null&quot;&gt;
+                goods_name,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsIntro != null&quot;&gt;
+                goods_intro,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCategoryId != null&quot;&gt;
+                goods_category_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCoverImg != null&quot;&gt;
+                goods_cover_img,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCarousel != null&quot;&gt;
+                goods_carousel,
+            &lt;/if&gt;
+            &lt;if test=&quot;originalPrice != null&quot;&gt;
+                original_price,
+            &lt;/if&gt;
+            &lt;if test=&quot;sellingPrice != null&quot;&gt;
+                selling_price,
+            &lt;/if&gt;
+            &lt;if test=&quot;stockNum != null&quot;&gt;
+                stock_num,
+            &lt;/if&gt;
+            &lt;if test=&quot;tag != null&quot;&gt;
+                tag,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsSellStatus != null&quot;&gt;
+                goods_sell_status,
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                create_user,
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                update_user,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsDetailContent != null&quot;&gt;
+                goods_detail_content,
+            &lt;/if&gt;
+        &lt;/trim&gt;
+        &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                #{goodsId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsName != null&quot;&gt;
+                #{goodsName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsIntro != null&quot;&gt;
+                #{goodsIntro,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsIntro != null&quot;&gt;
+                #{goodsCategoryId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCoverImg != null&quot;&gt;
+                #{goodsCoverImg,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCarousel != null&quot;&gt;
+                #{goodsCarousel,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;originalPrice != null&quot;&gt;
+                #{originalPrice,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;sellingPrice != null&quot;&gt;
+                #{sellingPrice,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;stockNum != null&quot;&gt;
+                #{stockNum,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;tag != null&quot;&gt;
+                #{tag,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsSellStatus != null&quot;&gt;
+                #{goodsSellStatus,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                #{createUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                #{updateUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsDetailContent != null&quot;&gt;
+                #{goodsDetailContent,jdbcType=LONGVARCHAR},
+            &lt;/if&gt;
+        &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_goods_info
+        &lt;set&gt;
+            &lt;if test=&quot;goodsName != null&quot;&gt;
+                goods_name = #{goodsName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsIntro != null&quot;&gt;
+                goods_intro = #{goodsIntro,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCategoryId != null&quot;&gt;
+                goods_category_id = #{goodsCategoryId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCoverImg != null&quot;&gt;
+                goods_cover_img = #{goodsCoverImg,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCarousel != null&quot;&gt;
+                goods_carousel = #{goodsCarousel,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;originalPrice != null&quot;&gt;
+                original_price = #{originalPrice,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;sellingPrice != null&quot;&gt;
+                selling_price = #{sellingPrice,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;stockNum != null&quot;&gt;
+                stock_num = #{stockNum,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;tag != null&quot;&gt;
+                tag = #{tag,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsSellStatus != null&quot;&gt;
+                goods_sell_status = #{goodsSellStatus,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createUser != null&quot;&gt;
+                create_user = #{createUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateUser != null&quot;&gt;
+                update_user = #{updateUser,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsDetailContent != null&quot;&gt;
+                goods_detail_content = #{goodsDetailContent,jdbcType=LONGVARCHAR},
+            &lt;/if&gt;
+        &lt;/set&gt;
+        where goods_id = #{goodsId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeyWithBLOBs（XML）</h4>
+    
+    <pre>update tb_newbee_mall_goods_info
+    set goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_intro = #{goodsIntro,jdbcType=VARCHAR},
+      goods_cover_img = #{goodsCoverImg,jdbcType=VARCHAR},
+      goods_carousel = #{goodsCarousel,jdbcType=VARCHAR},
+      original_price = #{originalPrice,jdbcType=INTEGER},
+      selling_price = #{sellingPrice,jdbcType=INTEGER},
+      stock_num = #{stockNum,jdbcType=INTEGER},
+      tag = #{tag,jdbcType=VARCHAR},
+      goods_sell_status = #{goodsSellStatus,jdbcType=TINYINT},
+      create_user = #{createUser,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      goods_detail_content = #{goodsDetailContent,jdbcType=LONGVARCHAR}
+    where goods_id = #{goodsId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_goods_info
+    set goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_intro = #{goodsIntro,jdbcType=VARCHAR},
+      goods_cover_img = #{goodsCoverImg,jdbcType=VARCHAR},
+      goods_carousel = #{goodsCarousel,jdbcType=VARCHAR},
+      original_price = #{originalPrice,jdbcType=INTEGER},
+      selling_price = #{sellingPrice,jdbcType=INTEGER},
+      stock_num = #{stockNum,jdbcType=INTEGER},
+      tag = #{tag,jdbcType=VARCHAR},
+      goods_sell_status = #{goodsSellStatus,jdbcType=TINYINT},
+      create_user = #{createUser,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where goods_id = #{goodsId,jdbcType=BIGINT}</pre>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.NewBeeMallOrderItemMapper"
+           title="ltd.newbee.mall.dao.NewBeeMallOrderItemMapper">NewBeeMallOrderItemMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.NewBeeMallOrderItemMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/NewBeeMallOrderItemMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>deleteByPrimaryKey</td>
+          <td>Long orderItemId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>delete deleteByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td>NewBeeMallOrderItem record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>NewBeeMallOrderItem record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Long orderItemId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallOrderItem"
+     title="ltd.newbee.mall.entity.NewBeeMallOrderItem">NewBeeMallOrderItem</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>selectByOrderId</td>
+          <td>Long orderId</td>
+          <td><span
+     title="java.util.List">List&lt;NewBeeMallOrderItem&gt;</span></td>
+          <td>select selectByOrderId</td>
+        </tr>
+        <tr>
+          <td>selectByOrderIds</td>
+          <td>List&lt;Long&gt; orderIds</td>
+          <td><span
+     title="java.util.List">List&lt;NewBeeMallOrderItem&gt;</span></td>
+          <td>select selectByOrderIds</td>
+        </tr>
+        <tr>
+          <td>insertBatch</td>
+          <td>List&lt;NewBeeMallOrderItem&gt; orderItems</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertBatch</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>NewBeeMallOrderItem record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>NewBeeMallOrderItem record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>order_item_id, order_id, goods_id, goods_name, goods_cover_img, selling_price, goods_count, 
+    create_time</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_order_item
+        where order_item_id = #{orderItemId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByOrderId（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_order_item
+        where order_id = #{orderItemId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByOrderIds（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_order_item
+        where order_id
+        in
+        &lt;foreach item=&quot;id&quot; collection=&quot;orderIds&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：delete deleteByPrimaryKey（XML）</h4>
+    
+    <pre>delete from tb_newbee_mall_order_item
+    where order_item_id = #{orderItemId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertBatch（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_order_item (order_id, goods_id,
+        goods_name, goods_cover_img, selling_price,
+        goods_count)
+        values
+        &lt;foreach collection=&quot;orderItems&quot; item=&quot;orderItem&quot; separator=&quot;,&quot;&gt;
+            (#{orderItem.orderId,jdbcType=BIGINT}, #{orderItem.goodsId,jdbcType=BIGINT},
+            #{orderItem.goodsName,jdbcType=VARCHAR}, #{orderItem.goodsCoverImg,jdbcType=VARCHAR},
+            #{orderItem.sellingPrice,jdbcType=INTEGER},
+            #{orderItem.goodsCount,jdbcType=INTEGER})
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_order_item (order_item_id, order_id, goods_id,
+      goods_name, goods_cover_img, selling_price,
+      goods_count, create_time)
+    values (#{orderItemId,jdbcType=BIGINT}, #{orderId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT},
+      #{goodsName,jdbcType=VARCHAR}, #{goodsCoverImg,jdbcType=VARCHAR}, #{sellingPrice,jdbcType=INTEGER},
+      #{goodsCount,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_order_item
+        &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;orderItemId != null&quot;&gt;
+                order_item_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;orderId != null&quot;&gt;
+                order_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                goods_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsName != null&quot;&gt;
+                goods_name,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCoverImg != null&quot;&gt;
+                goods_cover_img,
+            &lt;/if&gt;
+            &lt;if test=&quot;sellingPrice != null&quot;&gt;
+                selling_price,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCount != null&quot;&gt;
+                goods_count,
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time,
+            &lt;/if&gt;
+        &lt;/trim&gt;
+        &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;orderItemId != null&quot;&gt;
+                #{orderItemId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;orderId != null&quot;&gt;
+                #{orderId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                #{goodsId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsName != null&quot;&gt;
+                #{goodsName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCoverImg != null&quot;&gt;
+                #{goodsCoverImg,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;sellingPrice != null&quot;&gt;
+                #{sellingPrice,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCount != null&quot;&gt;
+                #{goodsCount,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+        &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_order_item
+        &lt;set&gt;
+            &lt;if test=&quot;orderId != null&quot;&gt;
+                order_id = #{orderId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                goods_id = #{goodsId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsName != null&quot;&gt;
+                goods_name = #{goodsName,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCoverImg != null&quot;&gt;
+                goods_cover_img = #{goodsCoverImg,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;sellingPrice != null&quot;&gt;
+                selling_price = #{sellingPrice,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCount != null&quot;&gt;
+                goods_count = #{goodsCount,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+        &lt;/set&gt;
+        where order_item_id = #{orderItemId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_order_item
+    set order_id = #{orderId,jdbcType=BIGINT},
+      goods_id = #{goodsId,jdbcType=BIGINT},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_cover_img = #{goodsCoverImg,jdbcType=VARCHAR},
+      selling_price = #{sellingPrice,jdbcType=INTEGER},
+      goods_count = #{goodsCount,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where order_item_id = #{orderItemId,jdbcType=BIGINT}</pre>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.NewBeeMallOrderMapper"
+           title="ltd.newbee.mall.dao.NewBeeMallOrderMapper">NewBeeMallOrderMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.NewBeeMallOrderMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/NewBeeMallOrderMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>deleteByPrimaryKey</td>
+          <td>Long orderId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td>NewBeeMallOrder record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>NewBeeMallOrder record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Long orderId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallOrder"
+     title="ltd.newbee.mall.entity.NewBeeMallOrder">NewBeeMallOrder</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>selectByOrderNo</td>
+          <td>String orderNo</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallOrder"
+     title="ltd.newbee.mall.entity.NewBeeMallOrder">NewBeeMallOrder</a></td>
+          <td>select selectByOrderNo</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>NewBeeMallOrder record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>NewBeeMallOrder record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>findNewBeeMallOrderList</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="java.util.List">List&lt;NewBeeMallOrder&gt;</span></td>
+          <td>select findNewBeeMallOrderList</td>
+        </tr>
+        <tr>
+          <td>getTotalNewBeeMallOrders</td>
+          <td>PageQueryUtil pageUtil</td>
+          <td><span
+     title="int">int</span></td>
+          <td>select getTotalNewBeeMallOrders</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKeys</td>
+          <td>List&lt;Long&gt; orderIds</td>
+          <td><span
+     title="java.util.List">List&lt;NewBeeMallOrder&gt;</span></td>
+          <td>select selectByPrimaryKeys</td>
+        </tr>
+        <tr>
+          <td>checkOut</td>
+          <td>List&lt;Long&gt; orderIds</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update checkOut</td>
+        </tr>
+        <tr>
+          <td>closeOrder</td>
+          <td>List&lt;Long&gt; orderIds, int orderStatus</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update closeOrder</td>
+        </tr>
+        <tr>
+          <td>checkDone</td>
+          <td>List&lt;Long&gt; asList</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update checkDone</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>order_id, order_no, user_id, total_price, pay_status, pay_type, pay_time, order_status,
+    extra_info, user_name, user_phone, user_address, is_deleted, create_time, update_time</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_order
+        where order_id = #{orderId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByOrderNo（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_order
+        where order_no = #{orderNo,jdbcType=VARCHAR} and is_deleted=0 limit 1</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKeys（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_order
+        where order_id in
+        &lt;foreach collection=&quot;orderIds&quot; item=&quot;item&quot; index=&quot;index&quot;
+                 open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;#{item}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select findNewBeeMallOrderList（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_order
+        &lt;where&gt;
+            &lt;if test=&quot;orderNo!=null and orderNo!=&#39;&#39;&quot;&gt;
+                and order_no = #{orderNo}
+            &lt;/if&gt;
+            &lt;if test=&quot;userId!=null and userId!=&#39;&#39;&quot;&gt;
+                and user_id = #{userId}
+            &lt;/if&gt;
+            &lt;if test=&quot;payType!=null and payType!=&#39;&#39;&quot;&gt;
+                and pay_type = #{payType}
+            &lt;/if&gt;
+            &lt;if test=&quot;orderStatus!=null and orderStatus!=&#39;&#39;&quot;&gt;
+                and order_status = #{orderStatus}
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted!=null and isDeleted!=&#39;&#39;&quot;&gt;
+                and is_deleted = #{isDeleted}
+            &lt;/if&gt;
+            &lt;if test=&quot;startTime != null and startTime.trim() != &#39;&#39;&quot;&gt;
+                and create_time &amp;gt; #{startTime}
+            &lt;/if&gt;
+            &lt;if test=&quot;endTime != null and endTime.trim() != &#39;&#39;&quot;&gt;
+                and create_time &amp;lt; #{endTime}
+            &lt;/if&gt;
+        &lt;/where&gt;
+        order by create_time desc
+        &lt;if test=&quot;start!=null and limit!=null&quot;&gt;
+            limit #{start},#{limit}
+        &lt;/if&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select getTotalNewBeeMallOrders（XML）</h4>
+    
+    <pre>select count(*) from tb_newbee_mall_order
+        &lt;where&gt;
+            &lt;if test=&quot;orderNo!=null and orderNo!=&#39;&#39;&quot;&gt;
+                and order_no = #{orderNo}
+            &lt;/if&gt;
+            &lt;if test=&quot;userId!=null and userId!=&#39;&#39;&quot;&gt;
+                and user_id = #{userId}
+            &lt;/if&gt;
+            &lt;if test=&quot;payType!=null and payType!=&#39;&#39;&quot;&gt;
+                and pay_type = #{payType}
+            &lt;/if&gt;
+            &lt;if test=&quot;orderStatus!=null and orderStatus!=&#39;&#39;&quot;&gt;
+                and order_status = #{orderStatus}
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted!=null and isDeleted!=&#39;&#39;&quot;&gt;
+                and is_deleted = #{isDeleted}
+            &lt;/if&gt;
+            &lt;if test=&quot;startTime != null and startTime.trim() != &#39;&#39;&quot;&gt;
+                and create_time &amp;gt; #{startTime}
+            &lt;/if&gt;
+            &lt;if test=&quot;endTime != null and endTime.trim() != &#39;&#39;&quot;&gt;
+                and create_time &amp;lt; #{endTime}
+            &lt;/if&gt;
+        &lt;/where&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_order set is_deleted=1
+    where order_id = #{orderId,jdbcType=BIGINT} and is_deleted=0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_order (order_id, order_no, user_id, 
+      total_price, pay_status, pay_type, 
+      pay_time, order_status, extra_info, 
+      user_address,is_deleted, create_time, update_time
+      )
+    values (#{orderId,jdbcType=BIGINT}, #{orderNo,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
+      #{totalPrice,jdbcType=INTEGER}, #{payStatus,jdbcType=TINYINT}, #{payType,jdbcType=TINYINT}, 
+      #{payTime,jdbcType=TIMESTAMP}, #{orderStatus,jdbcType=TINYINT}, #{extraInfo,jdbcType=VARCHAR}, 
+       #{userAddress,jdbcType=VARCHAR},#{isDeleted,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_order
+        &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;orderId != null&quot;&gt;
+                order_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;orderNo != null&quot;&gt;
+                order_no,
+            &lt;/if&gt;
+            &lt;if test=&quot;userId != null&quot;&gt;
+                user_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;totalPrice != null&quot;&gt;
+                total_price,
+            &lt;/if&gt;
+            &lt;if test=&quot;payStatus != null&quot;&gt;
+                pay_status,
+            &lt;/if&gt;
+            &lt;if test=&quot;payType != null&quot;&gt;
+                pay_type,
+            &lt;/if&gt;
+            &lt;if test=&quot;payTime != null&quot;&gt;
+                pay_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;orderStatus != null&quot;&gt;
+                order_status,
+            &lt;/if&gt;
+            &lt;if test=&quot;extraInfo != null&quot;&gt;
+                extra_info,
+            &lt;/if&gt;
+            &lt;if test=&quot;userAddress != null&quot;&gt;
+                user_address,
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted,
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time,
+            &lt;/if&gt;
+        &lt;/trim&gt;
+        &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;orderId != null&quot;&gt;
+                #{orderId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;orderNo != null&quot;&gt;
+                #{orderNo,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;userId != null&quot;&gt;
+                #{userId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;totalPrice != null&quot;&gt;
+                #{totalPrice,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;payStatus != null&quot;&gt;
+                #{payStatus,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;payType != null&quot;&gt;
+                #{payType,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;payTime != null&quot;&gt;
+                #{payTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;orderStatus != null&quot;&gt;
+                #{orderStatus,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;extraInfo != null&quot;&gt;
+                #{extraInfo,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;userAddress != null&quot;&gt;
+                #{userAddress,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+        &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update checkDone（XML）</h4>
+    
+    <pre>update tb_newbee_mall_order
+        set order_status = 2,update_time = now()
+        where order_id in
+        &lt;foreach collection=&quot;orderIds&quot; item=&quot;item&quot; index=&quot;index&quot;
+                 open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;#{item}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update checkOut（XML）</h4>
+    
+    <pre>update tb_newbee_mall_order
+        set order_status = 3,update_time = now()
+        where order_id in
+        &lt;foreach collection=&quot;orderIds&quot; item=&quot;item&quot; index=&quot;index&quot;
+                 open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;#{item}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update closeOrder（XML）</h4>
+    
+    <pre>update tb_newbee_mall_order
+        set order_status = #{orderStatus},update_time = now()
+        where order_id in
+        &lt;foreach collection=&quot;orderIds&quot; item=&quot;item&quot; index=&quot;index&quot;
+                 open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;#{item}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_order
+        &lt;set&gt;
+            &lt;if test=&quot;orderNo != null&quot;&gt;
+                order_no = #{orderNo,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;userId != null&quot;&gt;
+                user_id = #{userId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;totalPrice != null&quot;&gt;
+                total_price = #{totalPrice,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;payStatus != null&quot;&gt;
+                pay_status = #{payStatus,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;payType != null&quot;&gt;
+                pay_type = #{payType,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;payTime != null&quot;&gt;
+                pay_time = #{payTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;orderStatus != null&quot;&gt;
+                order_status = #{orderStatus,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;extraInfo != null&quot;&gt;
+                extra_info = #{extraInfo,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;userAddress != null&quot;&gt;
+                user_address = #{userAddress,jdbcType=VARCHAR},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted = #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+        &lt;/set&gt;
+        where order_id = #{orderId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_order
+    set order_no = #{orderNo,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      total_price = #{totalPrice,jdbcType=INTEGER},
+      pay_status = #{payStatus,jdbcType=TINYINT},
+      pay_type = #{payType,jdbcType=TINYINT},
+      pay_time = #{payTime,jdbcType=TIMESTAMP},
+      order_status = #{orderStatus,jdbcType=TINYINT},
+      extra_info = #{extraInfo,jdbcType=VARCHAR},
+      user_address = #{userAddress,jdbcType=VARCHAR},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where order_id = #{orderId,jdbcType=BIGINT}</pre>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.NewBeeMallShoppingCartItemMapper"
+           title="ltd.newbee.mall.dao.NewBeeMallShoppingCartItemMapper">NewBeeMallShoppingCartItemMapper</a></h2>
+    
+  <table class="kv">
+    <tr>
+      <th>namespace</th>
+      <td class="pre-line">ltd.newbee.mall.dao.NewBeeMallShoppingCartItemMapper</td>
+    </tr>
+    <tr>
+      <th>XML ファイル</th>
+      <td class="pre-line">src/main/resources/mapper/NewBeeMallShoppingCartItemMapper.xml</td>
+    </tr>
+    <tr>
+      <th>基底インタフェース</th>
+      <td class="pre-line">-</td>
+    </tr>
+  </table>
+
+    
+    <h3>メソッド</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>メソッド</th><th>引数</th><th>戻り値</th><th>SQL</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>deleteByPrimaryKey</td>
+          <td>Long cartItemId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>insert</td>
+          <td>NewBeeMallShoppingCartItem record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insert</td>
+        </tr>
+        <tr>
+          <td>insertSelective</td>
+          <td>NewBeeMallShoppingCartItem record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>insert insertSelective</td>
+        </tr>
+        <tr>
+          <td>selectByPrimaryKey</td>
+          <td>Long cartItemId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallShoppingCartItem"
+     title="ltd.newbee.mall.entity.NewBeeMallShoppingCartItem">NewBeeMallShoppingCartItem</a></td>
+          <td>select selectByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>selectByUserIdAndGoodsId</td>
+          <td>Long newBeeMallUserId, Long goodsId</td>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallShoppingCartItem"
+     title="ltd.newbee.mall.entity.NewBeeMallShoppingCartItem">NewBeeMallShoppingCartItem</a></td>
+          <td>select selectByUserIdAndGoodsId</td>
+        </tr>
+        <tr>
+          <td>selectByUserId</td>
+          <td>Long newBeeMallUserId, int number</td>
+          <td><span
+     title="java.util.List">List&lt;NewBeeMallShoppingCartItem&gt;</span></td>
+          <td>select selectByUserId</td>
+        </tr>
+        <tr>
+          <td>selectCountByUserId</td>
+          <td>Long newBeeMallUserId</td>
+          <td><span
+     title="int">int</span></td>
+          <td>select selectCountByUserId</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKeySelective</td>
+          <td>NewBeeMallShoppingCartItem record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKeySelective</td>
+        </tr>
+        <tr>
+          <td>updateByPrimaryKey</td>
+          <td>NewBeeMallShoppingCartItem record</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update updateByPrimaryKey</td>
+        </tr>
+        <tr>
+          <td>deleteBatch</td>
+          <td>List&lt;Long&gt; ids</td>
+          <td><span
+     title="int">int</span></td>
+          <td>update deleteBatch</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+  <div class="statement">
+    <h4>文：sql Base_Column_List（XML）</h4>
+    <p class="note">対応メソッドなし</p>
+    <pre>cart_item_id, user_id, goods_id, goods_count, is_deleted, create_time, update_time</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByPrimaryKey（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_shopping_cart_item
+        where cart_item_id = #{cartItemId,jdbcType=BIGINT} and is_deleted = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByUserIdAndGoodsId（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_shopping_cart_item
+        where user_id = #{newBeeMallUserId,jdbcType=BIGINT} and goods_id=#{goodsId,jdbcType=BIGINT} and is_deleted = 0
+        limit 1</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectByUserId（XML）</h4>
+    
+    <pre>select
+        &lt;include refid=&quot;Base_Column_List&quot;/&gt;
+        from tb_newbee_mall_shopping_cart_item
+        where user_id = #{newBeeMallUserId,jdbcType=BIGINT} and is_deleted = 0
+        limit #{number}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：select selectCountByUserId（XML）</h4>
+    
+    <pre>select
+    count(*)
+    from tb_newbee_mall_shopping_cart_item
+    where user_id = #{newBeeMallUserId,jdbcType=BIGINT} and is_deleted = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_shopping_cart_item set is_deleted = 1
+    where cart_item_id = #{cartItemId,jdbcType=BIGINT} and is_deleted = 0</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update deleteBatch（XML）</h4>
+    
+    <pre>update tb_newbee_mall_shopping_cart_item
+        set is_deleted=1 where cart_item_id in
+        &lt;foreach item=&quot;id&quot; collection=&quot;list&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insert（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_shopping_cart_item (cart_item_id, user_id, goods_id, 
+      goods_count, is_deleted, create_time, 
+      update_time)
+    values (#{cartItemId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, 
+      #{goodsCount,jdbcType=INTEGER}, #{isDeleted,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})</pre>
+  </div>
+  <div class="statement">
+    <h4>文：insert insertSelective（XML）</h4>
+    
+    <pre>insert into tb_newbee_mall_shopping_cart_item
+        &lt;trim prefix=&quot;(&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;cartItemId != null&quot;&gt;
+                cart_item_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;userId != null&quot;&gt;
+                user_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                goods_id,
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCount != null&quot;&gt;
+                goods_count,
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted,
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time,
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time,
+            &lt;/if&gt;
+        &lt;/trim&gt;
+        &lt;trim prefix=&quot;values (&quot; suffix=&quot;)&quot; suffixOverrides=&quot;,&quot;&gt;
+            &lt;if test=&quot;cartItemId != null&quot;&gt;
+                #{cartItemId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;userId != null&quot;&gt;
+                #{userId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                #{goodsId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCount != null&quot;&gt;
+                #{goodsCount,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+        &lt;/trim&gt;</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKeySelective（XML）</h4>
+    
+    <pre>update tb_newbee_mall_shopping_cart_item
+        &lt;set&gt;
+            &lt;if test=&quot;userId != null&quot;&gt;
+                user_id = #{userId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsId != null&quot;&gt;
+                goods_id = #{goodsId,jdbcType=BIGINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;goodsCount != null&quot;&gt;
+                goods_count = #{goodsCount,jdbcType=INTEGER},
+            &lt;/if&gt;
+            &lt;if test=&quot;isDeleted != null&quot;&gt;
+                is_deleted = #{isDeleted,jdbcType=TINYINT},
+            &lt;/if&gt;
+            &lt;if test=&quot;createTime != null&quot;&gt;
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+            &lt;if test=&quot;updateTime != null&quot;&gt;
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            &lt;/if&gt;
+        &lt;/set&gt;
+        where cart_item_id = #{cartItemId,jdbcType=BIGINT}</pre>
+  </div>
+  <div class="statement">
+    <h4>文：update updateByPrimaryKey（XML）</h4>
+    
+    <pre>update tb_newbee_mall_shopping_cart_item
+    set user_id = #{userId,jdbcType=BIGINT},
+      goods_id = #{goodsId,jdbcType=BIGINT},
+      goods_count = #{goodsCount,jdbcType=INTEGER},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where cart_item_id = #{cartItemId,jdbcType=BIGINT}</pre>
+  </div>
+
+  </section>
+
+  
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

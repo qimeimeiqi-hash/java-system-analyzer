@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'configuration')}">
+<head><title>Configuration - Javaシステム解析支援ツール</title></head>
+<body>
+<main class="app-main">
+  <h1>Configuration</h1>
+  <section class="card">
+    <h2>@Bean 定義</h2>
+    <th:block th:replace="~{fragments/parts :: dataTable(${beanTable})}"></th:block>
+    <p class="note">Bean 名は明記されたもののみ表示し、既定名は推測しない。Bean の内容（SecurityFilterChain 等）は解釈しない。@SpringBootApplication クラスの @Bean も含む。</p>
+  </section>
+  <section class="card">
+    <h2>@ConfigurationProperties</h2>
+    <th:block th:replace="~{fragments/parts :: dataTable(${propertiesTable})}"></th:block>
+    <p class="note">クラスに付与した場合、Bean メソッドは「-」。フィールドはクラス詳細で確認できる。</p>
+  </section>
+  <section class="card">
+    <h2>設定クラス（@Configuration）</h2>
+    <th:block th:replace="~{fragments/parts :: dataTable(${configurationTable})}"></th:block>
+  </section>
+</main>
+</body>
+</html>

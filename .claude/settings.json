@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|mcp__serena__(replace_symbol_body|insert_after_symbol|insert_before_symbol|replace_content|replace_in_files|rename_symbol|safe_delete_symbol)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "java \"$CLAUDE_PROJECT_DIR/.claude/hooks/ArchitectureCheck.java\" --post-edit",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "java \"$CLAUDE_PROJECT_DIR/.claude/hooks/ArchitectureCheck.java\" --pre-commit",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}

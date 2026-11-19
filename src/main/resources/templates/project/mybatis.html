@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'mybatis')}">
+<head><title>MyBatis - Javaシステム解析支援ツール</title></head>
+<body>
+<main class="app-main" th:with="id=${project.projectId()}">
+  <h1>MyBatis</h1>
+  <form method="get" th:action="@{/projects/{id}/mybatis(id=${id})}" class="filters" th:unless="${mapperChoices.isEmpty()}">
+    <label>Mapper：
+      <select name="mapper" data-auto-submit>
+        <option value="">すべて</option>
+        <option th:each="m : ${mapperChoices}" th:value="${m.key}" th:text="${m.value}" th:title="${m.key}"
+                th:selected="${m.key == selectedMapper}">BookMapper</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  <p class="note" th:text="${note}">note</p>
+  <p class="note" th:if="${mappers.isEmpty() and orphans.isEmpty()}">検出されませんでした</p>
+
+  <section class="card" th:each="mapper : ${mappers}">
+    <h2><a th:href="@{/projects/{id}/classes/{name}(id=${id},name=${mapper.interfaceType()})}"
+           th:title="${mapper.interfaceType()}" th:text="${mapper.title()}">BookMapper</a></h2>
+    <th:block th:replace="~{fragments/parts :: keyValueTable(${mapper.information()})}"></th:block>
+    <p class="note" th:each="n : ${mapper.notes()}" th:text="${n}">note</p>
+    <h3>メソッド</h3>
+    <th:block th:replace="~{fragments/parts :: dataTable(${mapper.methods()})}"></th:block>
+    <th:block th:replace="~{project/mybatis :: statementList(${mapper.statements()})}"></th:block>
+  </section>
+
+  <section class="card" th:unless="${orphans.isEmpty()}">
+    <h2>インタフェースのない namespace</h2>
+    <div th:each="mapper : ${orphans}">
+      <h3 th:text="${mapper.title()}">com.example.RemovedMapper</h3>
+      <th:block th:replace="~{fragments/parts :: keyValueTable(${mapper.information()})}"></th:block>
+      <th:block th:replace="~{project/mybatis :: statementList(${mapper.statements()})}"></th:block>
+    </div>
+  </section>
+</main>
+
+<th:block th:fragment="statementList(statements)">
+  <div class="statement" th:each="statement : ${statements}">
+    <h4 th:text="|文：${statement.heading()}|">文：select findById（XML）</h4>
+    <p class="note" th:each="n : ${statement.notes()}" th:text="${n}">note</p>
+    <pre th:text="${statement.sql()}">SELECT ...</pre>
+  </div>
+</th:block>
+</body>
+</html>

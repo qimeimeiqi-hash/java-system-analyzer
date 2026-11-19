@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>アーキテクチャ・依存関係 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa">解析総覧</a></li>
+        <li class="active"><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/apis">API一覧 (73)</a></li>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/er">ER図 (0)</a></li>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/classes">クラス一覧 (89)</a></li>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/mybatis">MyBatis (9)</a></li>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/views">画面一覧 (33)</a></li>
+        <li><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>アーキテクチャ・依存関係</h1>
+  <p class="tabs">
+    <a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/architecture?tab=layers">レイヤー構成</a>
+    <a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/architecture?tab=packages" class="active">パッケージ依存</a>
+    <a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/architecture?tab=components">コンポーネント依存</a>
+  </p>
+
+  
+
+  
+  
+    
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="packages">flowchart LR
+  n3[&quot;config&quot;]
+  n4[&quot;controller.admin&quot;]
+  n6[&quot;controller.mall&quot;]
+  n8[&quot;dao&quot;]
+  n10[&quot;interceptor&quot;]
+  n12[&quot;service.impl&quot;]
+  subgraph isolated[&quot;依存関係なし&quot;]
+    direction LR
+    n1[&quot;ltd.newbee.mall&quot;]
+    n2[&quot;common&quot;]
+    n5[&quot;controller.common&quot;]
+    n7[&quot;controller.vo&quot;]
+    n9[&quot;entity&quot;]
+    n11[&quot;service&quot;]
+    n13[&quot;util&quot;]
+    n1 ~~~ n2 ~~~ n5 ~~~ n7
+    n9 ~~~ n11 ~~~ n13
+  end
+  n3 --&gt; n10
+  n4 --&gt; n12
+  n6 --&gt; n12
+  n10 --&gt; n8
+  n12 --&gt; n8
+</pre>
+  </div>
+
+  
+  
+  <p class="note">凡例：実線＝直接解決 / 点線＝単一実装から解決（@Bean や @Profile による別実装の可能性がある） / 赤枠＝循環依存</p>
+
+  <section class="card">
+    <h2>解決できなかった依存</h2>
+    <p class="note">図の線にならない依存。欠落させずに掲載する。</p>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>依存元</th><th>メンバー</th><th>宣言型</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/classes/ltd.newbee.mall.controller.common.ErrorPageController"
+     title="ltd.newbee.mall.controller.common.ErrorPageController">ErrorPageController</a></div></td>
+          <td><div class="cell">errorAttributes</div></td>
+          <td><div class="cell"><span
+     title="org.springframework.boot.web.servlet.error.ErrorAttributes">ErrorAttributes</span></div></td>
+          <td><div class="cell">外部ライブラリ</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/2d552cd2-d423-4998-917a-2e156ea537fa/classes/ltd.newbee.mall.controller.common.UploadController"
+     title="ltd.newbee.mall.controller.common.UploadController">UploadController</a></div></td>
+          <td><div class="cell">standardServletMultipartResolver</div></td>
+          <td><div class="cell"><span
+     title="org.springframework.web.multipart.support.StandardServletMultipartResolver">StandardServletMultipartResolver</span></div></td>
+          <td><div class="cell">外部ライブラリ</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

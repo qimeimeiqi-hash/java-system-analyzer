@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.library.mapper.BookMapper">
+
+  <resultMap id="bookMap" type="com.example.library.domain.Book">
+    <id column="id" property="id"/>
+  </resultMap>
+
+  <sql id="columns">id, title</sql>
+
+  <select id="findById" resultMap="bookMap">
+    SELECT <include refid="columns"/> FROM books WHERE id = #{id}
+  </select>
+
+  <select id="search" resultMap="bookMap">
+    SELECT <include refid="columns"/> FROM books
+    <where>
+      <if test='title != null and title != ""'>AND title LIKE #{title}</if>
+      <foreach collection="ids" item="id" open="AND id IN (" separator="," close=")">#{id}</foreach>
+      <![CDATA[ AND price < 1000 ]]>
+    </where>
+  </select>
+
+  <select id="findByLegacyName">
+    SELECT * FROM books WHERE legacy_name = #{name}
+  </select>
+</mapper>

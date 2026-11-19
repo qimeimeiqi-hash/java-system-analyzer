@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10">解析総覧</a></li>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/architecture">アーキテクチャ・依存</a></li>
+        <li class="active"><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/apis">API一覧 (0)</a></li>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/er">ER図 (0)</a></li>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/classes">クラス一覧 (5)</a></li>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/mybatis">MyBatis (3)</a></li>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>API一覧（0件）</h1>
+  <form method="get" action="/projects/089499d3-f972-4f8a-be2d-38542b61dd10/apis" class="filters">
+    <label>Controller：
+      <select name="controller" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  
+  <p class="note">検出されませんでした</p>
+  
+
+  <p class="note">HTTP が「全メソッド」のものは、マッピングで HTTP メソッドを指定していない。「（未解決）」の Path は定数式のまま表示している。</p>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

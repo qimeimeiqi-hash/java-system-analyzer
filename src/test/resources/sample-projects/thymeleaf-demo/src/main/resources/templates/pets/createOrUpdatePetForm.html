@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{fragments/layout}">
+<body>
+<div layout:fragment="content">
+  <form th:object="${pet}" th:action="@{/pets/new}" method="post">
+    <input th:field="*{name}"/>
+    <button type="submit">Save</button>
+  </form>
+  <a th:href="@{${backUrl}}">Back</a>
+</div>
+</body>
+</html>

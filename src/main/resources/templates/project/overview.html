@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'overview')}">
+<head>
+  <title>解析総覧 - Javaシステム解析支援ツール</title>
+</head>
+<body>
+<main class="app-main" th:with="saved=${project.saved()}">
+  <h1>解析総覧</h1>
+
+  <section class="card">
+    <h2>事前検査</h2>
+    <p th:if="${saved.status().name() != 'UNSUPPORTED'}"><strong>判定：対応可能</strong></p>
+    <p th:if="${saved.status().name() == 'UNSUPPORTED'}"><strong>判定：対応不可</strong>（以下の理由により解析できません）</p>
+    <table class="kv">
+      <tr><th>Spring Boot</th><td th:text="${saved.springBootVersion() ?: '不明'}">3.2.5</td></tr>
+      <tr><th>pom.xml</th><td th:text="${saved.pomPath() ?: '-'}">demo/pom.xml</td></tr>
+      <tr><th>文字コード</th><td th:text="${saved.sourceEncoding()}">UTF-8</td></tr>
+    </table>
+    <ul th:unless="${saved.inspectionIssues().isEmpty()}">
+      <li th:each="issue : ${saved.inspectionIssues()}">
+        <span th:text="${issue.isError() ? '[エラー]' : '[警告]'}">[エラー]</span>
+        <span th:text="${issue.message()}">message</span>
+      </li>
+    </ul>
+  </section>
+
+  <p class="message error" th:if="${saved.status().name() == 'FAILED'}">解析に失敗しました。ソースコードの内容を確認してください。</p>
+  <p class="message error" th:if="${project.irOutdated()}">解析結果の版が古いため再アップロードしてください。</p>
+
+  <th:block th:if="${project.analyzed()}">
+    <section class="card">
+      <h2>プロジェクト統計</h2>
+      <ul class="stats">
+        <li th:each="item : ${statistics.items()}">
+          <span class="stat-label" th:text="${item.label()}">クラス</span>
+          <span class="stat-count" th:text="${item.count()}">0</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>解析エラー</h2>
+      <p>
+        <span th:text="|エラー ${statistics.errorCount()} 件 / 警告 ${statistics.warningCount()} 件|">エラー 0 件 / 警告 0 件</span>
+        <a th:href="@{/projects/{id}/issues(id=${project.projectId()})}">レポートを見る</a>
+      </p>
+    </section>
+
+    <p>
+      ルートパッケージ：<span th:text="${project.model().rootPackage() ?: '-'}">com.example</span>
+      <a th:href="@{/projects/{id}/ir/project.json(id=${project.projectId()})}">IR（JSON）を表示</a>
+    </p>
+  </th:block>
+</main>
+</body>
+</html>

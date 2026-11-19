@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--/* Shared page frame of SCR-02 and later (screen-design 2.1). Pages call layout(title, content, active). */-->
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content, active)">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:replace="${title}">Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css" th:href="@{/css/app.css}">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/" th:href="@{/}">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/" th:href="@{/}">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body" th:with="id=${project.projectId()}, ir=${project.model()}">
+    <nav class="app-nav" th:if="${project.analyzed()}">
+      <ul>
+        <li th:classappend="${active == 'overview'} ? 'active'"><a th:href="@{/projects/{id}(id=${id})}">解析総覧</a></li>
+        <li th:classappend="${active == 'architecture'} ? 'active'"><a th:href="@{/projects/{id}/architecture(id=${id})}">アーキテクチャ・依存</a></li>
+        <li th:classappend="${active == 'apis'} ? 'active'"><a th:href="@{/projects/{id}/apis(id=${id})}" th:text="|API一覧 (${ir.endpoints().size()})|">API一覧</a></li>
+        <li th:classappend="${active == 'er'} ? 'active'"><a th:href="@{/projects/{id}/er(id=${id})}" th:text="|ER図 (${ir.entities().size()})|">ER図</a></li>
+        <li th:classappend="${active == 'classes'} ? 'active'"><a th:href="@{/projects/{id}/classes(id=${id})}" th:text="|クラス一覧 (${ir.types().size()})|">クラス一覧</a></li>
+        <li th:classappend="${active == 'issues'} ? 'active'"><a th:href="@{/projects/{id}/issues(id=${id})}" th:text="|解析エラー (${ir.issues().size()})|">解析エラー</a></li>
+        <li th:classappend="${active == 'mybatis'} ? 'active'"><a th:href="@{/projects/{id}/mybatis(id=${id})}" th:text="|MyBatis (${ir.mappers().size()})|">MyBatis</a></li>
+        <li th:classappend="${active == 'configuration'} ? 'active'"><a th:href="@{/projects/{id}/configuration(id=${id})}" th:text="|Configuration (${ir.beanDefinitions().size()})|">Configuration</a></li>
+        <li th:classappend="${active == 'views'} ? 'active'"><a th:href="@{/projects/{id}/views(id=${id})}" th:text="|画面一覧 (${ir.views().size()})|">画面一覧</a></li>
+        <li th:classappend="${active == 'export'} ? 'active'"><a th:href="@{/projects/{id}/export(id=${id})}">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main" th:replace="${content}">content</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js" th:src="@{/js/mermaid/mermaid.min.js}"></script>
+  <script src="/js/diagrams.js" th:src="@{/js/diagrams.js}"></script>
+  <script src="/js/filters.js" th:src="@{/js/filters.js}"></script>
+</body>
+</html>

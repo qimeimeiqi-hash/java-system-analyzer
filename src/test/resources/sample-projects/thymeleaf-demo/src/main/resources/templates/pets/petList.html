@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{fragments/layout}">
+<head th:replace="~{fragments/layout :: head}"></head>
+<body>
+<div layout:fragment="content">
+  <table>
+    <tr th:each="pet : ${pets}">
+      <td><a th:href="@{/pets/{petId}(petId=${pet.id})}" th:text="${pet.name}">Leo</a></td>
+    </tr>
+  </table>
+  <!-- <a th:href="@{/pets/removed}">Removed screen</a> -->
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8">解析総覧</a></li>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/architecture">アーキテクチャ・依存</a></li>
+        <li class="active"><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/apis">API一覧 (5)</a></li>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/er">ER図 (0)</a></li>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/classes">クラス一覧 (3)</a></li>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/views">画面一覧 (5)</a></li>
+        <li><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>API一覧（5件）</h1>
+  <form method="get" action="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/apis" class="filters">
+    <label>Controller：
+      <select name="controller" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="com.example.clinic.web.PetApiController" title="com.example.clinic.web.PetApiController">PetApiController</option>
+        <option value="com.example.clinic.web.PetController" title="com.example.clinic.web.PetController">PetController</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Controller</th><th>Method</th><th>HTTP</th><th>Path</th><th>Request DTO</th><th>Response DTO</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/classes/com.example.clinic.web.PetApiController"
+     title="com.example.clinic.web.PetApiController">PetApiController</a></td>
+          <td>names</td>
+          <td>GET</td>
+          <td>/api/pets</td>
+          <td>-</td>
+          <td><span
+     title="java.util.List">List&lt;String&gt;</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/classes/com.example.clinic.web.PetController"
+     title="com.example.clinic.web.PetController">PetController</a></td>
+          <td>list</td>
+          <td>GET</td>
+          <td>/pets</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/classes/com.example.clinic.web.PetController"
+     title="com.example.clinic.web.PetController">PetController</a></td>
+          <td>initCreationForm</td>
+          <td>GET</td>
+          <td>/pets/new</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/classes/com.example.clinic.web.PetController"
+     title="com.example.clinic.web.PetController">PetController</a></td>
+          <td>processCreationForm</td>
+          <td>POST</td>
+          <td>/pets/new</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/811fd4fc-8d46-46a5-8c20-72711de1d5e8/classes/com.example.clinic.web.PetController"
+     title="com.example.clinic.web.PetController">PetController</a></td>
+          <td>showPet</td>
+          <td>GET</td>
+          <td>/pets/{petId}</td>
+          <td>-</td>
+          <td><span
+     title="org.springframework.web.servlet.ModelAndView">ModelAndView</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note">HTTP が「全メソッド」のものは、マッピングで HTTP メソッドを指定していない。「（未解決）」の Path は定数式のまま表示している。</p>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

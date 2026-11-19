@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>クラス一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964">解析総覧</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/apis">API一覧 (73)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/er">ER図 (0)</a></li>
+        <li class="active"><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes">クラス一覧 (89)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/mybatis">MyBatis (9)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/views">画面一覧 (33)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>クラス一覧</h1>
+  <form method="get" action="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes" class="filters">
+    <label>パッケージ：
+      <select name="package" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="ltd.newbee.mall">ltd.newbee.mall</option>
+        <option value="ltd.newbee.mall.common">ltd.newbee.mall.common</option>
+        <option value="ltd.newbee.mall.config">ltd.newbee.mall.config</option>
+        <option value="ltd.newbee.mall.controller.admin">ltd.newbee.mall.controller.admin</option>
+        <option value="ltd.newbee.mall.controller.common">ltd.newbee.mall.controller.common</option>
+        <option value="ltd.newbee.mall.controller.mall">ltd.newbee.mall.controller.mall</option>
+        <option value="ltd.newbee.mall.controller.vo">ltd.newbee.mall.controller.vo</option>
+        <option value="ltd.newbee.mall.dao">ltd.newbee.mall.dao</option>
+        <option value="ltd.newbee.mall.entity">ltd.newbee.mall.entity</option>
+        <option value="ltd.newbee.mall.interceptor">ltd.newbee.mall.interceptor</option>
+        <option value="ltd.newbee.mall.service">ltd.newbee.mall.service</option>
+        <option value="ltd.newbee.mall.service.impl">ltd.newbee.mall.service.impl</option>
+        <option value="ltd.newbee.mall.util">ltd.newbee.mall.util</option>
+      </select>
+    </label>
+    <label>役割：
+      <select name="role" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="Controller">Controller</option>
+        <option value="Service">Service</option>
+        <option value="Configuration">Configuration</option>
+        <option value="Component">Component</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>クラス名</th><th>種類</th><th>役割</th><th>パッケージ</th><th>概要</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.NewBeeMallApplication"
+     title="ltd.newbee.mall.NewBeeMallApplication">NewBeeMallApplication</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.common.Constants"
+     title="ltd.newbee.mall.common.Constants">Constants</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.common.IndexConfigTypeEnum"
+     title="ltd.newbee.mall.common.IndexConfigTypeEnum">IndexConfigTypeEnum</a></td>
+          <td>Enum</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.common.NewBeeMallCategoryLevelEnum"
+     title="ltd.newbee.mall.common.NewBeeMallCategoryLevelEnum">NewBeeMallCategoryLevelEnum</a></td>
+          <td>Enum</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.common.NewBeeMallException"
+     title="ltd.newbee.mall.common.NewBeeMallException">NewBeeMallException</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.common</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.common.NewBeeMallOrderStatusEnum"
+     title="ltd.newbee.mall.common.NewBeeMallOrderStatusEnum">NewBeeMallOrderStatusEnum</a></td>
+          <td>Enum</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.common.PayStatusEnum"
+     title="ltd.newbee.mall.common.PayStatusEnum">PayStatusEnum</a></td>
+          <td>Enum</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.common.PayTypeEnum"
+     title="ltd.newbee.mall.common.PayTypeEnum">PayTypeEnum</a></td>
+          <td>Enum</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.common.ServiceResultEnum"
+     title="ltd.newbee.mall.common.ServiceResultEnum">ServiceResultEnum</a></td>
+          <td>Enum</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.config.NeeBeeMallWebMvcConfigurer"
+     title="ltd.newbee.mall.config.NeeBeeMallWebMvcConfigurer">NeeBeeMallWebMvcConfigurer</a></td>
+          <td>クラス</td>
+          <td>Configuration</td>
+          <td>ltd.newbee.mall.config</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.admin.AdminController"
+     title="ltd.newbee.mall.controller.admin.AdminController">AdminController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.admin</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.admin.NewBeeMallCarouselController"
+     title="ltd.newbee.mall.controller.admin.NewBeeMallCarouselController">NewBeeMallCarouselController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.admin</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.admin.NewBeeMallGoodsCategoryController"
+     title="ltd.newbee.mall.controller.admin.NewBeeMallGoodsCategoryController">NewBeeMallGoodsCategoryController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.admin</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.admin.NewBeeMallGoodsController"
+     title="ltd.newbee.mall.controller.admin.NewBeeMallGoodsController">NewBeeMallGoodsController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.admin</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.admin.NewBeeMallGoodsIndexConfigController"
+     title="ltd.newbee.mall.controller.admin.NewBeeMallGoodsIndexConfigController">NewBeeMallGoodsIndexConfigController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.admin</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.admin.NewBeeMallOrderController"
+     title="ltd.newbee.mall.controller.admin.NewBeeMallOrderController">NewBeeMallOrderController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.admin</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.admin.NewBeeMallUserController"
+     title="ltd.newbee.mall.controller.admin.NewBeeMallUserController">NewBeeMallUserController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.admin</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.common.CommonController"
+     title="ltd.newbee.mall.controller.common.CommonController">CommonController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.common.ErrorPageController"
+     title="ltd.newbee.mall.controller.common.ErrorPageController">ErrorPageController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.common</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.common.NewBeeMallExceptionHandler"
+     title="ltd.newbee.mall.controller.common.NewBeeMallExceptionHandler">NewBeeMallExceptionHandler</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.common</td>
+          <td>newbee-mall全局异常处理</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.common.UploadController"
+     title="ltd.newbee.mall.controller.common.UploadController">UploadController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.common</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.mall.GoodsController"
+     title="ltd.newbee.mall.controller.mall.GoodsController">GoodsController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.mall</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.mall.IndexController"
+     title="ltd.newbee.mall.controller.mall.IndexController">IndexController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.mall</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.mall.OrderController"
+     title="ltd.newbee.mall.controller.mall.OrderController">OrderController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.mall</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.mall.PersonalController"
+     title="ltd.newbee.mall.controller.mall.PersonalController">PersonalController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.mall</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.mall.ShoppingCartController"
+     title="ltd.newbee.mall.controller.mall.ShoppingCartController">ShoppingCartController</a></td>
+          <td>クラス</td>
+          <td>Controller</td>
+          <td>ltd.newbee.mall.controller.mall</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallGoodsDetailVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallGoodsDetailVO">NewBeeMallGoodsDetailVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>商品详情页VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallIndexCarouselVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallIndexCarouselVO">NewBeeMallIndexCarouselVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>首页轮播图VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallIndexCategoryVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallIndexCategoryVO">NewBeeMallIndexCategoryVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>首页分类数据VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallIndexConfigGoodsVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallIndexConfigGoodsVO">NewBeeMallIndexConfigGoodsVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>首页配置商品VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallOrderDetailVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallOrderDetailVO">NewBeeMallOrderDetailVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>订单详情页页面VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallOrderItemVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallOrderItemVO">NewBeeMallOrderItemVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>订单详情页页面订单项VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallOrderListVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallOrderListVO">NewBeeMallOrderListVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>订单列表页面VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallSearchGoodsVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallSearchGoodsVO">NewBeeMallSearchGoodsVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>搜索列表页商品VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallShoppingCartItemVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallShoppingCartItemVO">NewBeeMallShoppingCartItemVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>购物车页面购物项VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.NewBeeMallUserVO"
+     title="ltd.newbee.mall.controller.vo.NewBeeMallUserVO">NewBeeMallUserVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.SearchPageCategoryVO"
+     title="ltd.newbee.mall.controller.vo.SearchPageCategoryVO">SearchPageCategoryVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>搜索页面分类数据VO</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.SecondLevelCategoryVO"
+     title="ltd.newbee.mall.controller.vo.SecondLevelCategoryVO">SecondLevelCategoryVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>首页分类数据VO(第二级)</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.controller.vo.ThirdLevelCategoryVO"
+     title="ltd.newbee.mall.controller.vo.ThirdLevelCategoryVO">ThirdLevelCategoryVO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.controller.vo</td>
+          <td>首页分类数据VO(第三级)</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.AdminUserMapper"
+     title="ltd.newbee.mall.dao.AdminUserMapper">AdminUserMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.CarouselMapper"
+     title="ltd.newbee.mall.dao.CarouselMapper">CarouselMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.GoodsCategoryMapper"
+     title="ltd.newbee.mall.dao.GoodsCategoryMapper">GoodsCategoryMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.IndexConfigMapper"
+     title="ltd.newbee.mall.dao.IndexConfigMapper">IndexConfigMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.MallUserMapper"
+     title="ltd.newbee.mall.dao.MallUserMapper">MallUserMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.NewBeeMallGoodsMapper"
+     title="ltd.newbee.mall.dao.NewBeeMallGoodsMapper">NewBeeMallGoodsMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.NewBeeMallOrderItemMapper"
+     title="ltd.newbee.mall.dao.NewBeeMallOrderItemMapper">NewBeeMallOrderItemMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.NewBeeMallOrderMapper"
+     title="ltd.newbee.mall.dao.NewBeeMallOrderMapper">NewBeeMallOrderMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.dao.NewBeeMallShoppingCartItemMapper"
+     title="ltd.newbee.mall.dao.NewBeeMallShoppingCartItemMapper">NewBeeMallShoppingCartItemMapper</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.dao</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.AdminUser"
+     title="ltd.newbee.mall.entity.AdminUser">AdminUser</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.Carousel"
+     title="ltd.newbee.mall.entity.Carousel">Carousel</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.GoodsCategory"
+     title="ltd.newbee.mall.entity.GoodsCategory">GoodsCategory</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.IndexConfig"
+     title="ltd.newbee.mall.entity.IndexConfig">IndexConfig</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.MallUser"
+     title="ltd.newbee.mall.entity.MallUser">MallUser</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallGoods"
+     title="ltd.newbee.mall.entity.NewBeeMallGoods">NewBeeMallGoods</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallOrder"
+     title="ltd.newbee.mall.entity.NewBeeMallOrder">NewBeeMallOrder</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallOrderItem"
+     title="ltd.newbee.mall.entity.NewBeeMallOrderItem">NewBeeMallOrderItem</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.NewBeeMallShoppingCartItem"
+     title="ltd.newbee.mall.entity.NewBeeMallShoppingCartItem">NewBeeMallShoppingCartItem</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.entity.StockNumDTO"
+     title="ltd.newbee.mall.entity.StockNumDTO">StockNumDTO</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.entity</td>
+          <td>库存修改所需实体</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.interceptor.AdminLoginInterceptor"
+     title="ltd.newbee.mall.interceptor.AdminLoginInterceptor">AdminLoginInterceptor</a></td>
+          <td>クラス</td>
+          <td>Component</td>
+          <td>ltd.newbee.mall.interceptor</td>
+          <td>后台系统身份验证拦截器</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.interceptor.NewBeeMallCartNumberInterceptor"
+     title="ltd.newbee.mall.interceptor.NewBeeMallCartNumberInterceptor">NewBeeMallCartNumberInterceptor</a></td>
+          <td>クラス</td>
+          <td>Component</td>
+          <td>ltd.newbee.mall.interceptor</td>
+          <td>newbee-mall购物车数量处理</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.interceptor.NewBeeMallLoginInterceptor"
+     title="ltd.newbee.mall.interceptor.NewBeeMallLoginInterceptor">NewBeeMallLoginInterceptor</a></td>
+          <td>クラス</td>
+          <td>Component</td>
+          <td>ltd.newbee.mall.interceptor</td>
+          <td>newbee-mall系统身份验证拦截器</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.AdminUserService"
+     title="ltd.newbee.mall.service.AdminUserService">AdminUserService</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.service</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.NewBeeMallCarouselService"
+     title="ltd.newbee.mall.service.NewBeeMallCarouselService">NewBeeMallCarouselService</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.service</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.NewBeeMallCategoryService"
+     title="ltd.newbee.mall.service.NewBeeMallCategoryService">NewBeeMallCategoryService</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.service</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.NewBeeMallGoodsService"
+     title="ltd.newbee.mall.service.NewBeeMallGoodsService">NewBeeMallGoodsService</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.service</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.NewBeeMallIndexConfigService"
+     title="ltd.newbee.mall.service.NewBeeMallIndexConfigService">NewBeeMallIndexConfigService</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.service</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.NewBeeMallOrderService"
+     title="ltd.newbee.mall.service.NewBeeMallOrderService">NewBeeMallOrderService</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.service</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.NewBeeMallShoppingCartService"
+     title="ltd.newbee.mall.service.NewBeeMallShoppingCartService">NewBeeMallShoppingCartService</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.service</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.NewBeeMallUserService"
+     title="ltd.newbee.mall.service.NewBeeMallUserService">NewBeeMallUserService</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.service</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.impl.AdminUserServiceImpl"
+     title="ltd.newbee.mall.service.impl.AdminUserServiceImpl">AdminUserServiceImpl</a></td>
+          <td>クラス</td>
+          <td>Service</td>
+          <td>ltd.newbee.mall.service.impl</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.impl.NewBeeMallCarouselServiceImpl"
+     title="ltd.newbee.mall.service.impl.NewBeeMallCarouselServiceImpl">NewBeeMallCarouselServiceImpl</a></td>
+          <td>クラス</td>
+          <td>Service</td>
+          <td>ltd.newbee.mall.service.impl</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.impl.NewBeeMallCategoryServiceImpl"
+     title="ltd.newbee.mall.service.impl.NewBeeMallCategoryServiceImpl">NewBeeMallCategoryServiceImpl</a></td>
+          <td>クラス</td>
+          <td>Service</td>
+          <td>ltd.newbee.mall.service.impl</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.impl.NewBeeMallGoodsServiceImpl"
+     title="ltd.newbee.mall.service.impl.NewBeeMallGoodsServiceImpl">NewBeeMallGoodsServiceImpl</a></td>
+          <td>クラス</td>
+          <td>Service</td>
+          <td>ltd.newbee.mall.service.impl</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.impl.NewBeeMallIndexConfigServiceImpl"
+     title="ltd.newbee.mall.service.impl.NewBeeMallIndexConfigServiceImpl">NewBeeMallIndexConfigServiceImpl</a></td>
+          <td>クラス</td>
+          <td>Service</td>
+          <td>ltd.newbee.mall.service.impl</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.impl.NewBeeMallOrderServiceImpl"
+     title="ltd.newbee.mall.service.impl.NewBeeMallOrderServiceImpl">NewBeeMallOrderServiceImpl</a></td>
+          <td>クラス</td>
+          <td>Service</td>
+          <td>ltd.newbee.mall.service.impl</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.impl.NewBeeMallShoppingCartServiceImpl"
+     title="ltd.newbee.mall.service.impl.NewBeeMallShoppingCartServiceImpl">NewBeeMallShoppingCartServiceImpl</a></td>
+          <td>クラス</td>
+          <td>Service</td>
+          <td>ltd.newbee.mall.service.impl</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.service.impl.NewBeeMallUserServiceImpl"
+     title="ltd.newbee.mall.service.impl.NewBeeMallUserServiceImpl">NewBeeMallUserServiceImpl</a></td>
+          <td>クラス</td>
+          <td>Service</td>
+          <td>ltd.newbee.mall.service.impl</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.BeanUtil"
+     title="ltd.newbee.mall.util.BeanUtil">BeanUtil</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.BeanUtil.Callback"
+     title="ltd.newbee.mall.util.BeanUtil.Callback">Callback</a></td>
+          <td>インタフェース</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.JsonUtil"
+     title="ltd.newbee.mall.util.JsonUtil">JsonUtil</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>操作json的封装方法</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.MD5Util"
+     title="ltd.newbee.mall.util.MD5Util">MD5Util</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.NewBeeMallUtils"
+     title="ltd.newbee.mall.util.NewBeeMallUtils">NewBeeMallUtils</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.NumberUtil"
+     title="ltd.newbee.mall.util.NumberUtil">NumberUtil</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.PageQueryUtil"
+     title="ltd.newbee.mall.util.PageQueryUtil">PageQueryUtil</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>分页查询参数</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.PageResult"
+     title="ltd.newbee.mall.util.PageResult">PageResult</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>分页工具类</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.PatternUtil"
+     title="ltd.newbee.mall.util.PatternUtil">PatternUtil</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>正则工具类</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.Result"
+     title="ltd.newbee.mall.util.Result">Result</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>@author 13</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.ResultGenerator"
+     title="ltd.newbee.mall.util.ResultGenerator">ResultGenerator</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>响应结果生成工具</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes/ltd.newbee.mall.util.SystemUtil"
+     title="ltd.newbee.mall.util.SystemUtil">SystemUtil</a></td>
+          <td>クラス</td>
+          <td>-</td>
+          <td>ltd.newbee.mall.util</td>
+          <td>@author 13</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

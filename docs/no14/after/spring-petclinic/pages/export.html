@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>エクスポート - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c">解析総覧</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/apis">API一覧 (17)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/er">ER図 (9)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes">クラス一覧 (25)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/configuration">Configuration (3)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/views">画面一覧 (12)</a></li>
+        <li class="active"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>エクスポート</h1>
+
+  <section class="card">
+    <h2>基本設計書</h2>
+    <p>全成果物を 8 章構成の基本設計書（表紙・改訂履歴・目次・章番号・図表番号付き）にまとめて出力する。
+      業務目的や作成者などコードから抽出できない事項は「（手動記入欄）」として残す。</p>
+    <div class="export-buttons">
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/export/basic-design.docx">
+        <button type="submit">Word（.docx）をダウンロード</button>
+      </form>
+    </div>
+    <p class="note">目次は Word で開いたときに更新される（更新を確認するメッセージが表示された場合は「はい」を選ぶ）。</p>
+  </section>
+
+  <section class="card">
+    <h2>個別の成果物</h2>
+    <p>全画面の内容を 1 つの文書にまとめて出力する。</p>
+    <div class="export-buttons">
+      <a class="button" href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/export/documents.md">Markdown</a>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/export/documents.docx">
+        <button type="submit">Word（.docx）</button>
+      </form>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/export/documents.xlsx">
+        <button type="submit">Excel（.xlsx）</button>
+      </form>
+    </div>
+    <p id="export-status" class="note" aria-live="polite"></p>
+    <p class="note">Markdown の図は Mermaid のコードブロックとして出力する。Word・Excel の図はブラウザで画像に変換して埋め込み、
+      変換できなかった図は表と Mermaid のコードで代替する。Excel のシート構成：統計 / API 一覧 / エンティティ / カラム / 関連 /
+      クラス一覧 / 依存関係 / 解析エラー / MyBatis / Configuration / 画面一覧 / 図</p>
+  </section>
+
+  <section class="card">
+    <h2>IR</h2>
+    <p><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/ir/project.json">JSON を表示</a></p>
+  </section>
+
+  
+  <div hidden>
+    <pre class="export-diagram" data-diagram-id="layers" data-diagram-title="レイヤー構成">flowchart TB
+  controller[&quot;Controller（6）&quot;]
+  repository[&quot;Repository（3）&quot;]
+  configuration[&quot;Configuration（2）&quot;]
+  component[&quot;Component（1）&quot;]
+  controller --&gt;|&quot;依存 5 件&quot;| repository
+  component --&gt;|&quot;依存 1 件&quot;| repository
+</pre>
+    <pre class="export-diagram" data-diagram-id="packages" data-diagram-title="パッケージ依存">flowchart LR
+  subgraph isolated[&quot;依存関係なし&quot;]
+    direction LR
+    n1[&quot;org.springframework.samples.petclinic&quot;]
+    n2[&quot;model&quot;]
+    n3[&quot;owner&quot;]
+    n4[&quot;system&quot;]
+    n5[&quot;vet&quot;]
+    n1 ~~~ n2 ~~~ n3 ~~~ n4
+  end
+</pre>
+    <pre class="export-diagram" data-diagram-id="components" data-diagram-title="コンポーネント依存">flowchart LR
+  subgraph p1[&quot;owner&quot;]
+    n1[&quot;OwnerController&quot;]
+    n2[&quot;OwnerRepository&quot;]
+    n3[&quot;PetController&quot;]
+    n4[&quot;PetTypeFormatter&quot;]
+    n5[&quot;PetTypeRepository&quot;]
+    n6[&quot;VisitController&quot;]
+  end
+  subgraph p2[&quot;system&quot;]
+    n7[&quot;CacheConfiguration&quot;]
+    n8[&quot;CrashController&quot;]
+    n9[&quot;WebConfiguration&quot;]
+    n10[&quot;WelcomeController&quot;]
+  end
+  subgraph p3[&quot;vet&quot;]
+    n11[&quot;VetController&quot;]
+    n12[&quot;VetRepository&quot;]
+  end
+  n1 --&gt; n2
+  n3 --&gt; n2
+  n3 --&gt; n5
+  n4 --&gt; n5
+  n6 --&gt; n2
+  n11 --&gt; n12
+</pre>
+    <pre class="export-diagram" data-diagram-id="er" data-diagram-title="ER図">erDiagram
+  e1[&quot;Owner（owners）継承：Person&quot;] {
+    String address
+    String city
+    String telephone
+  }
+  e2[&quot;Pet（pets）継承：NamedEntity&quot;] {
+    LocalDate birthDate
+  }
+  e3[&quot;PetType（types）継承：NamedEntity&quot;]
+  e4[&quot;Visit（visits）継承：BaseEntity&quot;] {
+    LocalDate date
+    String description
+  }
+  e5[&quot;Specialty（specialties）継承：NamedEntity&quot;]
+  e6[&quot;Vet（vets）継承：Person&quot;]
+  e1 |o--o{ e2 : &quot;pets（owner_id）&quot;
+  e3 |o--o{ e2 : &quot;type（type_id）&quot;
+  e2 |o--o{ e4 : &quot;visits（pet_id）&quot;
+  e6 }o--o{ e5 : &quot;specialties（vet_specialties）&quot;
+</pre>
+    <pre class="export-diagram" data-diagram-id="screens" data-diagram-title="画面遷移">flowchart LR
+  v1[&quot;error&quot;]
+  v2[&quot;fragments/inputField&quot;]
+  v3[&quot;fragments/layout&quot;]
+  v4[&quot;fragments/selectField&quot;]
+  v5[&quot;owners/createOrUpdateOwnerForm&quot;]
+  v6[&quot;owners/findOwners&quot;]
+  v7[&quot;owners/ownerDetails&quot;]
+  v8[&quot;owners/ownersList&quot;]
+  v9[&quot;pets/createOrUpdatePetForm&quot;]
+  v10[&quot;pets/createOrUpdateVisitForm&quot;]
+  v11[&quot;vets/vetList&quot;]
+  v12[&quot;welcome&quot;]
+  v3 --&gt; v12
+  v6 --&gt; v5
+  v6 --&gt; v6
+  v8 --&gt; v6
+</pre>
+  </div>
+  <script src="/js/export.js"></script>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

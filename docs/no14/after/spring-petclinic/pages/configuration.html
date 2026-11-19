@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configuration - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c">解析総覧</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/apis">API一覧 (17)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/er">ER図 (9)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes">クラス一覧 (25)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/mybatis">MyBatis (0)</a></li>
+        <li class="active"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/configuration">Configuration (3)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/views">画面一覧 (12)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>Configuration</h1>
+  <section class="card">
+    <h2>@Bean 定義</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>定義元クラス</th><th>Bean メソッド</th><th>Bean 名</th><th>戻り値型</th><th>引数</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.system.CacheConfiguration"
+     title="org.springframework.samples.petclinic.system.CacheConfiguration">CacheConfiguration</a></div></td>
+          <td><div class="cell">petclinicCacheConfigurationCustomizer</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><span
+     title="org.springframework.boot.cache.autoconfigure.JCacheManagerCustomizer">JCacheManagerCustomizer</span></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.system.WebConfiguration"
+     title="org.springframework.samples.petclinic.system.WebConfiguration">WebConfiguration</a></div></td>
+          <td><div class="cell">localeChangeInterceptor</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><span
+     title="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">LocaleChangeInterceptor</span></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.system.WebConfiguration"
+     title="org.springframework.samples.petclinic.system.WebConfiguration">WebConfiguration</a></div></td>
+          <td><div class="cell">localeResolver</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><span
+     title="org.springframework.web.servlet.LocaleResolver">LocaleResolver</span></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <p class="note">Bean 名は明記されたもののみ表示し、既定名は推測しない。Bean の内容（SecurityFilterChain 等）は解釈しない。@SpringBootApplication クラスの @Bean も含む。</p>
+  </section>
+  <section class="card">
+    <h2>@ConfigurationProperties</h2>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+    <p class="note">クラスに付与した場合、Bean メソッドは「-」。フィールドはクラス詳細で確認できる。</p>
+  </section>
+  <section class="card">
+    <h2>設定クラス（@Configuration）</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>クラス</th><th>依存先</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.system.CacheConfiguration"
+     title="org.springframework.samples.petclinic.system.CacheConfiguration">CacheConfiguration</a></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.system.WebConfiguration"
+     title="org.springframework.samples.petclinic.system.WebConfiguration">WebConfiguration</a></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

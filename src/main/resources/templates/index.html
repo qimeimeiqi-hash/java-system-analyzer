@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Javaシステム解析支援ツール</title>
+</head>
+<body>
+  <h1>Javaシステム解析支援ツール V1</h1>
+  <p>Spring Bootプロジェクト（Maven・単一モジュール）のzipをアップロードして解析します。</p>
+  <!-- Minimal form for WBS No.8 (FR-01); final screen layout is defined in No.5 -->
+  <p th:if="${errorMessage}" th:text="${errorMessage}" style="color: #b00020;">エラーメッセージ</p>
+  <form action="/upload" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".zip" required>
+    <button type="submit">アップロード</button>
+  </form>
+</body>
+</html>

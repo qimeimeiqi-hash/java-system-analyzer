@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>画面一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e">解析総覧</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/apis">API一覧 (5)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/er">ER図 (0)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/classes">クラス一覧 (2)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/configuration">Configuration (0)</a></li>
+        <li class="active"><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/views">画面一覧 (4)</a></li>
+        <li><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>画面一覧</h1>
+  <section class="card">
+    <h2>画面</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>テンプレート</th><th>種類</th><th>View 名</th><th>表示する Controller メソッド</th><th>部品（include）</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>src/main/webapp/WEB-INF/jsp/common/footer.jsp</td>
+          <td>JSP</td>
+          <td>common/footer</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>src/main/webapp/WEB-INF/jsp/common/header.jspf</td>
+          <td>JSP</td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>src/main/webapp/WEB-INF/jsp/items/detail.jsp</td>
+          <td>JSP</td>
+          <td>items/detail</td>
+          <td><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/classes/com.example.shop.web.ItemController"
+     title="com.example.shop.web.ItemController">ItemController.detail</a></td>
+          <td>src/main/webapp/WEB-INF/jsp/common/footer.jsp</td>
+        </tr>
+        <tr>
+          <td>src/main/webapp/WEB-INF/jsp/items/list.jsp</td>
+          <td>JSP</td>
+          <td>items/list</td>
+          <td><a href="/projects/6d58af43-ceb8-4946-ab66-7ae31ca9299e/classes/com.example.shop.web.ItemController"
+     title="com.example.shop.web.ItemController">ItemController.list</a></td>
+          <td>src/main/webapp/WEB-INF/jsp/common/header.jspf, src/main/webapp/WEB-INF/jsp/common/footer.jsp</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <p class="note">View 名が「未指定」のものは、設定から確定できないため推測していない。</p>
+  </section>
+  <section class="card">
+    <h2>画面遷移図</h2>
+    
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="screens">flowchart LR
+  v1[&quot;common/footer&quot;]
+  v2[&quot;src/main/webapp/WEB-INF/jsp/common/header.jspf&quot;]
+  v3[&quot;items/detail&quot;]
+  v4[&quot;items/list&quot;]
+  v2 --&gt; v4
+  v3 --&gt; v4
+  v4 -.-&gt; v4
+</pre>
+  </div>
+
+    <p class="note">実線＝遷移先メソッドが返す画面 / 点線＝redirect・forward を 1 段たどった画面。部品（include）は遷移ではないため含めない。式で書かれたリンクは線にしない。</p>
+  </section>
+  <section class="card">
+    <h2>画面ごとの遷移先</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>画面</th><th>要素</th><th>記述</th><th>遷移先 Controller メソッド</th><th>遷移後の画面</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>src/main/webapp/WEB-INF/jsp/common/header.jspf</td>
+          <td>a（href）</td>
+          <td>GET &lt;c:url value=&#39;/items&#39;/&gt;</td>
+          <td>ItemController.list</td>
+          <td>src/main/webapp/WEB-INF/jsp/items/list.jsp</td>
+        </tr>
+        <tr>
+          <td>src/main/webapp/WEB-INF/jsp/items/detail.jsp</td>
+          <td>a（href）</td>
+          <td>GET ${pageContext.request.contextPath}/items</td>
+          <td>ItemController.list</td>
+          <td>src/main/webapp/WEB-INF/jsp/items/list.jsp</td>
+        </tr>
+        <tr>
+          <td>src/main/webapp/WEB-INF/jsp/items/list.jsp</td>
+          <td>a（href）</td>
+          <td>GET &lt;c:url value=&#39;/items/${item.id}&#39;/&gt;（未解決）</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>src/main/webapp/WEB-INF/jsp/items/list.jsp</td>
+          <td>form:form（action）</td>
+          <td>POST ${pageContext.request.contextPath}/items</td>
+          <td>ItemController.create</td>
+          <td>src/main/webapp/WEB-INF/jsp/items/list.jsp</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+  <section class="card">
+    <h2>Controller と対応付けできなかった View 名</h2>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

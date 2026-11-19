@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>エクスポート - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c">解析総覧</a></li>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/apis">API一覧 (0)</a></li>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/er">ER図 (0)</a></li>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/classes">クラス一覧 (9)</a></li>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/configuration">Configuration (3)</a></li>
+        <li><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/views">画面一覧 (0)</a></li>
+        <li class="active"><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>エクスポート</h1>
+
+  <section class="card">
+    <h2>基本設計書</h2>
+    <p>全成果物を 8 章構成の基本設計書（表紙・改訂履歴・目次・章番号・図表番号付き）にまとめて出力する。
+      業務目的や作成者などコードから抽出できない事項は「（手動記入欄）」として残す。</p>
+    <div class="export-buttons">
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/export/basic-design.docx">
+        <button type="submit">Word（.docx）をダウンロード</button>
+      </form>
+    </div>
+    <p class="note">目次は Word で開いたときに更新される（更新を確認するメッセージが表示された場合は「はい」を選ぶ）。</p>
+  </section>
+
+  <section class="card">
+    <h2>個別の成果物</h2>
+    <p>全画面の内容を 1 つの文書にまとめて出力する。</p>
+    <div class="export-buttons">
+      <a class="button" href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/export/documents.md">Markdown</a>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/export/documents.docx">
+        <button type="submit">Word（.docx）</button>
+      </form>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/export/documents.xlsx">
+        <button type="submit">Excel（.xlsx）</button>
+      </form>
+    </div>
+    <p id="export-status" class="note" aria-live="polite"></p>
+    <p class="note">Markdown の図は Mermaid のコードブロックとして出力する。Word・Excel の図はブラウザで画像に変換して埋め込み、
+      変換できなかった図は表と Mermaid のコードで代替する。Excel のシート構成：統計 / API 一覧 / エンティティ / カラム / 関連 /
+      クラス一覧 / 依存関係 / 解析エラー / MyBatis / Configuration / 画面一覧 / 図</p>
+  </section>
+
+  <section class="card">
+    <h2>IR</h2>
+    <p><a href="/projects/1b16fe0a-36e3-49dc-8abe-7237c023279c/ir/project.json">JSON を表示</a></p>
+  </section>
+
+  
+  <div hidden>
+    <pre class="export-diagram" data-diagram-id="layers" data-diagram-title="レイヤー構成">flowchart TB
+  service[&quot;Service（1）&quot;]
+  configuration[&quot;Configuration（2）&quot;]
+  component[&quot;Component（3）&quot;]
+  service --&gt;|&quot;1&quot;| component
+  configuration --&gt;|&quot;2&quot;| component
+</pre>
+    <pre class="export-diagram" data-diagram-id="packages" data-diagram-title="パッケージ依存">flowchart LR
+  n1[&quot;com.example.mail&quot;]
+  n2[&quot;config&quot;]
+  n3[&quot;service&quot;]
+</pre>
+    <pre class="export-diagram" data-diagram-id="components" data-diagram-title="コンポーネント依存">flowchart LR
+  subgraph p1[&quot;config&quot;]
+    n1[&quot;AuditLogger&quot;]
+    n2[&quot;DataConfig&quot;]
+    n3[&quot;MailConfig&quot;]
+    n4[&quot;MailProperties&quot;]
+  end
+  subgraph p2[&quot;service&quot;]
+    n5[&quot;BroadcastService&quot;]
+    n6[&quot;EmailNotifier&quot;]
+    n7[&quot;Notifier&quot;]
+  end
+  n3 --&gt; n1
+  n3 --&gt; n4
+  n5 --&gt; n6
+  n5 --&gt; n7
+</pre>
+  </div>
+  <script src="/js/export.js"></script>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

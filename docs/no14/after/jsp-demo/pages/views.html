@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>画面一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82">解析総覧</a></li>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/apis">API一覧 (5)</a></li>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/er">ER図 (0)</a></li>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/classes">クラス一覧 (2)</a></li>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/configuration">Configuration (0)</a></li>
+        <li class="active"><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/views">画面一覧 (4)</a></li>
+        <li><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>画面一覧</h1>
+  <p class="note">テンプレートの場所：src/main/webapp/WEB-INF/jsp/</p>
+  <section class="card">
+    <h2>画面</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>テンプレート</th><th>種類</th><th>View 名</th><th>表示する Controller メソッド</th><th>部品（include）</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">common/footer.jsp</div></td>
+          <td><div class="cell">JSP</div></td>
+          <td><div class="cell">common/footer</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">common/header.jspf</div></td>
+          <td><div class="cell">JSP</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">items/detail.jsp</div></td>
+          <td><div class="cell">JSP</div></td>
+          <td><div class="cell">items/detail</div></td>
+          <td><div class="cell"><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/classes/com.example.shop.web.ItemController"
+     title="com.example.shop.web.ItemController">ItemController.detail</a></div></td>
+          <td><div class="cell">common/footer.jsp</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">items/list.jsp</div></td>
+          <td><div class="cell">JSP</div></td>
+          <td><div class="cell">items/list</div></td>
+          <td><div class="cell"><a href="/projects/1a32e562-11d9-49f6-b5a7-481629d21f82/classes/com.example.shop.web.ItemController"
+     title="com.example.shop.web.ItemController">ItemController.list</a></div></td>
+          <td><div class="cell">common/header.jspf
+common/footer.jsp</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <p class="note">View 名が「未指定」のものは、設定から確定できないため推測していない。</p>
+  </section>
+  <section class="card">
+    <h2>画面遷移図</h2>
+    
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="screens">flowchart LR
+  v1[&quot;common/footer&quot;]
+  v2[&quot;src/main/webapp/WEB-INF/jsp/common/header.jspf&quot;]
+  v3[&quot;items/detail&quot;]
+  v4[&quot;items/list&quot;]
+  v2 --&gt; v4
+  v3 --&gt; v4
+  v4 -.-&gt; v4
+</pre>
+  </div>
+
+    <p class="note">実線＝遷移先メソッドが返す画面 / 点線＝redirect・forward を 1 段たどった画面。部品（include）は遷移ではないため含めない。式で書かれたリンクは線にしない。</p>
+  </section>
+  <section class="card">
+    <h2>画面ごとの遷移先</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>画面</th><th>要素</th><th>記述</th><th>遷移先 Controller メソッド</th><th>遷移後の画面</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">common/header.jspf</div></td>
+          <td><div class="cell">a（href）</div></td>
+          <td><div class="cell">GET &lt;c:url value=&#39;/items&#39;/&gt;</div></td>
+          <td><div class="cell">ItemController.list</div></td>
+          <td><div class="cell">items/list.jsp</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">items/detail.jsp</div></td>
+          <td><div class="cell">a（href）</div></td>
+          <td><div class="cell">GET ${pageContext.request.contextPath}/items</div></td>
+          <td><div class="cell">ItemController.list</div></td>
+          <td><div class="cell">items/list.jsp</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">items/list.jsp</div></td>
+          <td><div class="cell">a（href）</div></td>
+          <td><div class="cell">GET &lt;c:url value=&#39;/items/${item.id}&#39;/&gt;（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">items/list.jsp</div></td>
+          <td><div class="cell">form:form（action）</div></td>
+          <td><div class="cell">POST ${pageContext.request.contextPath}/items</div></td>
+          <td><div class="cell">ItemController.create</div></td>
+          <td><div class="cell">items/list.jsp</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+  <section class="card">
+    <h2>Controller と対応付けできなかった View 名</h2>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

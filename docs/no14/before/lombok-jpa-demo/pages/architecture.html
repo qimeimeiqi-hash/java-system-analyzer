@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>アーキテクチャ・依存関係 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0">解析総覧</a></li>
+        <li class="active"><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/apis">API一覧 (2)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/er">ER図 (5)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes">クラス一覧 (15)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/issues">解析エラー (2)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>アーキテクチャ・依存関係</h1>
+  <p class="tabs">
+    <a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/architecture?tab=layers">レイヤー構成</a>
+    <a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/architecture?tab=packages" class="active">パッケージ依存</a>
+    <a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/architecture?tab=components">コンポーネント依存</a>
+  </p>
+
+  
+
+  
+  
+    
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="packages">flowchart LR
+  n1[&quot;com.example.shop&quot;]
+  n2[&quot;domain&quot;]
+  n3[&quot;repository&quot;]
+  n4[&quot;service&quot;]
+  n5[&quot;web&quot;]
+  n6[&quot;web.dto&quot;]
+  n4 --&gt; n3
+  n5 --&gt; n4
+</pre>
+  </div>
+
+  
+  
+  <p class="note">凡例：実線＝直接解決 / 点線＝単一実装から解決（@Bean や @Profile による別実装の可能性がある） / 赤枠＝循環依存</p>
+
+  <section class="card">
+    <h2>解決できなかった依存</h2>
+    <p class="note">図の線にならない依存。欠落させずに掲載する。</p>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>依存元</th><th>メンバー</th><th>宣言型</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes/com.example.shop.service.NotificationService"
+     title="com.example.shop.service.NotificationService">NotificationService</a></td>
+          <td>mailSender</td>
+          <td><span
+     title="org.springframework.mail.javamail.JavaMailSender">JavaMailSender</span></td>
+          <td>外部ライブラリ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>エクスポート - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0">解析総覧</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/apis">API一覧 (2)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/er">ER図 (5)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes">クラス一覧 (15)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/issues">解析エラー (2)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/views">画面一覧 (0)</a></li>
+        <li class="active"><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>エクスポート</h1>
+
+  <section class="card">
+    <h2>基本設計書</h2>
+    <p>全成果物を 8 章構成の基本設計書（表紙・改訂履歴・目次・章番号・図表番号付き）にまとめて出力する。
+      業務目的や作成者などコードから抽出できない事項は「（手動記入欄）」として残す。</p>
+    <div class="export-buttons">
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/c370fdce-5657-4154-b504-1a866091d3e0/export/basic-design.docx">
+        <button type="submit">Word（.docx）をダウンロード</button>
+      </form>
+    </div>
+    <p class="note">目次は Word で開いたときに更新される（更新を確認するメッセージが表示された場合は「はい」を選ぶ）。</p>
+  </section>
+
+  <section class="card">
+    <h2>個別の成果物</h2>
+    <p>全画面の内容を 1 つの文書にまとめて出力する。</p>
+    <div class="export-buttons">
+      <a class="button" href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/export/documents.md">Markdown</a>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/c370fdce-5657-4154-b504-1a866091d3e0/export/documents.docx">
+        <button type="submit">Word（.docx）</button>
+      </form>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/c370fdce-5657-4154-b504-1a866091d3e0/export/documents.xlsx">
+        <button type="submit">Excel（.xlsx）</button>
+      </form>
+    </div>
+    <p id="export-status" class="note" aria-live="polite"></p>
+    <p class="note">Markdown の図は Mermaid のコードブロックとして出力する。Word・Excel の図はブラウザで画像に変換して埋め込み、
+      変換できなかった図は表と Mermaid のコードで代替する。Excel のシート構成：統計 / API 一覧 / エンティティ / カラム / 関連 /
+      クラス一覧 / 依存関係 / 解析エラー / MyBatis / Configuration / 画面一覧 / 図</p>
+  </section>
+
+  <section class="card">
+    <h2>IR</h2>
+    <p><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/ir/project.json">JSON を表示</a></p>
+  </section>
+
+  
+  <div hidden>
+    <pre class="export-diagram" data-diagram-id="layers" data-diagram-title="レイヤー構成">flowchart TB
+  controller[&quot;Controller（1）&quot;]
+  service[&quot;Service（3）&quot;]
+  repository[&quot;Repository（2）&quot;]
+  controller --&gt;|&quot;1&quot;| service
+  service --&gt;|&quot;2&quot;| repository
+</pre>
+    <pre class="export-diagram" data-diagram-id="packages" data-diagram-title="パッケージ依存">flowchart LR
+  n1[&quot;com.example.shop&quot;]
+  n2[&quot;domain&quot;]
+  n3[&quot;repository&quot;]
+  n4[&quot;service&quot;]
+  n5[&quot;web&quot;]
+  n6[&quot;web.dto&quot;]
+  n4 --&gt; n3
+  n5 --&gt; n4
+</pre>
+    <pre class="export-diagram" data-diagram-id="components" data-diagram-title="コンポーネント依存">flowchart LR
+  subgraph p1[&quot;repository&quot;]
+    n1[&quot;CustomerRepository&quot;]
+    n2[&quot;PurchaseOrderRepository&quot;]
+  end
+  subgraph p2[&quot;service&quot;]
+    n3[&quot;LegacyReportService&quot;]
+    n4[&quot;NotificationService&quot;]
+    n5[&quot;OrderService&quot;]
+  end
+  subgraph p3[&quot;web&quot;]
+    n6[&quot;OrderController&quot;]
+  end
+  n5 --&gt; n1
+  n5 --&gt; n2
+  n6 --&gt; n5
+</pre>
+    <pre class="export-diagram" data-diagram-id="er" data-diagram-title="ER図">erDiagram
+  e1[&quot;Customer（customers）&quot;] {
+    String name
+    String email
+    boolean active
+    Address address &quot;埋め込み&quot;
+  }
+  e2[&quot;Product（テーブル名未指定）&quot;] {
+    String name
+    BigDecimal price
+  }
+  e3[&quot;PurchaseOrder（purchase_orders）&quot;] {
+    OrderStatus status &quot;Enum: STRING&quot;
+  }
+  e1 ||--o{ e3 : &quot;orders / customer&quot;
+  e3 }o--o{ e2 : &quot;products / orders&quot;
+</pre>
+  </div>
+  <script src="/js/export.js"></script>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

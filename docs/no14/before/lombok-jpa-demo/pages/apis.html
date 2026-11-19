@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0">解析総覧</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/architecture">アーキテクチャ・依存</a></li>
+        <li class="active"><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/apis">API一覧 (2)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/er">ER図 (5)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes">クラス一覧 (15)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/issues">解析エラー (2)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>API一覧（2件）</h1>
+  <form method="get" action="/projects/c370fdce-5657-4154-b504-1a866091d3e0/apis" class="filters">
+    <label>Controller：
+      <select name="controller" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="com.example.shop.web.OrderController" title="com.example.shop.web.OrderController">OrderController</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Controller</th><th>Method</th><th>HTTP</th><th>Path</th><th>Request DTO</th><th>Response DTO</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes/com.example.shop.web.OrderController"
+     title="com.example.shop.web.OrderController">OrderController</a></td>
+          <td>create</td>
+          <td>POST</td>
+          <td>/api/orders</td>
+          <td><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes/com.example.shop.web.dto.CreateOrderRequest"
+     title="com.example.shop.web.dto.CreateOrderRequest">CreateOrderRequest</a></td>
+          <td><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes/com.example.shop.web.dto.OrderResponse"
+     title="com.example.shop.web.dto.OrderResponse">OrderResponse</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes/com.example.shop.web.OrderController"
+     title="com.example.shop.web.OrderController">OrderController</a></td>
+          <td>get</td>
+          <td>GET</td>
+          <td>/api/orders/{id}</td>
+          <td>-</td>
+          <td><a href="/projects/c370fdce-5657-4154-b504-1a866091d3e0/classes/com.example.shop.web.dto.OrderResponse"
+     title="com.example.shop.web.dto.OrderResponse">OrderResponse</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note">HTTP が「全メソッド」のものは、マッピングで HTTP メソッドを指定していない。「（未解決）」の Path は定数式のまま表示している。</p>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

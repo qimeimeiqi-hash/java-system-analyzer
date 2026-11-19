@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>アーキテクチャ・依存関係 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf">解析総覧</a></li>
+        <li class="active"><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/apis">API一覧 (1)</a></li>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/er">ER図 (1)</a></li>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/classes">クラス一覧 (6)</a></li>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/issues">解析エラー (1)</a></li>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>アーキテクチャ・依存関係</h1>
+  <p class="tabs">
+    <a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/architecture?tab=layers">レイヤー構成</a>
+    <a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/architecture?tab=packages" class="active">パッケージ依存</a>
+    <a href="/projects/120efe94-9132-43f7-bec7-3912fe849ebf/architecture?tab=components">コンポーネント依存</a>
+  </p>
+
+  
+
+  
+  
+    
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="packages">flowchart LR
+  n2[&quot;repository&quot;]
+  n4[&quot;service.impl&quot;]
+  n5[&quot;web&quot;]
+  subgraph isolated[&quot;依存関係なし&quot;]
+    direction LR
+    n1[&quot;domain&quot;]
+    n3[&quot;service&quot;]
+    n1 ~~~ n3
+  end
+  n4 --&gt; n2
+  n5 --&gt; n4
+</pre>
+  </div>
+
+  
+  
+  <p class="note">凡例：実線＝直接解決 / 点線＝単一実装から解決（@Bean や @Profile による別実装の可能性がある） / 赤枠＝循環依存</p>
+
+  <section class="card">
+    <h2>解決できなかった依存</h2>
+    <p class="note">図の線にならない依存。欠落させずに掲載する。</p>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

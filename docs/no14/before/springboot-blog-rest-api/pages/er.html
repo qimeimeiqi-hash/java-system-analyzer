@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ER図 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc">解析総覧</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/apis">API一覧 (18)</a></li>
+        <li class="active"><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/er">ER図 (5)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes">クラス一覧 (41)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/configuration">Configuration (4)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>ER図</h1>
+  
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="er">erDiagram
+  e1[&quot;Category（categories）&quot;] {
+    Long id PK
+    String name
+    String description
+  }
+  e2[&quot;Comment（comments）&quot;] {
+    long id PK
+    String name
+    String email
+    String body
+  }
+  e3[&quot;Post（posts）&quot;] {
+    Long id PK
+    String title
+    String description
+    String content
+  }
+  e4[&quot;Role（roles）&quot;] {
+    Long id PK
+    String name
+  }
+  e5[&quot;User（users）&quot;] {
+    Long id PK
+    String name
+    String username
+    String email
+    String password
+  }
+  e1 |o--o{ e3 : &quot;posts / category&quot;
+  e3 |o--o{ e2 : &quot;comments / post&quot;
+  e5 }o--o{ e4 : &quot;roles&quot;
+</pre>
+  </div>
+
+  <p class="note">図はエンティティ（@Entity）のみ。MappedSuperclass・Embeddable は下の表で示し、親クラスのカラムは子エンティティに展開しない。
+    双方向の関連は mappedBy で対にして 1 本にまとめる。テーブル名・カラム名が未指定のものは命名規則による既定名を推測しない。</p>
+
+  <section class="card">
+    <h2>エンティティ一覧</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>エンティティ</th><th>種類</th><th>エンティティ名</th><th>テーブル名</th><th>スキーマ</th><th>親クラス</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Category"
+     title="com.springboot.blog.entity.Category">Category</a></td>
+          <td>エンティティ</td>
+          <td>未指定</td>
+          <td>categories</td>
+          <td>未指定</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Comment"
+     title="com.springboot.blog.entity.Comment">Comment</a></td>
+          <td>エンティティ</td>
+          <td>未指定</td>
+          <td>comments</td>
+          <td>未指定</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Post"
+     title="com.springboot.blog.entity.Post">Post</a></td>
+          <td>エンティティ</td>
+          <td>未指定</td>
+          <td>posts</td>
+          <td>未指定</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Role"
+     title="com.springboot.blog.entity.Role">Role</a></td>
+          <td>エンティティ</td>
+          <td>未指定</td>
+          <td>roles</td>
+          <td>未指定</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.User"
+     title="com.springboot.blog.entity.User">User</a></td>
+          <td>エンティティ</td>
+          <td>未指定</td>
+          <td>users</td>
+          <td>未指定</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Category"
+           title="com.springboot.blog.entity.Category">Category（エンティティ：テーブル categories）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td><span
+     title="java.lang.Long">Long</span></td>
+          <td>未指定</td>
+          <td>○</td>
+          <td>IDENTITY</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>posts</td>
+          <td>OneToMany</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Post"
+     title="com.springboot.blog.entity.Post">Post</a></td>
+          <td>×</td>
+          <td>category</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>ALL</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Comment"
+           title="com.springboot.blog.entity.Comment">Comment（エンティティ：テーブル comments）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td><span
+     title="long">long</span></td>
+          <td>未指定</td>
+          <td>○</td>
+          <td>IDENTITY</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>body</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>post</td>
+          <td>ManyToOne</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Post"
+     title="com.springboot.blog.entity.Post">Post</a></td>
+          <td>○</td>
+          <td>-</td>
+          <td>post_id</td>
+          <td>-</td>
+          <td>-</td>
+          <td>LAZY</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Post"
+           title="com.springboot.blog.entity.Post">Post（エンティティ：テーブル posts）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td><span
+     title="java.lang.Long">Long</span></td>
+          <td>未指定</td>
+          <td>○</td>
+          <td>IDENTITY</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>title</td>
+          <td>-</td>
+          <td>-</td>
+          <td>×</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>description</td>
+          <td>-</td>
+          <td>-</td>
+          <td>×</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>content</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>content</td>
+          <td>-</td>
+          <td>-</td>
+          <td>×</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>comments</td>
+          <td>OneToMany</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Comment"
+     title="com.springboot.blog.entity.Comment">Comment</a></td>
+          <td>×</td>
+          <td>post</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>ALL</td>
+        </tr>
+        <tr>
+          <td>category</td>
+          <td>ManyToOne</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Category"
+     title="com.springboot.blog.entity.Category">Category</a></td>
+          <td>○</td>
+          <td>-</td>
+          <td>category_id</td>
+          <td>-</td>
+          <td>-</td>
+          <td>LAZY</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Role"
+           title="com.springboot.blog.entity.Role">Role（エンティティ：テーブル roles）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td><span
+     title="java.lang.Long">Long</span></td>
+          <td>未指定</td>
+          <td>○</td>
+          <td>IDENTITY</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.User"
+           title="com.springboot.blog.entity.User">User（エンティティ：テーブル users）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td><span
+     title="java.lang.Long">Long</span></td>
+          <td>未指定</td>
+          <td>○</td>
+          <td>IDENTITY</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>username</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>×</td>
+          <td>-</td>
+          <td>○</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>×</td>
+          <td>-</td>
+          <td>○</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+          <td>未指定</td>
+          <td>-</td>
+          <td>-</td>
+          <td>×</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>roles</td>
+          <td>ManyToMany</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.entity.Role"
+     title="com.springboot.blog.entity.Role">Role</a></td>
+          <td>○</td>
+          <td>-</td>
+          <td>-</td>
+          <td>users_roles（user_id / 逆側 role_id）</td>
+          <td>-</td>
+          <td>EAGER</td>
+          <td>ALL</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

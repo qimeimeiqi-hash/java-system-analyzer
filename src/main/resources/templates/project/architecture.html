@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'architecture')}">
+<head><title>アーキテクチャ・依存関係 - Javaシステム解析支援ツール</title></head>
+<body>
+<main class="app-main" th:with="id=${project.projectId()}">
+  <h1>アーキテクチャ・依存関係</h1>
+  <p class="tabs">
+    <a th:href="@{/projects/{id}/architecture(id=${id},tab='layers')}" th:classappend="${tab == 'layers'} ? 'active'">レイヤー構成</a>
+    <a th:href="@{/projects/{id}/architecture(id=${id},tab='packages')}" th:classappend="${tab == 'packages'} ? 'active'">パッケージ依存</a>
+    <a th:href="@{/projects/{id}/architecture(id=${id},tab='components')}" th:classappend="${tab == 'components'} ? 'active'">コンポーネント依存</a>
+  </p>
+
+  <form th:if="${tab == 'components'}" method="get" th:action="@{/projects/{id}/architecture(id=${id})}" class="filters">
+    <input type="hidden" name="tab" value="components">
+    <label>パッケージ：
+      <select name="package" data-auto-submit>
+        <option value="">すべて</option>
+        <option th:each="p : ${packageChoices}" th:value="${p}" th:text="${p}" th:selected="${p == selectedPackage}">pkg</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+
+  <p class="message" th:if="${tab == 'components' and componentDiagram.filterRequired()}"
+     th:text="|コンポーネントが ${componentDiagram.nodeCount()} 件あり、${maxNodes} 件を超えるため、パッケージを選択してください。|">パッケージを選択してください。</p>
+  <th:block th:unless="${tab == 'components' and componentDiagram.filterRequired()}">
+    <th:block th:replace="~{fragments/parts :: diagramView(${diagram})}"></th:block>
+  </th:block>
+  <p class="note" th:if="${tab == 'layers'}">ノードは役割ごとのコンポーネント数、線の数字は役割間の依存関係の件数。</p>
+  <p class="note" th:unless="${tab == 'layers'}">凡例：実線＝直接解決 / 点線＝単一実装から解決（@Bean や @Profile による別実装の可能性がある） / 赤枠＝循環依存</p>
+
+  <section class="card">
+    <h2>解決できなかった依存</h2>
+    <p class="note">図の線にならない依存。欠落させずに掲載する。</p>
+    <th:block th:replace="~{fragments/parts :: dataTable(${unresolved})}"></th:block>
+  </section>
+</main>
+</body>
+</html>

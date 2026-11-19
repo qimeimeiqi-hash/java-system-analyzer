@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>解析エラーレポート - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b">解析総覧</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/apis">API一覧 (1)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/er">ER図 (1)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/classes">クラス一覧 (6)</a></li>
+        <li class="active"><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/issues">解析エラー (1)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>解析エラーレポート</h1>
+  <form method="get" action="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/issues" class="filters">
+    <label>種類：
+      <select name="kind" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="SYNTAX_ERROR">構文エラー</option>
+        <option value="UNRESOLVED_IMPORT">未解決 import</option>
+        <option value="ENCODING_FALLBACK">文字コード</option>
+        <option value="XML_PARSE_ERROR">XML 解析エラー</option>
+        <option value="VIEW_SETTING_UNRESOLVED">View 設定</option>
+        <option value="CIRCULAR_DEPENDENCY">循環依存</option>
+      </select>
+    </label>
+    <label>重要度：
+      <select name="severity" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="ERROR">エラー</option>
+        <option value="WARNING">警告</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>重要度</th><th>種類</th><th>ファイル</th><th>行</th><th>メッセージ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>警告</td>
+          <td>循環依存</td>
+          <td>-</td>
+          <td>-</td>
+          <td>コンポーネント間の循環依存を検出しました: com.example.billing.service.impl.AuditService, com.example.billing.service.impl.InvoiceServiceImpl</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note">コンパイル失敗を完全には検出しない。</p>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

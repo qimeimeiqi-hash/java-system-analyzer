@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--/*
+  Rendering of the generation layer's Table / Section / Diagram, shared by SCR-03 to SCR-10.
+  Uploaded text is always written with th:text (screen-design 2.5). A cell whose qualified name is a
+  type of the project links to its class page; any qualified name is shown as a tooltip (2.2).
+  Requires the model attributes "project" and "typeNames".
+*/-->
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<th:block th:fragment="cellView(cell)"><a th:if="${cell.qualifiedName() != null and typeNames.contains(cell.qualifiedName())}"
+     th:href="@{/projects/{id}/classes/{name}(id=${project.projectId()},name=${cell.qualifiedName()})}"
+     th:title="${cell.qualifiedName()}" th:text="${cell.text()}">Type</a><span
+     th:if="${cell.qualifiedName() != null and !typeNames.contains(cell.qualifiedName())}"
+     th:title="${cell.qualifiedName()}" th:text="${cell.text()}">Type</span><th:block
+     th:if="${cell.qualifiedName() == null}" th:text="${cell.text()}">text</th:block></th:block>
+
+<th:block th:fragment="dataTable(table)">
+  <p class="note" th:if="${table.isEmpty()}">検出されませんでした</p>
+  <div class="table-wrap" th:unless="${table.isEmpty()}">
+    <table>
+      <thead><tr><th th:each="header : ${table.headers()}" th:text="${header}">header</th></tr></thead>
+      <tbody>
+        <tr th:each="row : ${table.rows()}">
+          <td th:each="cell : ${row}"><div class="cell"><th:block th:replace="~{fragments/parts :: cellView(${cell})}"></th:block></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</th:block>
+
+<th:block th:fragment="keyValueTable(keyValues)">
+  <table class="kv" th:unless="${keyValues.isEmpty()}">
+    <tr th:each="kv : ${keyValues}">
+      <th th:text="${kv.key()}">key</th>
+      <td class="pre-line"><th:block th:replace="~{fragments/parts :: cellView(${kv.value()})}"></th:block></td>
+    </tr>
+  </table>
+</th:block>
+
+<section th:fragment="sectionCard(section)" class="card">
+  <h2 th:text="${section.title()}">title</h2>
+  <th:block th:replace="~{fragments/parts :: keyValueTable(${section.keyValues()})}"></th:block>
+  <th:block th:if="${section.table() != null}">
+    <th:block th:replace="~{fragments/parts :: dataTable(${section.table()})}"></th:block>
+  </th:block>
+  <p class="note" th:each="note : ${section.notes()}" th:text="${note}">note</p>
+</section>
+
+<th:block th:fragment="diagramView(diagram)">
+  <p class="note" th:if="${diagram == null}">検出されませんでした</p>
+  <div class="diagram" th:if="${diagram != null}">
+    <pre class="mermaid" th:attr="data-diagram-id=${diagram.id()}" th:text="${diagram.code()}">graph</pre>
+  </div>
+</th:block>
+
+</body>
+</html>

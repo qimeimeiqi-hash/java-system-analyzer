@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>エクスポート - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964">解析総覧</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/apis">API一覧 (73)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/er">ER図 (0)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/classes">クラス一覧 (89)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/mybatis">MyBatis (9)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/views">画面一覧 (33)</a></li>
+        <li class="active"><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>エクスポート</h1>
+
+  <section class="card">
+    <h2>基本設計書</h2>
+    <p>全成果物を 8 章構成の基本設計書（表紙・改訂履歴・目次・章番号・図表番号付き）にまとめて出力する。
+      業務目的や作成者などコードから抽出できない事項は「（手動記入欄）」として残す。</p>
+    <div class="export-buttons">
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/08ce5846-9749-42f7-af60-00b4f1324964/export/basic-design.docx">
+        <button type="submit">Word（.docx）をダウンロード</button>
+      </form>
+    </div>
+    <p class="note">目次は Word で開いたときに更新される（更新を確認するメッセージが表示された場合は「はい」を選ぶ）。</p>
+  </section>
+
+  <section class="card">
+    <h2>個別の成果物</h2>
+    <p>全画面の内容を 1 つの文書にまとめて出力する。</p>
+    <div class="export-buttons">
+      <a class="button" href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/export/documents.md">Markdown</a>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/08ce5846-9749-42f7-af60-00b4f1324964/export/documents.docx">
+        <button type="submit">Word（.docx）</button>
+      </form>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/08ce5846-9749-42f7-af60-00b4f1324964/export/documents.xlsx">
+        <button type="submit">Excel（.xlsx）</button>
+      </form>
+    </div>
+    <p id="export-status" class="note" aria-live="polite"></p>
+    <p class="note">Markdown の図は Mermaid のコードブロックとして出力する。Word・Excel の図はブラウザで画像に変換して埋め込み、
+      変換できなかった図は表と Mermaid のコードで代替する。Excel のシート構成：統計 / API 一覧 / エンティティ / カラム / 関連 /
+      クラス一覧 / 依存関係 / 解析エラー / MyBatis / Configuration / 画面一覧 / 図</p>
+  </section>
+
+  <section class="card">
+    <h2>IR</h2>
+    <p><a href="/projects/08ce5846-9749-42f7-af60-00b4f1324964/ir/project.json">JSON を表示</a></p>
+  </section>
+
+  
+  <div hidden>
+    <pre class="export-diagram" data-diagram-id="layers" data-diagram-title="レイヤー構成">flowchart TB
+  controller[&quot;Controller（15）&quot;]
+  service[&quot;Service（8）&quot;]
+  configuration[&quot;Configuration（1）&quot;]
+  component[&quot;Component（3）&quot;]
+  controller --&gt;|&quot;17&quot;| service
+  configuration --&gt;|&quot;3&quot;| component
+</pre>
+    <pre class="export-diagram" data-diagram-id="packages" data-diagram-title="パッケージ依存">flowchart LR
+  n1[&quot;ltd.newbee.mall&quot;]
+  n2[&quot;common&quot;]
+  n3[&quot;config&quot;]
+  n4[&quot;controller.admin&quot;]
+  n5[&quot;controller.common&quot;]
+  n6[&quot;controller.mall&quot;]
+  n7[&quot;controller.vo&quot;]
+  n8[&quot;dao&quot;]
+  n9[&quot;entity&quot;]
+  n10[&quot;interceptor&quot;]
+  n11[&quot;service&quot;]
+  n12[&quot;service.impl&quot;]
+  n13[&quot;util&quot;]
+  n3 --&gt; n10
+  n4 --&gt; n12
+  n6 --&gt; n12
+  n10 --&gt; n8
+  n12 --&gt; n8
+</pre>
+    <pre class="export-diagram" data-diagram-id="components" data-diagram-title="コンポーネント依存">flowchart LR
+  subgraph p1[&quot;config&quot;]
+    n1[&quot;NeeBeeMallWebMvcConfigurer&quot;]
+  end
+  subgraph p2[&quot;controller.admin&quot;]
+    n2[&quot;AdminController&quot;]
+    n3[&quot;NewBeeMallCarouselController&quot;]
+    n4[&quot;NewBeeMallGoodsCategoryController&quot;]
+    n5[&quot;NewBeeMallGoodsController&quot;]
+    n6[&quot;NewBeeMallGoodsIndexConfigController&quot;]
+    n7[&quot;NewBeeMallOrderController&quot;]
+    n8[&quot;NewBeeMallUserController&quot;]
+  end
+  subgraph p3[&quot;controller.common&quot;]
+    n9[&quot;CommonController&quot;]
+    n10[&quot;ErrorPageController&quot;]
+    n11[&quot;UploadController&quot;]
+  end
+  subgraph p4[&quot;controller.mall&quot;]
+    n12[&quot;GoodsController&quot;]
+    n13[&quot;IndexController&quot;]
+    n14[&quot;OrderController&quot;]
+    n15[&quot;PersonalController&quot;]
+    n16[&quot;ShoppingCartController&quot;]
+  end
+  subgraph p5[&quot;dao&quot;]
+    n17[&quot;AdminUserMapper&quot;]
+    n18[&quot;CarouselMapper&quot;]
+    n19[&quot;GoodsCategoryMapper&quot;]
+    n20[&quot;IndexConfigMapper&quot;]
+    n21[&quot;MallUserMapper&quot;]
+    n22[&quot;NewBeeMallGoodsMapper&quot;]
+    n23[&quot;NewBeeMallOrderItemMapper&quot;]
+    n24[&quot;NewBeeMallOrderMapper&quot;]
+    n25[&quot;NewBeeMallShoppingCartItemMapper&quot;]
+  end
+  subgraph p6[&quot;interceptor&quot;]
+    n26[&quot;AdminLoginInterceptor&quot;]
+    n27[&quot;NewBeeMallCartNumberInterceptor&quot;]
+    n28[&quot;NewBeeMallLoginInterceptor&quot;]
+  end
+  subgraph p7[&quot;service.impl&quot;]
+    n29[&quot;AdminUserServiceImpl&quot;]
+    n30[&quot;NewBeeMallCarouselServiceImpl&quot;]
+    n31[&quot;NewBeeMallCategoryServiceImpl&quot;]
+    n32[&quot;NewBeeMallGoodsServiceImpl&quot;]
+    n33[&quot;NewBeeMallIndexConfigServiceImpl&quot;]
+    n34[&quot;NewBeeMallOrderServiceImpl&quot;]
+    n35[&quot;NewBeeMallShoppingCartServiceImpl&quot;]
+    n36[&quot;NewBeeMallUserServiceImpl&quot;]
+  end
+  n1 --&gt; n26
+  n1 --&gt; n27
+  n1 --&gt; n28
+  n2 -.-&gt; n29
+  n3 -.-&gt; n30
+  n4 -.-&gt; n31
+  n5 -.-&gt; n31
+  n5 -.-&gt; n32
+  n6 -.-&gt; n33
+  n7 -.-&gt; n34
+  n8 -.-&gt; n36
+  n12 -.-&gt; n31
+  n12 -.-&gt; n32
+  n13 -.-&gt; n30
+  n13 -.-&gt; n31
+  n13 -.-&gt; n33
+  n14 -.-&gt; n34
+  n14 -.-&gt; n35
+  n15 -.-&gt; n36
+  n16 -.-&gt; n35
+  n27 --&gt; n25
+  n29 --&gt; n17
+  n30 --&gt; n18
+  n31 --&gt; n19
+  n32 --&gt; n19
+  n32 --&gt; n22
+  n33 --&gt; n20
+  n33 --&gt; n22
+  n34 --&gt; n22
+  n34 --&gt; n23
+  n34 --&gt; n24
+  n34 --&gt; n25
+  n35 --&gt; n22
+  n35 --&gt; n25
+  n36 --&gt; n21
+</pre>
+    <pre class="export-diagram" data-diagram-id="screens" data-diagram-title="画面遷移">flowchart LR
+  v1[&quot;admin/footer&quot;]
+  v2[&quot;admin/header&quot;]
+  v3[&quot;admin/index&quot;]
+  v4[&quot;admin/login&quot;]
+  v5[&quot;admin/newbee_mall_carousel&quot;]
+  v6[&quot;admin/newbee_mall_category&quot;]
+  v7[&quot;admin/newbee_mall_goods&quot;]
+  v8[&quot;admin/newbee_mall_goods_edit&quot;]
+  v9[&quot;admin/newbee_mall_index_config&quot;]
+  v10[&quot;admin/newbee_mall_order&quot;]
+  v11[&quot;admin/newbee_mall_user&quot;]
+  v12[&quot;admin/profile&quot;]
+  v13[&quot;admin/sidebar&quot;]
+  v14[&quot;error/error&quot;]
+  v15[&quot;error/error_400&quot;]
+  v16[&quot;error/error_404&quot;]
+  v17[&quot;error/error_5xx&quot;]
+  v18[&quot;mall/alipay&quot;]
+  v19[&quot;mall/cart&quot;]
+  v20[&quot;mall/detail&quot;]
+  v21[&quot;mall/footer&quot;]
+  v22[&quot;mall/header&quot;]
+  v23[&quot;mall/index&quot;]
+  v24[&quot;mall/login&quot;]
+  v25[&quot;mall/my-orders&quot;]
+  v26[&quot;mall/order-detail&quot;]
+  v27[&quot;mall/order-settle&quot;]
+  v28[&quot;mall/pay-select&quot;]
+  v29[&quot;mall/personal-sidebar&quot;]
+  v30[&quot;mall/personal&quot;]
+  v31[&quot;mall/register&quot;]
+  v32[&quot;mall/search&quot;]
+  v33[&quot;mall/wxpay&quot;]
+  v2 --&gt; v3
+  v2 --&gt; v23
+  v4 --&gt; v4
+  v13 --&gt; v3
+  v13 --&gt; v4
+  v13 --&gt; v5
+  v13 --&gt; v6
+  v13 --&gt; v7
+  v13 --&gt; v8
+  v13 --&gt; v9
+  v13 --&gt; v10
+  v13 --&gt; v11
+  v13 --&gt; v12
+  v19 --&gt; v23
+  v21 --&gt; v3
+  v21 --&gt; v23
+  v22 --&gt; v3
+  v22 --&gt; v19
+  v22 --&gt; v23
+  v22 --&gt; v24
+  v22 --&gt; v25
+  v22 --&gt; v30
+  v22 --&gt; v31
+  v25 --&gt; v23
+  v29 --&gt; v24
+  v29 --&gt; v25
+  v29 --&gt; v30
+</pre>
+  </div>
+  <script src="/js/export.js"></script>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'issues')}">
+<head><title>解析エラーレポート - Javaシステム解析支援ツール</title></head>
+<body>
+<main class="app-main" th:with="id=${project.projectId()}">
+  <h1>解析エラーレポート</h1>
+  <form method="get" th:action="@{/projects/{id}/issues(id=${id})}" class="filters">
+    <label>種類：
+      <select name="kind" data-auto-submit>
+        <option value="">すべて</option>
+        <option th:each="k : ${kindChoices}" th:value="${k.key}" th:text="${k.value}"
+                th:selected="${selectedKind != null and k.key == selectedKind.name()}">構文エラー</option>
+      </select>
+    </label>
+    <label>重要度：
+      <select name="severity" data-auto-submit>
+        <option value="">すべて</option>
+        <option th:each="s : ${severityChoices}" th:value="${s.key}" th:text="${s.value}"
+                th:selected="${selectedSeverity != null and s.key == selectedSeverity.name()}">エラー</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  <th:block th:replace="~{fragments/parts :: dataTable(${issueTable})}"></th:block>
+  <p class="note" th:text="${note}">note</p>
+</main>
+</body>
+</html>

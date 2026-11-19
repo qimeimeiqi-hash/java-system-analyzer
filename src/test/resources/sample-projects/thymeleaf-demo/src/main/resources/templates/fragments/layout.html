@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head"><title>Clinic</title></head>
+<body>
+<nav th:fragment="menu">
+  <a th:href="@{/pets}">Pets</a>
+  <a th:href="@{/pets/new}">Add pet</a>
+  <a href="https://example.org/help">Help</a>
+</nav>
+<div layout:fragment="content"></div>
+</body>
+</html>

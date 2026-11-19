@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'apis')}">
+<head><title>API一覧 - Javaシステム解析支援ツール</title></head>
+<body>
+<main class="app-main" th:with="id=${project.projectId()}">
+  <h1 th:text="|API一覧（${apiTable.rows().size()}件）|">API一覧</h1>
+  <form method="get" th:action="@{/projects/{id}/apis(id=${id})}" class="filters">
+    <label>Controller：
+      <select name="controller" data-auto-submit>
+        <option value="">すべて</option>
+        <option th:each="c : ${controllerChoices}" th:value="${c.key}" th:text="${c.value}" th:title="${c.key}"
+                th:selected="${c.key == selectedController}">OrderController</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  <th:block th:replace="~{fragments/parts :: dataTable(${apiTable})}"></th:block>
+  <p class="note">HTTP が「全メソッド」のものは、マッピングで HTTP メソッドを指定していない。「（未解決）」の Path は定数式のまま表示している。</p>
+</main>
+</body>
+</html>

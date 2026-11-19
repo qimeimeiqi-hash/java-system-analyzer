@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>画面一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c">解析総覧</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/apis">API一覧 (17)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/er">ER図 (9)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes">クラス一覧 (25)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/configuration">Configuration (3)</a></li>
+        <li class="active"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/views">画面一覧 (12)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>画面一覧</h1>
+  <p class="note">テンプレートの場所：src/main/resources/templates/</p>
+  <section class="card">
+    <h2>画面</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>テンプレート</th><th>種類</th><th>View 名</th><th>表示する Controller メソッド</th><th>部品（include）</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">error.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">error</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">fragments/layout.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">fragments/inputField.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">fragments/inputField</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">fragments/layout.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">fragments/layout</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">${template}（未解決）</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">fragments/selectField.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">fragments/selectField</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/createOrUpdateOwnerForm.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">owners/createOrUpdateOwnerForm</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController.initCreationForm
+OwnerController.initUpdateOwnerForm
+OwnerController.processCreationForm
+OwnerController.processUpdateOwnerForm</a></div></td>
+          <td><div class="cell">fragments/layout.html
+fragments/inputField.html
+fragments/inputField.html
+fragments/inputField.html
+fragments/inputField.html
+fragments/inputField.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/findOwners.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">owners/findOwners</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController.initFindForm
+OwnerController.processFindForm</a></div></td>
+          <td><div class="cell">fragments/layout.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownerDetails.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">owners/ownerDetails</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController.showOwner</a></div></td>
+          <td><div class="cell">fragments/layout.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownersList.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">owners/ownersList</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">fragments/layout.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/createOrUpdatePetForm.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">pets/createOrUpdatePetForm</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.PetController"
+     title="org.springframework.samples.petclinic.owner.PetController">PetController.initCreationForm
+PetController.initUpdateForm
+PetController.processCreationForm
+PetController.processUpdateForm</a></div></td>
+          <td><div class="cell">fragments/layout.html
+fragments/inputField.html
+fragments/inputField.html
+fragments/selectField.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/createOrUpdateVisitForm.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">pets/createOrUpdateVisitForm</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.VisitController"
+     title="org.springframework.samples.petclinic.owner.VisitController">VisitController.initNewVisitForm
+VisitController.processNewVisitForm</a></div></td>
+          <td><div class="cell">fragments/layout.html
+fragments/inputField.html
+fragments/inputField.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">vets/vetList.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">vets/vetList</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">fragments/layout.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">welcome.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">welcome</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.system.WelcomeController"
+     title="org.springframework.samples.petclinic.system.WelcomeController">WelcomeController.welcome</a></div></td>
+          <td><div class="cell">fragments/layout.html</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <p class="note">View 名が「未指定」のものは、設定から確定できないため推測していない。</p>
+  </section>
+  <section class="card">
+    <h2>画面遷移図</h2>
+    
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="screens">flowchart LR
+  v1[&quot;error&quot;]
+  v2[&quot;fragments/inputField&quot;]
+  v3[&quot;fragments/layout&quot;]
+  v4[&quot;fragments/selectField&quot;]
+  v5[&quot;owners/createOrUpdateOwnerForm&quot;]
+  v6[&quot;owners/findOwners&quot;]
+  v7[&quot;owners/ownerDetails&quot;]
+  v8[&quot;owners/ownersList&quot;]
+  v9[&quot;pets/createOrUpdatePetForm&quot;]
+  v10[&quot;pets/createOrUpdateVisitForm&quot;]
+  v11[&quot;vets/vetList&quot;]
+  v12[&quot;welcome&quot;]
+  v3 --&gt; v12
+  v6 --&gt; v5
+  v6 --&gt; v6
+  v8 --&gt; v6
+</pre>
+  </div>
+
+    <p class="note">実線＝遷移先メソッドが返す画面 / 点線＝redirect・forward を 1 段たどった画面。部品（include）は遷移ではないため含めない。式で書かれたリンクは線にしない。</p>
+  </section>
+  <section class="card">
+    <h2>画面ごとの遷移先</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>画面</th><th>要素</th><th>記述</th><th>遷移先 Controller メソッド</th><th>遷移後の画面</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">fragments/layout.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{/}</div></td>
+          <td><div class="cell">WelcomeController.welcome</div></td>
+          <td><div class="cell">welcome.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">fragments/layout.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{__${link}__}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/findOwners.html</div></td>
+          <td><div class="cell">form（th:action）</div></td>
+          <td><div class="cell">GET @{/owners}</div></td>
+          <td><div class="cell">OwnerController.processFindForm</div></td>
+          <td><div class="cell">owners/findOwners.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/findOwners.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{/owners/new}</div></td>
+          <td><div class="cell">OwnerController.initCreationForm</div></td>
+          <td><div class="cell">owners/createOrUpdateOwnerForm.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownerDetails.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{__${owner.id}__/edit}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownerDetails.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{__${owner.id}__/pets/new}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownerDetails.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{__${owner.id}__/pets/__${pet.id}__/edit}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownerDetails.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{__${owner.id}__/pets/__${pet.id}__/visits/new}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownersList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{/owners/__${owner.id}__}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownersList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/owners?page=&#39; + ${i}}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownersList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/owners?page=1&#39;}</div></td>
+          <td><div class="cell">OwnerController.processFindForm</div></td>
+          <td><div class="cell">owners/findOwners.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownersList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/owners?page=__${currentPage - 1}__&#39;}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownersList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/owners?page=__${currentPage + 1}__&#39;}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">owners/ownersList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/owners?page=__${totalPages}__&#39;}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">vets/vetList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/vets.html?page=__${i}__&#39;}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">vets/vetList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/vets.html?page=1&#39;}</div></td>
+          <td><div class="cell">VetController.showVetList</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">vets/vetList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/vets.html?page=__${currentPage - 1}__&#39;}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">vets/vetList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/vets.html?page=__${currentPage + 1}__&#39;}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">vets/vetList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{&#39;/vets.html?page=__${totalPages}__&#39;}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+  <section class="card">
+    <h2>Controller と対応付けできなかった View 名</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Controller メソッド</th><th>種類</th><th>記述</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController.processCreationForm</a></div></td>
+          <td><div class="cell">redirect</div></td>
+          <td><div class="cell">&quot;redirect:/owners/&quot; + owner.getId()</div></td>
+          <td><div class="cell">式のため未解決</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController.processFindForm</a></div></td>
+          <td><div class="cell">redirect</div></td>
+          <td><div class="cell">&quot;redirect:/owners/&quot; + owner.getId()</div></td>
+          <td><div class="cell">式のため未解決</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController.processFindForm</a></div></td>
+          <td><div class="cell">不明</div></td>
+          <td><div class="cell">addPaginationModel(page, model, ownersResults)</div></td>
+          <td><div class="cell">式のため未解決</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.vet.VetController"
+     title="org.springframework.samples.petclinic.vet.VetController">VetController.showVetList</a></div></td>
+          <td><div class="cell">不明</div></td>
+          <td><div class="cell">addPaginationModel(page, paginated, model)</div></td>
+          <td><div class="cell">式のため未解決</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

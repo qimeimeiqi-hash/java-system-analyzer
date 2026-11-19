@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'views')}">
+<head><title>画面一覧 - Javaシステム解析支援ツール</title></head>
+<body>
+<main class="app-main">
+  <h1>画面一覧</h1>
+  <p class="note" th:if="${templateDirectoryNote != null}" th:text="${templateDirectoryNote}"></p>
+  <section class="card">
+    <h2>画面</h2>
+    <th:block th:replace="~{fragments/parts :: dataTable(${screenTable})}"></th:block>
+    <p class="note">View 名が「未指定」のものは、設定から確定できないため推測していない。</p>
+  </section>
+  <section class="card">
+    <h2>画面遷移図</h2>
+    <th:block th:replace="~{fragments/parts :: diagramView(${diagram})}"></th:block>
+    <p class="note">実線＝遷移先メソッドが返す画面 / 点線＝redirect・forward を 1 段たどった画面。部品（include）は遷移ではないため含めない。式で書かれたリンクは線にしない。</p>
+  </section>
+  <section class="card">
+    <h2>画面ごとの遷移先</h2>
+    <th:block th:replace="~{fragments/parts :: dataTable(${transitionTable})}"></th:block>
+  </section>
+  <section class="card">
+    <h2>Controller と対応付けできなかった View 名</h2>
+    <th:block th:replace="~{fragments/parts :: dataTable(${unmatchedTable})}"></th:block>
+  </section>
+</main>
+</body>
+</html>

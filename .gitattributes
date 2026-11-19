@@ -1,0 +1,8 @@
+/mvnw text eol=lf
+*.cmd text eol=crlf
+
+# Vendored library: keep byte-for-byte
+src/main/resources/static/js/mermaid/** -text
+
+# Hook scripts and fixtures run under bash; keep LF
+/.claude/hooks/** text eol=lf

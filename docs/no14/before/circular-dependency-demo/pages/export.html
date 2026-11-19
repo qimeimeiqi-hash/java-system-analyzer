@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>エクスポート - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b">解析総覧</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/apis">API一覧 (1)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/er">ER図 (1)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/classes">クラス一覧 (6)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/issues">解析エラー (1)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/views">画面一覧 (0)</a></li>
+        <li class="active"><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>エクスポート</h1>
+
+  <section class="card">
+    <h2>基本設計書</h2>
+    <p>全成果物を 8 章構成の基本設計書（表紙・改訂履歴・目次・章番号・図表番号付き）にまとめて出力する。
+      業務目的や作成者などコードから抽出できない事項は「（手動記入欄）」として残す。</p>
+    <div class="export-buttons">
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/export/basic-design.docx">
+        <button type="submit">Word（.docx）をダウンロード</button>
+      </form>
+    </div>
+    <p class="note">目次は Word で開いたときに更新される（更新を確認するメッセージが表示された場合は「はい」を選ぶ）。</p>
+  </section>
+
+  <section class="card">
+    <h2>個別の成果物</h2>
+    <p>全画面の内容を 1 つの文書にまとめて出力する。</p>
+    <div class="export-buttons">
+      <a class="button" href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/export/documents.md">Markdown</a>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/export/documents.docx">
+        <button type="submit">Word（.docx）</button>
+      </form>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            action="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/export/documents.xlsx">
+        <button type="submit">Excel（.xlsx）</button>
+      </form>
+    </div>
+    <p id="export-status" class="note" aria-live="polite"></p>
+    <p class="note">Markdown の図は Mermaid のコードブロックとして出力する。Word・Excel の図はブラウザで画像に変換して埋め込み、
+      変換できなかった図は表と Mermaid のコードで代替する。Excel のシート構成：統計 / API 一覧 / エンティティ / カラム / 関連 /
+      クラス一覧 / 依存関係 / 解析エラー / MyBatis / Configuration / 画面一覧 / 図</p>
+  </section>
+
+  <section class="card">
+    <h2>IR</h2>
+    <p><a href="/projects/d60df992-b50e-419a-bbd7-3cd7ea25332b/ir/project.json">JSON を表示</a></p>
+  </section>
+
+  
+  <div hidden>
+    <pre class="export-diagram" data-diagram-id="layers" data-diagram-title="レイヤー構成">flowchart TB
+  controller[&quot;Controller（1）&quot;]
+  service[&quot;Service（2）&quot;]
+  repository[&quot;Repository（1）&quot;]
+  controller --&gt;|&quot;1&quot;| service
+  service --&gt;|&quot;2&quot;| service
+  service --&gt;|&quot;1&quot;| repository
+</pre>
+    <pre class="export-diagram" data-diagram-id="packages" data-diagram-title="パッケージ依存">flowchart LR
+  n1[&quot;domain&quot;]
+  n2[&quot;repository&quot;]
+  n3[&quot;service&quot;]
+  n4[&quot;service.impl&quot;]
+  n5[&quot;web&quot;]
+  n4 --&gt; n2
+  n5 --&gt; n4
+</pre>
+    <pre class="export-diagram" data-diagram-id="components" data-diagram-title="コンポーネント依存">flowchart LR
+  subgraph p1[&quot;repository&quot;]
+    n1[&quot;InvoiceRepository&quot;]
+  end
+  subgraph p2[&quot;service.impl&quot;]
+    n2[&quot;AuditService&quot;]
+    n3[&quot;InvoiceServiceImpl&quot;]
+  end
+  subgraph p3[&quot;web&quot;]
+    n4[&quot;InvoiceController&quot;]
+  end
+  n2 -.-&gt; n3
+  n3 --&gt; n1
+  n3 --&gt; n2
+  n4 -.-&gt; n3
+  classDef cycle stroke:#d32f2f,stroke-width:3px
+  class n2,n3 cycle
+</pre>
+    <pre class="export-diagram" data-diagram-id="er" data-diagram-title="ER図">erDiagram
+  e1[&quot;Invoice（invoices）&quot;] {
+    Long id PK
+  }
+</pre>
+  </div>
+  <script src="/js/export.js"></script>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

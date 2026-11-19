@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ER図 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c">解析総覧</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/apis">API一覧 (17)</a></li>
+        <li class="active"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/er">ER図 (9)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes">クラス一覧 (25)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/configuration">Configuration (3)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/views">画面一覧 (12)</a></li>
+        <li><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>ER図</h1>
+  
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="er">erDiagram
+  e1[&quot;Owner（owners）継承：Person&quot;] {
+    String address
+    String city
+    String telephone
+  }
+  e2[&quot;Pet（pets）継承：NamedEntity&quot;] {
+    LocalDate birthDate
+  }
+  e3[&quot;PetType（types）継承：NamedEntity&quot;]
+  e4[&quot;Visit（visits）継承：BaseEntity&quot;] {
+    LocalDate date
+    String description
+  }
+  e5[&quot;Specialty（specialties）継承：NamedEntity&quot;]
+  e6[&quot;Vet（vets）継承：Person&quot;]
+  e1 |o--o{ e2 : &quot;pets（owner_id）&quot;
+  e3 |o--o{ e2 : &quot;type（type_id）&quot;
+  e2 |o--o{ e4 : &quot;visits（pet_id）&quot;
+  e6 }o--o{ e5 : &quot;specialties（vet_specialties）&quot;
+</pre>
+  </div>
+
+  <p class="note">図はエンティティ（@Entity）のみ。MappedSuperclass・Embeddable は下の表で示し、親クラスのカラムは子エンティティに展開しない。
+    双方向の関連は mappedBy で対にして 1 本にまとめる。テーブル名・カラム名が未指定のものは命名規則による既定名を推測しない。</p>
+
+  <section class="card">
+    <h2>エンティティ一覧</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>エンティティ</th><th>種類</th><th>エンティティ名</th><th>テーブル名</th><th>スキーマ</th><th>親クラス</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.BaseEntity"
+     title="org.springframework.samples.petclinic.model.BaseEntity">BaseEntity</a></div></td>
+          <td><div class="cell">MappedSuperclass</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.NamedEntity"
+     title="org.springframework.samples.petclinic.model.NamedEntity">NamedEntity</a></div></td>
+          <td><div class="cell">MappedSuperclass</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.BaseEntity"
+     title="org.springframework.samples.petclinic.model.BaseEntity">BaseEntity</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.Person"
+     title="org.springframework.samples.petclinic.model.Person">Person</a></div></td>
+          <td><div class="cell">MappedSuperclass</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.BaseEntity"
+     title="org.springframework.samples.petclinic.model.BaseEntity">BaseEntity</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.Owner"
+     title="org.springframework.samples.petclinic.owner.Owner">Owner</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">owners</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.Person"
+     title="org.springframework.samples.petclinic.model.Person">Person</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.Pet"
+     title="org.springframework.samples.petclinic.owner.Pet">Pet</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">pets</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.NamedEntity"
+     title="org.springframework.samples.petclinic.model.NamedEntity">NamedEntity</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.PetType"
+     title="org.springframework.samples.petclinic.owner.PetType">PetType</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">types</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.NamedEntity"
+     title="org.springframework.samples.petclinic.model.NamedEntity">NamedEntity</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.Visit"
+     title="org.springframework.samples.petclinic.owner.Visit">Visit</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">visits</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.BaseEntity"
+     title="org.springframework.samples.petclinic.model.BaseEntity">BaseEntity</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.vet.Specialty"
+     title="org.springframework.samples.petclinic.vet.Specialty">Specialty</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">specialties</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.NamedEntity"
+     title="org.springframework.samples.petclinic.model.NamedEntity">NamedEntity</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.vet.Vet"
+     title="org.springframework.samples.petclinic.vet.Vet">Vet</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">vets</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.Person"
+     title="org.springframework.samples.petclinic.model.Person">Person</a></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.BaseEntity"
+           title="org.springframework.samples.petclinic.model.BaseEntity">BaseEntity（MappedSuperclass）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">id</div></td>
+          <td><div class="cell"><span
+     title="java.lang.Integer">Integer</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">IDENTITY</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.NamedEntity"
+           title="org.springframework.samples.petclinic.model.NamedEntity">NamedEntity（MappedSuperclass）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">name</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.model.Person"
+           title="org.springframework.samples.petclinic.model.Person">Person（MappedSuperclass）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">firstName</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">30</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">lastName</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">30</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.Owner"
+           title="org.springframework.samples.petclinic.owner.Owner">Owner（エンティティ：テーブル owners）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">address</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">city</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">telephone</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">pets</div></td>
+          <td><div class="cell">OneToMany</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.Pet"
+     title="org.springframework.samples.petclinic.owner.Pet">Pet</a></div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">owner_id</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">EAGER</div></td>
+          <td><div class="cell">ALL</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.Pet"
+           title="org.springframework.samples.petclinic.owner.Pet">Pet（エンティティ：テーブル pets）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">birthDate</div></td>
+          <td><div class="cell"><span
+     title="java.time.LocalDate">LocalDate</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">type</div></td>
+          <td><div class="cell">ManyToOne</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.PetType"
+     title="org.springframework.samples.petclinic.owner.PetType">PetType</a></div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">type_id</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">visits</div></td>
+          <td><div class="cell">OneToMany</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.Visit"
+     title="org.springframework.samples.petclinic.owner.Visit">Visit</a></div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">pet_id</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">EAGER</div></td>
+          <td><div class="cell">ALL</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.PetType"
+           title="org.springframework.samples.petclinic.owner.PetType">PetType（エンティティ：テーブル types）</a></h2>
+    <h3>カラム</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.owner.Visit"
+           title="org.springframework.samples.petclinic.owner.Visit">Visit（エンティティ：テーブル visits）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">date</div></td>
+          <td><div class="cell"><span
+     title="java.time.LocalDate">LocalDate</span></div></td>
+          <td><div class="cell">visit_date</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">description</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.vet.Specialty"
+           title="org.springframework.samples.petclinic.vet.Specialty">Specialty（エンティティ：テーブル specialties）</a></h2>
+    <h3>カラム</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.vet.Vet"
+           title="org.springframework.samples.petclinic.vet.Vet">Vet（エンティティ：テーブル vets）</a></h2>
+    <h3>カラム</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">specialties</div></td>
+          <td><div class="cell">ManyToMany</div></td>
+          <td><div class="cell"><a href="/projects/80448ffc-3db3-4712-9b9a-36f11734a81c/classes/org.springframework.samples.petclinic.vet.Specialty"
+     title="org.springframework.samples.petclinic.vet.Specialty">Specialty</a></div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">vet_specialties（vet_id / 逆側 specialty_id）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">EAGER</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

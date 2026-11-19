@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{fragments/layout}">
+<body>
+<div layout:fragment="content">
+  <p th:text="${petId}">1</p>
+  <a th:href="@{/pets}">Back to list</a>
+</div>
+</body>
+</html>

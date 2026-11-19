@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6">解析総覧</a></li>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/architecture">アーキテクチャ・依存</a></li>
+        <li class="active"><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/apis">API一覧 (17)</a></li>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/er">ER図 (9)</a></li>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes">クラス一覧 (25)</a></li>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/configuration">Configuration (3)</a></li>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/views">画面一覧 (12)</a></li>
+        <li><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>API一覧（17件）</h1>
+  <form method="get" action="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/apis" class="filters">
+    <label>Controller：
+      <select name="controller" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="org.springframework.samples.petclinic.owner.OwnerController" title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController</option>
+        <option value="org.springframework.samples.petclinic.owner.PetController" title="org.springframework.samples.petclinic.owner.PetController">PetController</option>
+        <option value="org.springframework.samples.petclinic.owner.VisitController" title="org.springframework.samples.petclinic.owner.VisitController">VisitController</option>
+        <option value="org.springframework.samples.petclinic.system.CrashController" title="org.springframework.samples.petclinic.system.CrashController">CrashController</option>
+        <option value="org.springframework.samples.petclinic.system.WelcomeController" title="org.springframework.samples.petclinic.system.WelcomeController">WelcomeController</option>
+        <option value="org.springframework.samples.petclinic.vet.VetController" title="org.springframework.samples.petclinic.vet.VetController">VetController</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Controller</th><th>Method</th><th>HTTP</th><th>Path</th><th>Request DTO</th><th>Response DTO</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController</a></td>
+          <td>processFindForm</td>
+          <td>GET</td>
+          <td>/owners</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController</a></td>
+          <td>initFindForm</td>
+          <td>GET</td>
+          <td>/owners/find</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController</a></td>
+          <td>initCreationForm</td>
+          <td>GET</td>
+          <td>/owners/new</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController</a></td>
+          <td>processCreationForm</td>
+          <td>POST</td>
+          <td>/owners/new</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController</a></td>
+          <td>showOwner</td>
+          <td>GET</td>
+          <td>/owners/{ownerId}</td>
+          <td>-</td>
+          <td><span
+     title="org.springframework.web.servlet.ModelAndView">ModelAndView</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController</a></td>
+          <td>initUpdateOwnerForm</td>
+          <td>GET</td>
+          <td>/owners/{ownerId}/edit</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.OwnerController"
+     title="org.springframework.samples.petclinic.owner.OwnerController">OwnerController</a></td>
+          <td>processUpdateOwnerForm</td>
+          <td>POST</td>
+          <td>/owners/{ownerId}/edit</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.PetController"
+     title="org.springframework.samples.petclinic.owner.PetController">PetController</a></td>
+          <td>initCreationForm</td>
+          <td>GET</td>
+          <td>/owners/{ownerId}/pets/new</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.PetController"
+     title="org.springframework.samples.petclinic.owner.PetController">PetController</a></td>
+          <td>processCreationForm</td>
+          <td>POST</td>
+          <td>/owners/{ownerId}/pets/new</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.PetController"
+     title="org.springframework.samples.petclinic.owner.PetController">PetController</a></td>
+          <td>initUpdateForm</td>
+          <td>GET</td>
+          <td>/owners/{ownerId}/pets/{petId}/edit</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.PetController"
+     title="org.springframework.samples.petclinic.owner.PetController">PetController</a></td>
+          <td>processUpdateForm</td>
+          <td>POST</td>
+          <td>/owners/{ownerId}/pets/{petId}/edit</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.VisitController"
+     title="org.springframework.samples.petclinic.owner.VisitController">VisitController</a></td>
+          <td>initNewVisitForm</td>
+          <td>GET</td>
+          <td>/owners/{ownerId}/pets/{petId}/visits/new</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.owner.VisitController"
+     title="org.springframework.samples.petclinic.owner.VisitController">VisitController</a></td>
+          <td>processNewVisitForm</td>
+          <td>POST</td>
+          <td>/owners/{ownerId}/pets/{petId}/visits/new</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.system.CrashController"
+     title="org.springframework.samples.petclinic.system.CrashController">CrashController</a></td>
+          <td>triggerException</td>
+          <td>GET</td>
+          <td>/oups</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.system.WelcomeController"
+     title="org.springframework.samples.petclinic.system.WelcomeController">WelcomeController</a></td>
+          <td>welcome</td>
+          <td>GET</td>
+          <td>/</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.vet.VetController"
+     title="org.springframework.samples.petclinic.vet.VetController">VetController</a></td>
+          <td>showResourcesVetList</td>
+          <td>GET</td>
+          <td>/vets</td>
+          <td>-</td>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.vet.Vets"
+     title="org.springframework.samples.petclinic.vet.Vets">Vets</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/425627d4-1262-4c11-8d29-c08f8f3e52e6/classes/org.springframework.samples.petclinic.vet.VetController"
+     title="org.springframework.samples.petclinic.vet.VetController">VetController</a></td>
+          <td>showVetList</td>
+          <td>GET</td>
+          <td>/vets.html</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note">HTTP が「全メソッド」のものは、マッピングで HTTP メソッドを指定していない。「（未解決）」の Path は定数式のまま表示している。</p>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

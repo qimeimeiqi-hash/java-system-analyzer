@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ER図 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc">解析総覧</a></li>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/apis">API一覧 (2)</a></li>
+        <li class="active"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/er">ER図 (5)</a></li>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes">クラス一覧 (15)</a></li>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/issues">解析エラー (2)</a></li>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/configuration">Configuration (0)</a></li>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>ER図</h1>
+  
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="er">erDiagram
+  e1[&quot;Customer（customers）継承：BaseEntity&quot;] {
+    String name
+    String email
+    boolean active
+    Address address &quot;埋め込み&quot;
+  }
+  e2[&quot;Product（テーブル名未指定）継承：BaseEntity&quot;] {
+    String name
+    BigDecimal price
+  }
+  e3[&quot;PurchaseOrder（purchase_orders）継承：BaseEntity&quot;] {
+    OrderStatus status &quot;Enum: STRING&quot;
+  }
+  e1 ||--o{ e3 : &quot;orders / customer（customer_id）&quot;
+  e3 }o--o{ e2 : &quot;products / orders（order_products）&quot;
+</pre>
+  </div>
+
+  <p class="note">図はエンティティ（@Entity）のみ。MappedSuperclass・Embeddable は下の表で示し、親クラスのカラムは子エンティティに展開しない。
+    双方向の関連は mappedBy で対にして 1 本にまとめる。テーブル名・カラム名が未指定のものは命名規則による既定名を推測しない。</p>
+
+  <section class="card">
+    <h2>エンティティ一覧</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>エンティティ</th><th>種類</th><th>エンティティ名</th><th>テーブル名</th><th>スキーマ</th><th>親クラス</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Address"
+     title="com.example.shop.domain.Address">Address</a></div></td>
+          <td><div class="cell">Embeddable</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.BaseEntity"
+     title="com.example.shop.domain.BaseEntity">BaseEntity</a></div></td>
+          <td><div class="cell">MappedSuperclass</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Customer"
+     title="com.example.shop.domain.Customer">Customer</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">customers</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.BaseEntity"
+     title="com.example.shop.domain.BaseEntity">BaseEntity</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Product"
+     title="com.example.shop.domain.Product">Product</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.BaseEntity"
+     title="com.example.shop.domain.BaseEntity">BaseEntity</a></div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.PurchaseOrder"
+     title="com.example.shop.domain.PurchaseOrder">PurchaseOrder</a></div></td>
+          <td><div class="cell">エンティティ</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">purchase_orders</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.BaseEntity"
+     title="com.example.shop.domain.BaseEntity">BaseEntity</a></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Address"
+           title="com.example.shop.domain.Address">Address（Embeddable）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">street</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">city</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.BaseEntity"
+           title="com.example.shop.domain.BaseEntity">BaseEntity（MappedSuperclass）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">id</div></td>
+          <td><div class="cell"><span
+     title="java.lang.Long">Long</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">IDENTITY</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">createdAt</div></td>
+          <td><div class="cell"><span
+     title="java.time.LocalDateTime">LocalDateTime</span></div></td>
+          <td><div class="cell">created_at</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">×</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Customer"
+           title="com.example.shop.domain.Customer">Customer（エンティティ：テーブル customers）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">name</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">×</div></td>
+          <td><div class="cell">100</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">email</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">active</div></td>
+          <td><div class="cell"><span
+     title="boolean">boolean</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">address</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Address"
+     title="com.example.shop.domain.Address">Address</a></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">○</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">orders</div></td>
+          <td><div class="cell">OneToMany</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.PurchaseOrder"
+     title="com.example.shop.domain.PurchaseOrder">PurchaseOrder</a></div></td>
+          <td><div class="cell">×</div></td>
+          <td><div class="cell">customer</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">ALL</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Product"
+           title="com.example.shop.domain.Product">Product（エンティティ：テーブル 未指定）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">name</div></td>
+          <td><div class="cell"><span
+     title="java.lang.String">String</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">price</div></td>
+          <td><div class="cell"><span
+     title="java.math.BigDecimal">BigDecimal</span></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">orders</div></td>
+          <td><div class="cell">ManyToMany</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.PurchaseOrder"
+     title="com.example.shop.domain.PurchaseOrder">PurchaseOrder</a></div></td>
+          <td><div class="cell">×</div></td>
+          <td><div class="cell">products</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+
+  <section class="card">
+    <h2><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.PurchaseOrder"
+           title="com.example.shop.domain.PurchaseOrder">PurchaseOrder（エンティティ：テーブル purchase_orders）</a></h2>
+    <h3>カラム</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>型</th><th>カラム名</th><th>PK</th><th>生成戦略</th><th>NULL可</th><th>長さ</th><th>一意</th><th>Enum型</th><th>埋め込み</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">status</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.OrderStatus"
+     title="com.example.shop.domain.OrderStatus">OrderStatus</a></div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">STRING</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <h3>関連</h3>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>フィールド</th><th>種類</th><th>相手</th><th>所有側</th><th>mappedBy</th><th>結合カラム</th><th>結合テーブル</th><th>optional</th><th>fetch</th><th>cascade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">customer</div></td>
+          <td><div class="cell">ManyToOne</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Customer"
+     title="com.example.shop.domain.Customer">Customer</a></div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">customer_id</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">×</div></td>
+          <td><div class="cell">LAZY</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">products</div></td>
+          <td><div class="cell">ManyToMany</div></td>
+          <td><div class="cell"><a href="/projects/bad4a4a1-bb33-4c01-aa2c-263e332504dc/classes/com.example.shop.domain.Product"
+     title="com.example.shop.domain.Product">Product</a></div></td>
+          <td><div class="cell">○</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">order_products（order_id / 逆側 product_id）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

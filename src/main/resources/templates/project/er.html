@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'er')}">
+<head><title>ER図 - Javaシステム解析支援ツール</title></head>
+<body>
+<main class="app-main">
+  <h1>ER図</h1>
+  <th:block th:replace="~{fragments/parts :: diagramView(${diagram})}"></th:block>
+  <p class="note">図はエンティティ（@Entity）のみ。MappedSuperclass・Embeddable は下の表で示し、親クラスのカラムは子エンティティに展開しない。
+    双方向の関連は mappedBy で対にして 1 本にまとめる。テーブル名・カラム名が未指定のものは命名規則による既定名を推測しない。</p>
+
+  <section class="card">
+    <h2>エンティティ一覧</h2>
+    <th:block th:replace="~{fragments/parts :: dataTable(${entityList})}"></th:block>
+  </section>
+
+  <section class="card" th:each="entity : ${entities}">
+    <h2><a th:href="@{/projects/{id}/classes/{name}(id=${project.projectId()},name=${entity.typeName()})}"
+           th:title="${entity.typeName()}" th:text="${entity.heading()}">Order</a></h2>
+    <h3>カラム</h3>
+    <th:block th:replace="~{fragments/parts :: dataTable(${entity.columns()})}"></th:block>
+    <h3>関連</h3>
+    <th:block th:replace="~{fragments/parts :: dataTable(${entity.relations()})}"></th:block>
+  </section>
+</main>
+</body>
+</html>

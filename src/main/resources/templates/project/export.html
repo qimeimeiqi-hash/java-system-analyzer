@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main}, 'export')}">
+<head><title>エクスポート - Javaシステム解析支援ツール</title></head>
+<body>
+<main class="app-main" th:with="id=${project.projectId()}">
+  <h1>エクスポート</h1>
+
+  <section class="card">
+    <h2>基本設計書</h2>
+    <p>全成果物を 8 章構成の基本設計書（表紙・改訂履歴・目次・章番号・図表番号付き）にまとめて出力する。
+      業務目的や作成者などコードから抽出できない事項は「（手動記入欄）」として残す。</p>
+    <div class="export-buttons">
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            th:action="@{/projects/{id}/export/basic-design.docx(id=${id})}">
+        <button type="submit">Word（.docx）をダウンロード</button>
+      </form>
+    </div>
+    <p class="note">目次は Word で開いたときに更新される（更新を確認するメッセージが表示された場合は「はい」を選ぶ）。</p>
+  </section>
+
+  <section class="card">
+    <h2>個別の成果物</h2>
+    <p>全画面の内容を 1 つの文書にまとめて出力する。</p>
+    <div class="export-buttons">
+      <a class="button" th:href="@{/projects/{id}/export/documents.md(id=${id})}">Markdown</a>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            th:action="@{/projects/{id}/export/documents.docx(id=${id})}">
+        <button type="submit">Word（.docx）</button>
+      </form>
+      <form class="export-with-diagrams" method="post" enctype="multipart/form-data"
+            th:action="@{/projects/{id}/export/documents.xlsx(id=${id})}">
+        <button type="submit">Excel（.xlsx）</button>
+      </form>
+    </div>
+    <p id="export-status" class="note" aria-live="polite"></p>
+    <p class="note">Markdown の図は Mermaid のコードブロックとして出力する。Word・Excel の図はブラウザで画像に変換して埋め込み、
+      変換できなかった図は表と Mermaid のコードで代替する。Excel のシート構成：統計 / API 一覧 / エンティティ / カラム / 関連 /
+      クラス一覧 / 依存関係 / 解析エラー / MyBatis / Configuration / 画面一覧 / 図</p>
+  </section>
+
+  <section class="card">
+    <h2>IR</h2>
+    <p><a th:href="@{/projects/{id}/ir/project.json(id=${id})}">JSON を表示</a></p>
+  </section>
+
+  <!--/* Mermaid code of every diagram in the documents; export.js converts them to PNG. */-->
+  <div hidden id="export-diagrams"
+       th:attr="data-max-diagram-bytes=${maxDiagramBytes},data-max-total-bytes=${maxTotalDiagramBytes}">
+    <pre class="export-diagram" th:each="diagram : ${diagrams}"
+         th:attr="data-diagram-id=${diagram.id()},data-diagram-title=${diagram.title()}"
+         th:text="${diagram.code()}">graph</pre>
+  </div>
+  <script src="/js/export.js" th:src="@{/js/export.js}"></script>
+</main>
+</body>
+</html>

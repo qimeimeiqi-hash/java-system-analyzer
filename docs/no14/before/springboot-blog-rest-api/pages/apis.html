@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc">解析総覧</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/architecture">アーキテクチャ・依存</a></li>
+        <li class="active"><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/apis">API一覧 (18)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/er">ER図 (5)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes">クラス一覧 (41)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/configuration">Configuration (4)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>API一覧（20件）</h1>
+  <form method="get" action="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/apis" class="filters">
+    <label>Controller：
+      <select name="controller" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        <option value="com.springboot.blog.controller.AuthController" title="com.springboot.blog.controller.AuthController">AuthController</option>
+        <option value="com.springboot.blog.controller.CategoryController" title="com.springboot.blog.controller.CategoryController">CategoryController</option>
+        <option value="com.springboot.blog.controller.CommentController" title="com.springboot.blog.controller.CommentController">CommentController</option>
+        <option value="com.springboot.blog.controller.PostController" title="com.springboot.blog.controller.PostController">PostController</option>
+      </select>
+    </label>
+    <noscript><button type="submit">表示</button></noscript>
+  </form>
+  
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Controller</th><th>Method</th><th>HTTP</th><th>Path</th><th>Request DTO</th><th>Response DTO</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.AuthController"
+     title="com.springboot.blog.controller.AuthController">AuthController</a></td>
+          <td>login</td>
+          <td>POST</td>
+          <td>/api/auth/login</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.LoginDto"
+     title="com.springboot.blog.payload.LoginDto">LoginDto</a></td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.JWTAuthResponse"
+     title="com.springboot.blog.payload.JWTAuthResponse">JWTAuthResponse</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.AuthController"
+     title="com.springboot.blog.controller.AuthController">AuthController</a></td>
+          <td>register</td>
+          <td>POST</td>
+          <td>/api/auth/register</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.RegisterDto"
+     title="com.springboot.blog.payload.RegisterDto">RegisterDto</a></td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.AuthController"
+     title="com.springboot.blog.controller.AuthController">AuthController</a></td>
+          <td>login</td>
+          <td>POST</td>
+          <td>/api/auth/signin</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.LoginDto"
+     title="com.springboot.blog.payload.LoginDto">LoginDto</a></td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.JWTAuthResponse"
+     title="com.springboot.blog.payload.JWTAuthResponse">JWTAuthResponse</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.AuthController"
+     title="com.springboot.blog.controller.AuthController">AuthController</a></td>
+          <td>register</td>
+          <td>POST</td>
+          <td>/api/auth/signup</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.RegisterDto"
+     title="com.springboot.blog.payload.RegisterDto">RegisterDto</a></td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CategoryController"
+     title="com.springboot.blog.controller.CategoryController">CategoryController</a></td>
+          <td>addCategory</td>
+          <td>POST</td>
+          <td>/api/v1/categories</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CategoryDto"
+     title="com.springboot.blog.payload.CategoryDto">CategoryDto</a></td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CategoryDto"
+     title="com.springboot.blog.payload.CategoryDto">CategoryDto</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CategoryController"
+     title="com.springboot.blog.controller.CategoryController">CategoryController</a></td>
+          <td>getCategories</td>
+          <td>GET</td>
+          <td>/api/v1/categories</td>
+          <td>-</td>
+          <td><span
+     title="java.util.List">List&lt;CategoryDto&gt;</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CategoryController"
+     title="com.springboot.blog.controller.CategoryController">CategoryController</a></td>
+          <td>deleteCategory</td>
+          <td>DELETE</td>
+          <td>/api/v1/categories/{id}</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CategoryController"
+     title="com.springboot.blog.controller.CategoryController">CategoryController</a></td>
+          <td>getCategory</td>
+          <td>GET</td>
+          <td>/api/v1/categories/{id}</td>
+          <td>-</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CategoryDto"
+     title="com.springboot.blog.payload.CategoryDto">CategoryDto</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CategoryController"
+     title="com.springboot.blog.controller.CategoryController">CategoryController</a></td>
+          <td>updateCategory</td>
+          <td>PUT</td>
+          <td>/api/v1/categories/{id}</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CategoryDto"
+     title="com.springboot.blog.payload.CategoryDto">CategoryDto</a></td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CategoryDto"
+     title="com.springboot.blog.payload.CategoryDto">CategoryDto</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CommentController"
+     title="com.springboot.blog.controller.CommentController">CommentController</a></td>
+          <td>createComment</td>
+          <td>POST</td>
+          <td>/api/v1/posts/{postId}/comments</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CommentDto"
+     title="com.springboot.blog.payload.CommentDto">CommentDto</a></td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CommentDto"
+     title="com.springboot.blog.payload.CommentDto">CommentDto</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CommentController"
+     title="com.springboot.blog.controller.CommentController">CommentController</a></td>
+          <td>getCommentsByPostId</td>
+          <td>GET</td>
+          <td>/api/v1/posts/{postId}/comments</td>
+          <td>-</td>
+          <td><span
+     title="java.util.List">List&lt;CommentDto&gt;</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CommentController"
+     title="com.springboot.blog.controller.CommentController">CommentController</a></td>
+          <td>deleteComment</td>
+          <td>DELETE</td>
+          <td>/api/v1/posts/{postId}/comments/{id}</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CommentController"
+     title="com.springboot.blog.controller.CommentController">CommentController</a></td>
+          <td>getCommentById</td>
+          <td>GET</td>
+          <td>/api/v1/posts/{postId}/comments/{id}</td>
+          <td>-</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CommentDto"
+     title="com.springboot.blog.payload.CommentDto">CommentDto</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.CommentController"
+     title="com.springboot.blog.controller.CommentController">CommentController</a></td>
+          <td>updateComment</td>
+          <td>PUT</td>
+          <td>/api/v1/posts/{postId}/comments/{id}</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CommentDto"
+     title="com.springboot.blog.payload.CommentDto">CommentDto</a></td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.CommentDto"
+     title="com.springboot.blog.payload.CommentDto">CommentDto</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.PostController"
+     title="com.springboot.blog.controller.PostController">PostController</a></td>
+          <td>createPost</td>
+          <td>POST</td>
+          <td>/api/posts</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.PostDto"
+     title="com.springboot.blog.payload.PostDto">PostDto</a></td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.PostDto"
+     title="com.springboot.blog.payload.PostDto">PostDto</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.PostController"
+     title="com.springboot.blog.controller.PostController">PostController</a></td>
+          <td>getAllPosts</td>
+          <td>GET</td>
+          <td>/api/posts</td>
+          <td>-</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.PostResponse"
+     title="com.springboot.blog.payload.PostResponse">PostResponse</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.PostController"
+     title="com.springboot.blog.controller.PostController">PostController</a></td>
+          <td>getPostsByCategory</td>
+          <td>GET</td>
+          <td>/api/posts/category/{id}</td>
+          <td>-</td>
+          <td><span
+     title="java.util.List">List&lt;PostDto&gt;</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.PostController"
+     title="com.springboot.blog.controller.PostController">PostController</a></td>
+          <td>deletePost</td>
+          <td>DELETE</td>
+          <td>/api/posts/{id}</td>
+          <td>-</td>
+          <td><span
+     title="java.lang.String">String</span></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.PostController"
+     title="com.springboot.blog.controller.PostController">PostController</a></td>
+          <td>getPostById</td>
+          <td>GET</td>
+          <td>/api/posts/{id}</td>
+          <td>-</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.PostDto"
+     title="com.springboot.blog.payload.PostDto">PostDto</a></td>
+        </tr>
+        <tr>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.controller.PostController"
+     title="com.springboot.blog.controller.PostController">PostController</a></td>
+          <td>updatePost</td>
+          <td>PUT</td>
+          <td>/api/posts/{id}</td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.PostDto"
+     title="com.springboot.blog.payload.PostDto">PostDto</a></td>
+          <td><a href="/projects/e9389ac7-5b85-40c4-84a1-f1ac003791fc/classes/com.springboot.blog.payload.PostDto"
+     title="com.springboot.blog.payload.PostDto">PostDto</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note">HTTP が「全メソッド」のものは、マッピングで HTTP メソッドを指定していない。「（未解決）」の Path は定数式のまま表示している。</p>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

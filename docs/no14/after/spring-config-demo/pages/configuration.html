@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configuration - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e">解析総覧</a></li>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/apis">API一覧 (0)</a></li>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/er">ER図 (0)</a></li>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes">クラス一覧 (9)</a></li>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/mybatis">MyBatis (0)</a></li>
+        <li class="active"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/configuration">Configuration (3)</a></li>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/views">画面一覧 (0)</a></li>
+        <li><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>Configuration</h1>
+  <section class="card">
+    <h2>@Bean 定義</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>定義元クラス</th><th>Bean メソッド</th><th>Bean 名</th><th>戻り値型</th><th>引数</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes/com.example.mail.MailApplication"
+     title="com.example.mail.MailApplication">MailApplication</a></div></td>
+          <td><div class="cell">clock</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><span
+     title="java.time.Clock">Clock</span></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes/com.example.mail.config.DataConfig"
+     title="com.example.mail.config.DataConfig">DataConfig</a></div></td>
+          <td><div class="cell">dataSource</div></td>
+          <td><div class="cell">mainDataSource</div></td>
+          <td><div class="cell"><span
+     title="javax.sql.DataSource">DataSource</span></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes/com.example.mail.config.MailConfig"
+     title="com.example.mail.config.MailConfig">MailConfig</a></div></td>
+          <td><div class="cell">smsNotifier</div></td>
+          <td><div class="cell">未指定</div></td>
+          <td><div class="cell"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes/com.example.mail.service.Notifier"
+     title="com.example.mail.service.Notifier">Notifier</a></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <p class="note">Bean 名は明記されたもののみ表示し、既定名は推測しない。Bean の内容（SecurityFilterChain 等）は解釈しない。@SpringBootApplication クラスの @Bean も含む。</p>
+  </section>
+  <section class="card">
+    <h2>@ConfigurationProperties</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>クラス</th><th>Bean メソッド</th><th>prefix</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes/com.example.mail.config.DataConfig"
+     title="com.example.mail.config.DataConfig">DataConfig</a></div></td>
+          <td><div class="cell">dataSource</div></td>
+          <td><div class="cell">app.datasource</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes/com.example.mail.config.MailProperties"
+     title="com.example.mail.config.MailProperties">MailProperties</a></div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">app.mail</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <p class="note">クラスに付与した場合、Bean メソッドは「-」。フィールドはクラス詳細で確認できる。</p>
+  </section>
+  <section class="card">
+    <h2>設定クラス（@Configuration）</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>クラス</th><th>依存先</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes/com.example.mail.config.DataConfig"
+     title="com.example.mail.config.DataConfig">DataConfig</a></div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell"><a href="/projects/540eb150-7895-4902-a646-28a388d4773e/classes/com.example.mail.config.MailConfig"
+     title="com.example.mail.config.MailConfig">MailConfig</a></div></td>
+          <td><div class="cell">AuditLogger, MailProperties</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>

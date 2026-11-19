@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プロジェクトが見つかりません - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css" th:href="@{/css/app.css}">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/" th:href="@{/}">Javaシステム解析支援ツール V1</a>
+  </header>
+  <main class="app-main">
+    <h1>プロジェクトが見つかりません</h1>
+    <p>指定された解析結果は存在しません。</p>
+    <p><a href="/" th:href="@{/}">プロジェクトをアップロードする</a></p>
+  </main>
+</body>
+</html>

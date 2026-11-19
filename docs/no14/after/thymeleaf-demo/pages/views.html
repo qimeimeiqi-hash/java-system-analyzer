@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>画面一覧 - Javaシステム解析支援ツール</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-title" href="/">Javaシステム解析支援ツール V1</a>
+    <a class="app-new" href="/">別のプロジェクトを解析</a>
+  </header>
+  <div class="app-body">
+    <nav class="app-nav">
+      <ul>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518">解析総覧</a></li>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/architecture">アーキテクチャ・依存</a></li>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/apis">API一覧 (5)</a></li>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/er">ER図 (0)</a></li>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/classes">クラス一覧 (3)</a></li>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/issues">解析エラー (0)</a></li>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/mybatis">MyBatis (0)</a></li>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/configuration">Configuration (0)</a></li>
+        <li class="active"><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/views">画面一覧 (5)</a></li>
+        <li><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/export">エクスポート</a></li>
+      </ul>
+    </nav>
+    <main class="app-main">
+  <h1>画面一覧</h1>
+  <p class="note">テンプレートの場所：src/main/resources/templates/</p>
+  <section class="card">
+    <h2>画面</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>テンプレート</th><th>種類</th><th>View 名</th><th>表示する Controller メソッド</th><th>部品（include）</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">error.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">error</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">fragments/layout.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">fragments/layout</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/createOrUpdatePetForm.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">pets/createOrUpdatePetForm</div></td>
+          <td><div class="cell"><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/classes/com.example.clinic.web.PetController"
+     title="com.example.clinic.web.PetController">PetController.initCreationForm
+PetController.processCreationForm</a></div></td>
+          <td><div class="cell">fragments/layout.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/petDetails.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">pets/petDetails</div></td>
+          <td><div class="cell"><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/classes/com.example.clinic.web.PetController"
+     title="com.example.clinic.web.PetController">PetController.showPet</a></div></td>
+          <td><div class="cell">fragments/layout.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/petList.html</div></td>
+          <td><div class="cell">THYMELEAF</div></td>
+          <td><div class="cell">pets/petList</div></td>
+          <td><div class="cell"><a href="/projects/cb8f6c9b-eb35-449a-a36b-48389da59518/classes/com.example.clinic.web.PetController"
+     title="com.example.clinic.web.PetController">PetController.list</a></div></td>
+          <td><div class="cell">fragments/layout.html
+fragments/layout.html</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <p class="note">View 名が「未指定」のものは、設定から確定できないため推測していない。</p>
+  </section>
+  <section class="card">
+    <h2>画面遷移図</h2>
+    
+  
+  <div class="diagram">
+    <pre class="mermaid" data-diagram-id="screens">flowchart LR
+  v1[&quot;error&quot;]
+  v2[&quot;fragments/layout&quot;]
+  v3[&quot;pets/createOrUpdatePetForm&quot;]
+  v4[&quot;pets/petDetails&quot;]
+  v5[&quot;pets/petList&quot;]
+  v2 --&gt; v3
+  v2 --&gt; v5
+  v3 --&gt; v3
+  v3 -.-&gt; v4
+  v4 --&gt; v5
+  v5 --&gt; v4
+</pre>
+  </div>
+
+    <p class="note">実線＝遷移先メソッドが返す画面 / 点線＝redirect・forward を 1 段たどった画面。部品（include）は遷移ではないため含めない。式で書かれたリンクは線にしない。</p>
+  </section>
+  <section class="card">
+    <h2>画面ごとの遷移先</h2>
+    
+  
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>画面</th><th>要素</th><th>記述</th><th>遷移先 Controller メソッド</th><th>遷移後の画面</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="cell">error.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{/}</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">fragments/layout.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{/pets}</div></td>
+          <td><div class="cell">PetController.list</div></td>
+          <td><div class="cell">pets/petList.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">fragments/layout.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{/pets/new}</div></td>
+          <td><div class="cell">PetController.initCreationForm</div></td>
+          <td><div class="cell">pets/createOrUpdatePetForm.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/createOrUpdatePetForm.html</div></td>
+          <td><div class="cell">form（th:action）</div></td>
+          <td><div class="cell">POST @{/pets/new}</div></td>
+          <td><div class="cell">PetController.processCreationForm</div></td>
+          <td><div class="cell">pets/createOrUpdatePetForm.html
+pets/petDetails.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/createOrUpdatePetForm.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{${backUrl}}（未解決）</div></td>
+          <td><div class="cell">-</div></td>
+          <td><div class="cell">-</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/petDetails.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{/pets}</div></td>
+          <td><div class="cell">PetController.list</div></td>
+          <td><div class="cell">pets/petList.html</div></td>
+        </tr>
+        <tr>
+          <td><div class="cell">pets/petList.html</div></td>
+          <td><div class="cell">a（th:href）</div></td>
+          <td><div class="cell">GET @{/pets/{petId}(petId=${pet.id})}</div></td>
+          <td><div class="cell">PetController.showPet</div></td>
+          <td><div class="cell">pets/petDetails.html</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </section>
+  <section class="card">
+    <h2>Controller と対応付けできなかった View 名</h2>
+    
+  <p class="note">検出されませんでした</p>
+  
+
+  </section>
+</main>
+  </div>
+  <script src="/js/mermaid/mermaid.min.js"></script>
+  <script src="/js/diagrams.js"></script>
+</body>
+</html>
